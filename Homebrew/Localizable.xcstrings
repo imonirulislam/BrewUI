@@ -1,40 +1,8 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
-    "A report was saved after the app quit unexpectedly. You can send it to the Homebrew team on GitHub to help fix the problem, or discard it." : {
-      "comment" : "Crash report dialog body",
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Se guardó un reporte después de que la app se cerró de forma inesperada. Puedes enviarlo al equipo de Homebrew en GitHub para ayudar a solucionar el problema, o descartarlo."
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "应用意外退出后已保存一份报告。你可以在 GitHub 上将报告发送给 Homebrew 团队，帮助修复问题，也可以丢弃报告。"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "App 意外結束後已儲存一份報告。你可以透過 GitHub 將報告傳送給 Homebrew 團隊，協助修正問題，也可以將報告捨棄。"
-          }
-        },
-        "sv" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "En rapport sparades när programmet avslutades oväntat. Du kan skicka den till Homebrewteamet på GitHub för att hjälpa till att lösa problemet eller kasta den."
-          }
-        },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "앱이 예기치 않게 종료된 후 보고서가 저장되었습니다. GitHub에서 Homebrew 팀에 보내 문제 해결을 돕거나 보고서를 폐기할 수 있습니다."
-          }
-        }
-      }
+    "A report was saved after the app quit unexpectedly. You can send it to the Brewly developers on GitHub to help fix the problem, or discard it." : {
+      "comment" : "Crash report dialog body"
     },
     "Administrator password" : {
       "comment" : "Askpass: secure password field label",
@@ -57,6 +25,9 @@
           }
         }
       }
+    },
+    "Brewly quit unexpectedly" : {
+      "comment" : "Crash report dialog title"
     },
     "Browse and search %lld+ packages" : {
       "comment" : "Window subtitle, Discover; %lld is the approximate catalog size",
@@ -647,41 +618,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Brewfile 저장…"
-          }
-        }
-      }
-    },
-    "The Homebrew app quit unexpectedly" : {
-      "comment" : "Crash report dialog title",
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "La app de Homebrew se cerró inesperadamente"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Homebrew 应用意外退出"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Homebrew App 意外結束"
-          }
-        },
-        "sv" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Homebrew-appen avslutades oväntat"
-          }
-        },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Homebrew 앱이 예기치 않게 종료되었습니다"
           }
         }
       }

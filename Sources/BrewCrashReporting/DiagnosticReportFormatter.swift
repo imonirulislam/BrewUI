@@ -12,8 +12,8 @@ enum DiagnosticReportFormatter {
 
     static func makeReportText(_ report: DiagnosticReport) -> String {
         var lines = [
-            "Homebrew.app crash report",
-            "=========================",
+            "Brewly.app crash report",
+            "=======================",
             "Date: \(report.capturedAt.ISO8601Format())",
             "App version: \(report.appVersion) (\(report.buildNumber))",
             "macOS: \(report.osVersion)",

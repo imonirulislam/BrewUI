@@ -85,7 +85,7 @@ public enum SelfUpgradeHandoffDefaults {
         homeDirectory: URL = FileManager.default.homeDirectoryForCurrentUser,
     ) -> URL {
         homeDirectory
-            .appendingPathComponent("Library/Logs/sh.brew.app", isDirectory: true)
+            .appendingPathComponent("Library/Logs/dev.imonirulislam.brewly", isDirectory: true)
             .appendingPathComponent("self-upgrade.log")
     }
 }

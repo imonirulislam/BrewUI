@@ -5,7 +5,7 @@
 
 import Foundation
 
-/// The parts of a macOS crash report (`~/Library/Logs/DiagnosticReports/Homebrew-*.ips`)
+/// The parts of a macOS crash report (`~/Library/Logs/DiagnosticReports/Brewly-*.ips`)
 /// worth showing in a GitHub issue.
 public struct DiagnosticReport: Sendable, Equatable {
     public struct Frame: Sendable, Equatable {

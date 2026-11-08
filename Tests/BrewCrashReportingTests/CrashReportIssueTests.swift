@@ -23,7 +23,7 @@ struct CrashReportIssueTests {
         let url = CrashReportIssue.url(for: makeReport(text: "Homebrew.app crash report"))
 
         #expect(url.host == "github.com")
-        #expect(url.path == "/Homebrew/BrewUI/issues/new")
+        #expect(url.path == "/imonirulislam/BrewUI/issues/new")
     }
 
     @Test func `issue title carries the report summary`() {

@@ -16,8 +16,8 @@ struct SelfUpgradeCaskExclusionTests {
     // MARK: The inventory accessors
 
     @Test func `the app's own cask is recognised, and a formula of the same name is not`() {
-        #expect(InstalledBrewPackage.fixture(name: "homebrew-app", kind: .cask).isTheAppsOwnCask)
-        #expect(!InstalledBrewPackage.fixture(name: "homebrew-app", kind: .formula).isTheAppsOwnCask)
+        #expect(InstalledBrewPackage.fixture(name: "brewly", kind: .cask).isTheAppsOwnCask)
+        #expect(!InstalledBrewPackage.fixture(name: "brewly", kind: .formula).isTheAppsOwnCask)
         #expect(!InstalledBrewPackage.fixture(name: "slack", kind: .cask).isTheAppsOwnCask)
     }
 
@@ -40,7 +40,7 @@ struct SelfUpgradeCaskExclusionTests {
     @Test func `an app cask that is up to date does not trip the bulk guard`() {
         let repository = StubInstalledPackagesRepository(packages: [
             .fixture(name: "git", kind: .formula, outdated: true),
-            .fixture(name: "homebrew-app", kind: .cask, outdated: false),
+            .fixture(name: "brewly", kind: .cask, outdated: false),
         ])
 
         #expect(!repository.isTheAppsOwnCaskOutdated)
@@ -78,7 +78,7 @@ struct SelfUpgradeCaskExclusionTests {
     @Test func `searching for it by name finds nothing`() {
         let viewModel = Self.makeUpgradesViewModel(packages: Self.packagesIncludingTheApp)
 
-        viewModel.searchQuery = "homebrew-app"
+        viewModel.searchQuery = "brewly"
 
         #expect(viewModel.state.value?.packages.isEmpty == true)
     }
@@ -86,7 +86,7 @@ struct SelfUpgradeCaskExclusionTests {
     @Test func `the cask scope shows the other casks but not this one`() {
         let viewModel = Self.makeUpgradesViewModel(packages: [
             .fixture(name: "slack", kind: .cask, outdated: true),
-            .fixture(name: "homebrew-app", kind: .cask, outdated: true),
+            .fixture(name: "brewly", kind: .cask, outdated: true),
         ])
 
         viewModel.scope = .casks
@@ -106,7 +106,7 @@ struct SelfUpgradeCaskExclusionTests {
     @Test func `the cask scope names the rows too, since bare --cask would sweep it in`() {
         let viewModel = Self.makeUpgradesViewModel(packages: [
             .fixture(name: "slack", kind: .cask, outdated: true),
-            .fixture(name: "homebrew-app", kind: .cask, outdated: true),
+            .fixture(name: "brewly", kind: .cask, outdated: true),
         ])
 
         viewModel.scope = .casks
@@ -141,7 +141,7 @@ struct SelfUpgradeCaskExclusionTests {
         let viewModel = UpgradesViewModel(
             repository: StubInstalledPackagesRepository(packages: [
                 .fixture(name: "git", kind: .formula, outdated: false),
-                .fixture(name: "homebrew-app", kind: .cask, outdated: true),
+                .fixture(name: "brewly", kind: .cask, outdated: true),
             ]),
             brewCommandCenter: commandCenter,
             commandFactory: StubMutatingCommandFactory(),
@@ -173,7 +173,7 @@ struct SelfUpgradeCaskExclusionTests {
         [
             .fixture(name: "git", kind: .formula, outdated: true),
             .fixture(name: "slack", kind: .cask, outdated: false),
-            .fixture(name: "homebrew-app", kind: .cask, outdated: true),
+            .fixture(name: "brewly", kind: .cask, outdated: true),
         ]
     }
 

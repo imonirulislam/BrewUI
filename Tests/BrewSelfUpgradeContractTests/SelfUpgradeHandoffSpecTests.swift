@@ -68,7 +68,7 @@ struct SelfUpgradeHandoffSpecTests {
             homeDirectory: URL(fileURLWithPath: "/Users/example"),
         )
 
-        #expect(url.path == "/Users/example/Library/Logs/sh.brew.app/self-upgrade.log")
+        #expect(url.path == "/Users/example/Library/Logs/dev.imonirulislam.brewly/self-upgrade.log")
     }
 
     /// `Logs/Homebrew` is the `brew` CLI's own directory, not the app's to write into.
@@ -78,6 +78,6 @@ struct SelfUpgradeHandoffSpecTests {
         )
 
         #expect(!url.path.contains("Logs/Homebrew"))
-        #expect(url.deletingLastPathComponent().lastPathComponent == "sh.brew.app")
+        #expect(url.deletingLastPathComponent().lastPathComponent == "dev.imonirulislam.brewly")
     }
 }

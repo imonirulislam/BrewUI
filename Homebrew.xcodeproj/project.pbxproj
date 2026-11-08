@@ -90,7 +90,7 @@
 		EE2FB0372F654024004AE92A /* Brew-UI.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Brew-UI.xctestplan"; sourceTree = "<group>"; };
 		EEBB120100000000000000A1 /* HomebrewUpgradeHelper */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = HomebrewUpgradeHelper; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEBC120100000000000000A1 /* HomebrewAskpassHelper */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = HomebrewAskpassHelper; sourceTree = BUILT_PRODUCTS_DIR; };
-		EEC39EBF2F5AB4B900269514 /* Homebrew.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Homebrew.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EEC39EBF2F5AB4B900269514 /* Brewly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Brewly.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEC39ECC2F5AB4B900269514 /* BrewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BrewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEC39ED62F5AB4B900269514 /* BrewUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BrewUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -213,7 +213,7 @@
 		EEC39EC02F5AB4B900269514 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				EEC39EBF2F5AB4B900269514 /* Homebrew.app */,
+				EEC39EBF2F5AB4B900269514 /* Brewly.app */,
 				EEBB120100000000000000A1 /* HomebrewUpgradeHelper */,
 				EEBC120100000000000000A1 /* HomebrewAskpassHelper */,
 				EEC39ECC2F5AB4B900269514 /* BrewTests.xctest */,
@@ -312,7 +312,7 @@
 				EEBB100400000000000000F4 /* BrewFeatureSelfUpgrade */,
 			);
 			productName = Brew;
-			productReference = EEC39EBF2F5AB4B900269514 /* Homebrew.app */;
+			productReference = EEC39EBF2F5AB4B900269514 /* Brewly.app */;
 			productType = "com.apple.product-type.application";
 		};
 		EEC39ECB2F5AB4B900269514 /* BrewTests */ = {
@@ -554,7 +554,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				ENABLE_HARDENED_RUNTIME = YES;
 				MACOSX_DEPLOYMENT_TARGET = 26.2;
-				PRODUCT_BUNDLE_IDENTIFIER = sh.brew.app.upgradehelper;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.imonirulislam.brewly.upgradehelper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				STRING_CATALOG_GENERATE_SYMBOLS = NO;
@@ -572,7 +572,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				ENABLE_HARDENED_RUNTIME = YES;
 				MACOSX_DEPLOYMENT_TARGET = 26.2;
-				PRODUCT_BUNDLE_IDENTIFIER = sh.brew.app.askpasshelper;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.imonirulislam.brewly.askpasshelper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				STRING_CATALOG_GENERATE_SYMBOLS = NO;
@@ -590,7 +590,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				ENABLE_HARDENED_RUNTIME = YES;
 				MACOSX_DEPLOYMENT_TARGET = 26.2;
-				PRODUCT_BUNDLE_IDENTIFIER = sh.brew.app.upgradehelper;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.imonirulislam.brewly.upgradehelper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				STRING_CATALOG_GENERATE_SYMBOLS = NO;
@@ -608,7 +608,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				ENABLE_HARDENED_RUNTIME = YES;
 				MACOSX_DEPLOYMENT_TARGET = 26.2;
-				PRODUCT_BUNDLE_IDENTIFIER = sh.brew.app.askpasshelper;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.imonirulislam.brewly.askpasshelper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				STRING_CATALOG_GENERATE_SYMBOLS = NO;
@@ -757,13 +757,14 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "© Homebrew contributors. AGPLv3.";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "© Homebrew contributors and Brewly contributors. AGPLv3.";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = sh.brew.app;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = dev.imonirulislam.brewly;
+				PRODUCT_MODULE_NAME = Homebrew;
+				PRODUCT_NAME = Brewly;
 				REGISTER_APP_GROUPS = YES;
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
@@ -786,13 +787,14 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "© Homebrew contributors. AGPLv3.";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "© Homebrew contributors and Brewly contributors. AGPLv3.";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = sh.brew.app;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = dev.imonirulislam.brewly;
+				PRODUCT_MODULE_NAME = Homebrew;
+				PRODUCT_NAME = Brewly;
 				REGISTER_APP_GROUPS = YES;
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
@@ -817,7 +819,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 6.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Homebrew.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Homebrew";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Brewly.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Brewly";
 			};
 			name = Debug;
 		};
@@ -835,7 +837,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 6.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Homebrew.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Homebrew";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Brewly.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Brewly";
 			};
 			name = Release;
 		};

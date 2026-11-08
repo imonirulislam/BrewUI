@@ -25,7 +25,7 @@ public actor CatalogueCache: CatalogueCaching {
         let fileManager = FileManager.default
         let base = fileManager.urls(for: .cachesDirectory, in: .userDomainMask).first
             ?? fileManager.temporaryDirectory
-        return base.appendingPathComponent("sh.brew.app", isDirectory: true)
+        return base.appendingPathComponent("dev.imonirulislam.brewly", isDirectory: true)
     }
 
     public init(

@@ -82,7 +82,7 @@ enum ScenarioFixtures {
 
     /// The app's own cask, installed and behind — detection is real here, not the DEBUG override.
     static let homebrewApp = FixturePackage(
-        token: "homebrew-app",
+        token: "brewly",
         kind: .cask,
         displayName: "Homebrew",
         summary: "Homebrew, as an app",

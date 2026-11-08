@@ -8,7 +8,7 @@ import Foundation
 /// Builds a pre-filled "new issue" URL on the app's GitHub repository from a
 /// crash report, so a user can file it with one click.
 enum CrashReportIssue {
-    static let repositoryURL = URL(string: "https://github.com/Homebrew/BrewUI")!
+    static let repositoryURL = URL(string: "https://github.com/imonirulislam/BrewUI")!
 
     /// Kept under GitHub's ~8k URL ceiling; longer logs are truncated.
     static let maxBodyLength = 6000
@@ -29,7 +29,7 @@ enum CrashReportIssue {
     private static func body(for report: CrashReport) -> String {
         let log = truncatedLog(report.text)
         return """
-        <!-- Thanks for helping improve the Homebrew app. -->
+        <!-- Thanks for helping improve Brewly. -->
         The app crashed on a previous launch. Please describe what you were \
         doing when it happened:
 

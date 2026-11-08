@@ -49,7 +49,7 @@ struct ThirdPartyCaskUpgradeTests {
         let viewModel = UpgradesViewModel(
             repository: StubInstalledPackagesRepository(packages: [
                 .fixture(name: "orca", kind: .cask, outdated: true, tap: "stablyai/orca"),
-                .fixture(name: "homebrew-app", kind: .cask, outdated: true),
+                .fixture(name: "brewly", kind: .cask, outdated: true),
             ]),
             brewCommandCenter: StubBrewCommandCenter(),
             commandFactory: StubMutatingCommandFactory(),

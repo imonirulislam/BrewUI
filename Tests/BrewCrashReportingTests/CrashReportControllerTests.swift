@@ -22,7 +22,7 @@ struct CrashReportControllerTests {
             withExtension: "ips",
             subdirectory: "Fixtures",
         ))
-        try Data(contentsOf: fixture).write(to: root.appendingPathComponent("Homebrew-2026-09-20-223007.ips"))
+        try Data(contentsOf: fixture).write(to: root.appendingPathComponent("Brewly-2026-09-20-223007.ips"))
     }
 
     private func makeController() -> CrashReportController {
@@ -34,7 +34,7 @@ struct CrashReportControllerTests {
 
         await controller.loadPendingReports()
 
-        #expect(controller.currentReport?.id == "Homebrew-2026-09-20-223007.ips")
+        #expect(controller.currentReport?.id == "Brewly-2026-09-20-223007.ips")
         #expect(controller.currentReport?.text.contains("Exception: EXC_BAD_ACCESS (SIGSEGV)") == true)
     }
 

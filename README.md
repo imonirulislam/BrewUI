@@ -1,4 +1,19 @@
-# 🧑‍💻 BrewUI
+# Brewly
+
+Brewly is a community fork of [BrewUI](https://github.com/Homebrew/brewui), Homebrew's official macOS GUI,
+adding an on-device assistant, extra features and performance work. It is not affiliated with or endorsed
+by the Homebrew project. Upstream's documentation below still applies unless noted.
+
+## Fork differences
+
+- App name `Brewly.app` and bundle ID `dev.imonirulislam.brewly`, so it can run beside the official app
+  without sharing caches, logs, settings or crash reports.
+- Crash reports file issues on this fork rather than upstream.
+- Self-upgrade is inactive: Brewly is not distributed as a Homebrew cask, so the official `homebrew-app`
+  cask shows as an ordinary package.
+- Original placeholder icon instead of the Homebrew mark.
+
+# Upstream: BrewUI
 
 <img width="1476" height="975" alt="BrewUI user interface" src="docs/images/brewui.png" />
 
@@ -16,9 +31,8 @@ Enable CLI-averse users to safely discover, install, update and manage Homebrew 
 
 ## 📦 Installation
 
-```bash
-brew install --cask homebrew-app
-```
+Brewly is not yet packaged. Build it from source (see Development below). For the official app run
+`brew install --cask homebrew-app`.
 
 ## Homebrew configuration
 

@@ -23,7 +23,7 @@ struct CrashReportDialog: View {
 
             Text(
                 """
-                A report was saved after the app quit unexpectedly. You can send it to the Homebrew team on \
+                A report was saved after the app quit unexpectedly. You can send it to the Brewly developers on \
                 GitHub to help fix the problem, or discard it.
                 """,
                 bundle: #bundle,
@@ -55,7 +55,7 @@ struct CrashReportDialog: View {
                 .font(.largeTitle)
                 .foregroundStyle(.orange)
                 .accessibilityHidden(true)
-            Text("The Homebrew app quit unexpectedly", bundle: #bundle, comment: "Crash report dialog title")
+            Text("Brewly quit unexpectedly", bundle: #bundle, comment: "Crash report dialog title")
                 .font(.title2)
                 .fontWeight(.semibold)
                 .fixedSize(horizontal: false, vertical: true)
@@ -93,7 +93,7 @@ struct CrashReportDialog: View {
                 0\tHomebrew\tmain + 42
                 """,
             ),
-            issueURL: URL(string: "https://github.com/Homebrew/BrewUI/issues/new")!,
+            issueURL: URL(string: "https://github.com/imonirulislam/BrewUI/issues/new")!,
             onDismiss: {},
         )
     }

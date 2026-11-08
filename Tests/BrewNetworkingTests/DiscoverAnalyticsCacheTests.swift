@@ -160,7 +160,7 @@ private struct TestFixture {
 struct DiscoverAnalyticsCacheLocationTests {
     @Test func `analytics cache defaults into the namespaced caches directory`() throws {
         let expected = try #require(FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first)
-            .appendingPathComponent("sh.brew.app", isDirectory: true)
+            .appendingPathComponent("dev.imonirulislam.brewly", isDirectory: true)
 
         #expect(DiscoverAnalyticsCache.defaultCacheDirectoryURL() == expected)
     }

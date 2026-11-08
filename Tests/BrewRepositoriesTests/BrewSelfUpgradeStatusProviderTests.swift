@@ -111,7 +111,7 @@ struct BrewSelfUpgradeDetectionIntegrationTests {
           "casks": [
             { "token": "docker", "name": ["Docker"], "version": "27.4.1", "installed": "27.3.0", "outdated": true },
             {
-              "token": "homebrew-app",
+              "token": "brewly",
               "name": ["Homebrew"],
               "homepage": "https://github.com/Homebrew/brew",
               "version": "1.5.0",

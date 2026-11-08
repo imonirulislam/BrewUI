@@ -41,7 +41,7 @@ struct BrewCommandsTests {
 
     @Test func `selfUpgrade upgrades the app's own cask under upgradeApp`() {
         let command = BrewCommands.selfUpgrade()
-        #expect(command.arguments == ["upgrade", "--cask", "homebrew-app"])
+        #expect(command.arguments == ["upgrade", "--cask", "brewly"])
         #expect(command.arguments == ["upgrade", "--cask", SelfUpgradeIdentity.caskToken])
         #expect(command.operationKind == .upgradeApp)
     }

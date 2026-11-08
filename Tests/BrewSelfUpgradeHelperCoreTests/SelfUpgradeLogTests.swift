@@ -35,7 +35,7 @@ struct SelfUpgradeLogTests {
         #expect(lines[1].hasSuffix("second"))
     }
 
-    /// `~/Library/Logs/sh.brew.app` does not exist until the first self-upgrade writes to it.
+    /// `~/Library/Logs/dev.imonirulislam.brewly` does not exist until the first self-upgrade writes to it.
     @Test func `a missing directory is created`() {
         let fileURL = makeFileURL()
         defer { try? FileManager.default.removeItem(at: fileURL.deletingLastPathComponent()) }

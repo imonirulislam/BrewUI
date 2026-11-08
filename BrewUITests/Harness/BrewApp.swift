@@ -33,7 +33,7 @@ enum BrewApp {
     }
 
     /// `XCUIApplication` does not expose this, so it is spelled rather than derived.
-    private static let appBundleIdentifier = "sh.brew.app"
+    private static let appBundleIdentifier = "dev.imonirulislam.brewly"
 
     /// `launch()` can leave the app frontmost with no window at all, and a windowless app has an empty
     /// accessibility tree. Only the "reopen" AppleEvent a Dock click sends reliably creates one.

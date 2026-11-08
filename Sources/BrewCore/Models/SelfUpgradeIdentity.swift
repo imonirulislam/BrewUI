@@ -8,12 +8,12 @@ import Foundation
 /// How the app identifies *itself* to Homebrew. It ships as a cask, so its outdated state arrives through
 /// the ordinary installed inventory — there is deliberately no second "ask brew what's current" path.
 public enum SelfUpgradeIdentity {
-    public static let caskToken = "homebrew-app"
+    public static let caskToken = "brewly"
 
-    public static let bundleIdentifier = "sh.brew.app"
+    public static let bundleIdentifier = "dev.imonirulislam.brewly"
 
     /// The cask's own `homepage`, so the fallback and what `brew info` reports agree.
-    public static let homepageURL = URL(string: "https://github.com/Homebrew/BrewUI")!
+    public static let homepageURL = URL(string: "https://github.com/imonirulislam/BrewUI")!
 
     public static let displayCommand = "brew upgrade --cask \(caskToken)"
 

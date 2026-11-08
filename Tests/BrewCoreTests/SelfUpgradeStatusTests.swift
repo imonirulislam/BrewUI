@@ -8,13 +8,13 @@ import Foundation
 import Testing
 
 struct SelfUpgradeStatusTests {
-    @Test func `identity uses the homebrew-app cask token`() {
-        #expect(SelfUpgradeIdentity.caskToken == "homebrew-app")
-        #expect(SelfUpgradeIdentity.bundleIdentifier == "sh.brew.app")
+    @Test func `identity uses the brewly cask token`() {
+        #expect(SelfUpgradeIdentity.caskToken == "brewly")
+        #expect(SelfUpgradeIdentity.bundleIdentifier == "dev.imonirulislam.brewly")
     }
 
     @Test func `display command targets the app cask and is derived from the token`() {
-        #expect(SelfUpgradeIdentity.displayCommand == "brew upgrade --cask homebrew-app")
+        #expect(SelfUpgradeIdentity.displayCommand == "brew upgrade --cask brewly")
         #expect(SelfUpgradeIdentity.displayCommand.contains(SelfUpgradeIdentity.caskToken))
     }
 

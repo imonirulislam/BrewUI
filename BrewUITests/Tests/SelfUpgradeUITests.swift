@@ -8,7 +8,7 @@ import BrewAccessibilityID
 import XCTest
 
 /// The self-upgrade handshake end to end, with nothing simulated: the app really terminates, the real
-/// helper runs `brew upgrade --cask homebrew-app` against the fake `brew`, and brings back a new process.
+/// helper runs `brew upgrade --cask brewly` against the fake `brew`, and brings back a new process.
 @MainActor
 final class SelfUpgradeUITests: BrewUITestCase {
     func testBannerOffersAnUpgradeWhenTheAppsOwnCaskIsOutdated() {
@@ -35,12 +35,12 @@ final class SelfUpgradeUITests: BrewUITestCase {
         let installed = launch(.selfUpgradeAvailable)
             .assertShowsSelfUpgradeBanner()
             .assertHasPackage("ripgrep")
-            .assertDoesNotHavePackage("homebrew-app")
+            .assertDoesNotHavePackage("brewly")
 
         installed.sidebar
             .goToUpgrades()
             .assertHasPackage("ripgrep")
-            .assertDoesNotHavePackage("homebrew-app")
+            .assertDoesNotHavePackage("brewly")
     }
 
     /// Dismissal is the app's, not the list's, so it has to hold as the tabs change.
@@ -134,7 +134,7 @@ final class SelfUpgradeUITests: BrewUITestCase {
 
     // MARK: Relaunch
 
-    private static let appBundleIdentifier = "sh.brew.app"
+    private static let appBundleIdentifier = "dev.imonirulislam.brewly"
 
     /// `/DerivedData/` narrows this to the build under test; a real install shares the identifier.
     private static func runningAppUnderTest(bundleURL: URL, excludingProcessIdentifier: pid_t) -> NSRunningApplication? {

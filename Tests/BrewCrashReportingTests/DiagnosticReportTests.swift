@@ -81,8 +81,8 @@ struct DiagnosticReportFormatterTests {
         let text = try DiagnosticReportFormatter.makeReportText(DiagnosticReportParser.parse(loadFixture()))
 
         #expect(text.hasPrefix("""
-        Homebrew.app crash report
-        =========================
+        Brewly.app crash report
+        =======================
         Date: 2026-09-20T12:30:03Z
         App version: 0.0.0 (0)
         macOS: macOS 26.5 (25F71)
@@ -139,19 +139,20 @@ struct DiagnosticReportDirectoryTests {
 
     @Test func `finds this app's reports in the directory and in Retired`() throws {
         let directory = try makeDirectory(files: [
-            "Homebrew-2026-09-20-223007.ips",
-            "Retired/Homebrew-2026-09-19-120000.ips",
+            "Brewly-2026-09-20-223007.ips",
+            "Retired/Brewly-2026-09-19-120000.ips",
             "Xcode-2026-09-16-221857.ips",
-            "Homebrew-2026-09-18-000000.diag",
+            "Homebrew-2026-09-17-090000.ips",
+            "Brewly-2026-09-18-000000.diag",
         ])
 
         let names = directory.reports(capturedAfter: .distantPast).map(\.fileName)
 
-        #expect(names.sorted() == ["Homebrew-2026-09-19-120000.ips", "Homebrew-2026-09-20-223007.ips"])
+        #expect(names.sorted() == ["Brewly-2026-09-19-120000.ips", "Brewly-2026-09-20-223007.ips"])
     }
 
     @Test func `reports captured before the cut-off are ignored`() throws {
-        let directory = try makeDirectory(files: ["Homebrew-2026-09-20-223007.ips"])
+        let directory = try makeDirectory(files: ["Brewly-2026-09-20-223007.ips"])
         let afterCapture = try #require(ISO8601DateFormatter().date(from: "2026-09-20T12:30:04Z"))
 
         #expect(directory.reports(capturedAfter: afterCapture).isEmpty)

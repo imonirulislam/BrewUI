@@ -10,7 +10,7 @@ public struct DiagnosticReportDirectory: Sendable {
     private let directoryURL: URL
     private let processName: String
 
-    public init(directoryURL: URL? = nil, processName: String = "Homebrew") {
+    public init(directoryURL: URL? = nil, processName: String = "Brewly") {
         self.directoryURL = directoryURL ?? Self.defaultDirectoryURL()
         self.processName = processName
     }
