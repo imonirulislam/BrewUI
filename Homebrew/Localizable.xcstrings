@@ -2,7 +2,39 @@
   "sourceLanguage" : "en",
   "strings" : {
     "A report was saved after the app quit unexpectedly. You can send it to the Brewly developers on GitHub to help fix the problem, or discard it." : {
-      "comment" : "Crash report dialog body"
+      "comment" : "Crash report dialog body",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Se guardó un reporte después de que la app se cerrara de forma inesperada. Puedes enviarlo a los desarrolladores de Brewly en GitHub para ayudar a solucionar el problema, o descartarlo."
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "앱이 예기치 않게 종료된 후 보고서가 저장되었습니다. GitHub에서 Brewly 개발자에게 보내 문제 해결을 돕거나 보고서를 폐기할 수 있습니다."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "En rapport sparades när programmet avslutades oväntat. Du kan skicka den till Brewlys utvecklare på GitHub för att hjälpa till att lösa problemet eller kasta den."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "应用意外退出后已保存一份报告。你可以在 GitHub 上将报告发送给 Brewly 开发者，帮助修复问题，也可以丢弃报告。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "App 意外結束後已儲存一份報告。你可以透過 GitHub 將報告傳送給 Brewly 開發者，協助修正問題，也可以將報告捨棄。"
+          }
+        }
+      }
     },
     "Administrator password" : {
       "comment" : "Askpass: secure password field label",
@@ -16,7 +48,39 @@
       }
     },
     "Assistant" : {
-      "comment" : "Sidebar: on-device assistant that suggests packages"
+      "comment" : "Sidebar: on-device assistant that suggests packages",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Asistente"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "어시스턴트"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Assistent"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "助手"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "助理"
+          }
+        }
+      }
     },
     "Authenticate" : {
       "comment" : "Askpass: submit the administrator password",
@@ -30,7 +94,39 @@
       }
     },
     "Brewly quit unexpectedly" : {
-      "comment" : "Crash report dialog title"
+      "comment" : "Crash report dialog title",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Brewly se cerró inesperadamente"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Brewly가 예기치 않게 종료되었습니다"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Brewly avslutades oväntat"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Brewly 意外退出"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Brewly 意外結束"
+          }
+        }
+      }
     },
     "Browse and search %lld+ packages" : {
       "comment" : "Window subtitle, Discover; %lld is the approximate catalog size",
@@ -190,7 +286,39 @@
       }
     },
     "Describe what you need and get package suggestions" : {
-      "comment" : "Window subtitle, Assistant"
+      "comment" : "Window subtitle, Assistant",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Describe lo que necesitas y recibe sugerencias de paquetes"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "필요한 것을 설명하면 패키지를 추천해 드립니다"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Beskriv vad du behöver och få paketförslag"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "描述你的需求，获取软件包建议"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "描述你的需求，取得套件建議"
+          }
+        }
+      }
     },
     "Discard" : {
       "comment" : "Crash report dialog: delete the report",
@@ -321,13 +449,109 @@
       }
     },
     "Find" : {
-      "comment" : "Sidebar section: finding new packages"
+      "comment" : "Sidebar section: finding new packages",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Buscar"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "찾기"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Hitta"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "查找"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "尋找"
+          }
+        }
+      }
     },
     "Go to…" : {
-      "comment" : "View menu: open the Go to palette"
+      "comment" : "View menu: open the Go to palette",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Ir a…"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "이동…"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Gå till…"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "前往…"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "前往…"
+          }
+        }
+      }
     },
     "Health" : {
-      "comment" : "Sidebar section: diagnostics and configuration"
+      "comment" : "Sidebar section: diagnostics and configuration",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Estado"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "상태"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Hälsa"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "健康"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "健康"
+          }
+        }
+      }
     },
     "Homebrew Documentation" : {
       "comment" : "Help menu",
@@ -452,10 +676,74 @@
       }
     },
     "Library" : {
-      "comment" : "Sidebar section: packages on this Mac"
+      "comment" : "Sidebar section: packages on this Mac",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Biblioteca"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "보관함"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Bibliotek"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "资料库"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "資料庫"
+          }
+        }
+      }
     },
     "Manage" : {
-      "comment" : "Sidebar section: services and taps"
+      "comment" : "Sidebar section: services and taps",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Gestionar"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "관리"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Hantera"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "管理"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "管理"
+          }
+        }
+      }
     },
     "OK" : {
       "comment" : "Self-upgrade outcome alert: dismiss",
@@ -563,7 +851,39 @@
       }
     },
     "Repositories Homebrew installs packages from" : {
-      "comment" : "Window subtitle, Taps"
+      "comment" : "Window subtitle, Taps",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Repositorios desde los que Homebrew instala paquetes"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Homebrew가 패키지를 설치하는 저장소"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Förråd som Homebrew installerar paket från"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Homebrew 安装软件包所用的仓库"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Homebrew 安裝套件所用的儲存庫"
+          }
+        }
+      }
     },
     "Review and upgrade outdated packages" : {
       "comment" : "Window subtitle, Upgrades",
@@ -647,7 +967,39 @@
       }
     },
     "Taps" : {
-      "comment" : "Sidebar: installed taps and adding or removing them"
+      "comment" : "Sidebar: installed taps and adding or removing them",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Taps"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "탭"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Taps"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Tap"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Tap"
+          }
+        }
+      }
     },
     "The upgrade helper is missing from this build of the Homebrew app." : {
       "comment" : "Shown when the bundled self-upgrade helper executable cannot be found",

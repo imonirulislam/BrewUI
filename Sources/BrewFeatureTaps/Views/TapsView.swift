@@ -3,6 +3,7 @@
 //  BrewFeatureTaps
 //
 
+import BrewAccessibilityID
 import BrewAppEnvironment
 import BrewCore
 import BrewRepositoryInterfaces
@@ -40,6 +41,7 @@ public struct TapsRoot: View {
 
 struct TapsView: View {
     @State private var viewModel: TapsViewModel
+    @FocusState private var listIsFocused: Bool
 
     init(viewModel: TapsViewModel) {
         _viewModel = State(initialValue: viewModel)
@@ -68,6 +70,8 @@ struct TapsView: View {
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
         }
+        .accessibilityElement(children: .contain)
+        .axid(.tapsScreen)
         .task { await viewModel.load() }
         .confirmationDialog(
             confirmationTitle,
@@ -89,6 +93,7 @@ struct TapsView: View {
                       text: $viewModel.newTapName)
                 .textFieldStyle(.roundedBorder)
                 .onSubmit { viewModel.requestAdd() }
+                .axid(.tapsAddField)
             Button {
                 viewModel.requestAdd()
             } label: {
@@ -99,6 +104,7 @@ struct TapsView: View {
                 }
             }
             .disabled(!viewModel.canAddTap)
+            .axid(.tapsAddButton)
         }
         .padding(BrewSpacing.lg)
     }
@@ -123,10 +129,25 @@ struct TapsView: View {
                     .fill(viewModel.selectedTap == tap ? Color.brewBrandTint : Color.clear)
                     .padding(.horizontal, BrewSpacing.sm),
             )
-            .onTapGesture { viewModel.select(tap) }
+            .onTapGesture {
+                viewModel.select(tap)
+                listIsFocused = true
+            }
+            .accessibilityElement(children: .combine)
             .accessibilityAddTraits(viewModel.selectedTap == tap ? [.isSelected, .isButton] : [.isButton])
+            .axid(.tapsRow(name: tap.name))
         }
         .listStyle(.inset)
+        .focused($listIsFocused)
+        .axid(.tapsList)
+        .onKeyPress(.downArrow) {
+            viewModel.selectNext()
+            return .handled
+        }
+        .onKeyPress(.upArrow) {
+            viewModel.selectPrevious()
+            return .handled
+        }
     }
 
     private func packageCounts(for tap: BrewTap) -> String {
@@ -261,6 +282,7 @@ private struct TapDetailView: View {
                 Text("Remove Tap…", bundle: #bundle, comment: "Taps: remove a tap after confirmation")
             }
             .disabled(viewModel.removalBlockReason(for: tap) != nil || viewModel.runningAction != nil)
+            .axid(.tapsRemoveButton)
             if let reason = viewModel.removalBlockReason(for: tap) {
                 Text(reason)
                     .font(.brewCaption)

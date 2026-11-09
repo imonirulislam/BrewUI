@@ -58,6 +58,18 @@ struct AXIDTests {
         ])
     }
 
+    @Test func `fork identifiers keep their wire format`() {
+        #expect([
+            AXID.upgradesRowCheckbox(token: "wget"), .upgradesBatchButton, .upgradesDeselectAllButton,
+            .tapsScreen, .tapsList, .tapsRow(name: "user/tools"), .tapsAddField, .tapsAddButton, .tapsRemoveButton,
+            .goToPalette, .goToField, .goToRow(id: "page-taps"), .assistantScreen,
+        ].map(\.rawValue) == [
+            "upgrades.tick.wget", "upgrades.batch", "upgrades.deselect",
+            "taps.screen", "taps.list", "taps.row.user/tools", "taps.add.field", "taps.add", "taps.remove",
+            "goto.palette", "goto.field", "goto.row.page-taps", "assistant.screen",
+        ])
+    }
+
     @Test func `service identifiers keep their wire format`() {
         #expect([AXID.servicesScreen.rawValue, AXID.servicesRefreshButton.rawValue] == ["services.screen", "services.refresh"])
     }

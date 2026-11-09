@@ -2,76 +2,844 @@
   "sourceLanguage" : "en",
   "strings" : {
     "Apple’s on-device model suggests packages, and Brewly checks each one against the Homebrew catalogue. Nothing leaves your Mac and nothing installs until you confirm." : {
-      "comment" : "Assistant: explanation under the heading"
+      "comment" : "Assistant: explanation under the heading",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "El modelo integrado de Apple sugiere paquetes y Brewly comprueba cada uno en el catálogo de Homebrew. Nada sale de tu Mac y nada se instala hasta que lo confirmes."
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Apple의 기기 내 모델이 패키지를 추천하고, Brewly가 각 패키지를 Homebrew 카탈로그에서 확인합니다. Mac 밖으로 전송되는 것은 없으며, 확인하기 전에는 아무것도 설치되지 않습니다."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Apples modell på enheten föreslår paket och Brewly kontrollerar vart och ett mot Homebrews katalog. Inget lämnar din Mac och inget installeras förrän du bekräftar."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Apple 的设备端模型会推荐软件包，Brewly 会逐一在 Homebrew 目录中核实。所有内容都不会离开你的 Mac，在你确认之前也不会安装任何东西。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Apple 的裝置端模型會建議套件，Brewly 會逐一在 Homebrew 目錄中核對。所有內容都不會離開你的 Mac，在你確認前也不會安裝任何項目。"
+          }
+        }
+      }
     },
     "Brewly will run: %@" : {
-      "comment" : "Assistant: install confirmation; %@ is the exact brew command"
+      "comment" : "Assistant: install confirmation; %@ is the exact brew command",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Brewly ejecutará: %@"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Brewly가 실행할 명령: %@"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Brewly kör: %@"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Brewly 将运行：%@"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Brewly 將執行：%@"
+          }
+        }
+      }
     },
     "Cancel" : {
-      "comment" : "Assistant: cancel install button"
+      "comment" : "Assistant: cancel install button",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Cancelar"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "취소"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Avbryt"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "取消"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "取消"
+          }
+        }
+      }
     },
     "Find software by describing what you need" : {
-      "comment" : "Assistant: page heading"
+      "comment" : "Assistant: page heading",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Encuentra software describiendo lo que necesitas"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "필요한 것을 설명해 소프트웨어를 찾으세요"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Hitta programvara genom att beskriva vad du behöver"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "描述你的需求来查找软件"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "描述你的需求來尋找軟體"
+          }
+        }
+      }
     },
     "For example: something to convert videos" : {
-      "comment" : "Assistant: request field placeholder"
+      "comment" : "Assistant: request field placeholder",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Por ejemplo: algo para convertir vídeos"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "예: 동영상을 변환하는 도구"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Till exempel: något för att konvertera videor"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "例如：用于转换视频的工具"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "例如：用來轉換影片的工具"
+          }
+        }
+      }
     },
     "Install" : {
-      "comment" : "Assistant: confirm install button"
+      "comment" : "Assistant: confirm install button",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Instalar"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "설치"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Installera"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "安装"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "安裝"
+          }
+        }
+      }
     },
     "Install %@?" : {
-      "comment" : "Assistant: install confirmation title; %@ is the package name"
+      "comment" : "Assistant: install confirmation title; %@ is the package name",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "¿Instalar %@?"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "%@을(를) 설치하시겠습니까?"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Installera %@?"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "安装 %@？"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "安裝 %@？"
+          }
+        }
+      }
     },
     "Installed" : {
-      "comment" : "Assistant: package already installed"
+      "comment" : "Assistant: package already installed",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Instalado"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "설치됨"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Installerad"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "已安装"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "已安裝"
+          }
+        }
+      }
     },
     "Install…" : {
-      "comment" : "Assistant: install button that asks for confirmation"
+      "comment" : "Assistant: install button that asks for confirmation",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Instalar…"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "설치…"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Installera…"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "安装…"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "安裝…"
+          }
+        }
+      }
     },
     "No matching packages found in the Homebrew catalogue. Try naming the kind of tool or a related app." : {
-      "comment" : "Assistant: no catalogue matches for the request"
+      "comment" : "Assistant: no catalogue matches for the request",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "No se encontraron paquetes en el catálogo de Homebrew. Prueba a nombrar el tipo de herramienta o una app relacionada."
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Homebrew 카탈로그에서 일치하는 패키지를 찾지 못했습니다. 도구 종류나 관련 앱 이름으로 다시 시도해 보세요."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Inga matchande paket hittades i Homebrews katalog. Prova att ange typen av verktyg eller en liknande app."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "在 Homebrew 目录中未找到匹配的软件包。试试说明工具类型或相关应用。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "在 Homebrew 目錄中找不到相符的套件。試試說明工具類型或相關 App。"
+          }
+        }
+      }
     },
     "Open Apple Intelligence Settings…" : {
-      "comment" : "Assistant: button opening System Settings"
+      "comment" : "Assistant: button opening System Settings",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Abrir ajustes de Apple Intelligence…"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Apple Intelligence 설정 열기…"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Öppna inställningar för Apple Intelligence…"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "打开 Apple 智能设置…"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "打開 Apple Intelligence 設定…"
+          }
+        }
+      }
     },
     "Searching the catalogue…" : {
-      "comment" : "Assistant: working on a request"
+      "comment" : "Assistant: working on a request",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Buscando en el catálogo…"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "카탈로그 검색 중…"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Söker i katalogen…"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "正在搜索目录…"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "正在搜尋目錄…"
+          }
+        }
+      }
     },
     "Something went wrong while installing this package." : {
-      "comment" : "Assistant: generic install error"
+      "comment" : "Assistant: generic install error",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Algo salió mal al instalar este paquete."
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "이 패키지를 설치하는 중 문제가 발생했습니다."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Något gick fel när paketet installerades."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "安装此软件包时出现问题。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "安裝此套件時發生問題。"
+          }
+        }
+      }
     },
     "Suggest" : {
-      "comment" : "Assistant: submit request button"
+      "comment" : "Assistant: submit request button",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Sugerir"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "추천"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Föreslå"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "推荐"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "建議"
+          }
+        }
+      }
     },
     "That request is too long for the on-device model. Try a shorter description." : {
-      "comment" : "Assistant: request exceeded the model's context window"
+      "comment" : "Assistant: request exceeded the model's context window",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "La solicitud es demasiado larga para el modelo integrado. Prueba con una descripción más corta."
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "요청이 기기 내 모델에 비해 너무 깁니다. 더 짧게 설명해 보세요."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Förfrågan är för lång för modellen på enheten. Prova en kortare beskrivning."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "请求对设备端模型来说太长。请尝试更简短的描述。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "要求對裝置端模型來說太長。請試試更簡短的描述。"
+          }
+        }
+      }
     },
     "The assistant couldn’t answer. Try again." : {
-      "comment" : "Assistant: generic failure"
+      "comment" : "Assistant: generic failure",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "El asistente no pudo responder. Inténtalo de nuevo."
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "어시스턴트가 답변하지 못했습니다. 다시 시도해 주세요."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Assistenten kunde inte svara. Försök igen."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "助手无法回答。请重试。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "助理無法回答。請再試一次。"
+          }
+        }
+      }
     },
     "The assistant couldn’t answer: %@" : {
-      "comment" : "Assistant: generation failed; %@ is the model's error description"
+      "comment" : "Assistant: generation failed; %@ is the model's error description",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "El asistente no pudo responder: %@"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "어시스턴트가 답변하지 못했습니다: %@"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Assistenten kunde inte svara: %@"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "助手无法回答：%@"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "助理無法回答：%@"
+          }
+        }
+      }
     },
     "The on-device model declined this request. Try describing the task differently." : {
-      "comment" : "Assistant: model refused or hit a safety guardrail"
+      "comment" : "Assistant: model refused or hit a safety guardrail",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "El modelo integrado rechazó esta solicitud. Prueba a describir la tarea de otra forma."
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "기기 내 모델이 이 요청을 거부했습니다. 작업을 다르게 설명해 보세요."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Modellen på enheten avböjde förfrågan. Prova att beskriva uppgiften på ett annat sätt."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "设备端模型拒绝了此请求。请尝试换一种方式描述任务。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "裝置端模型拒絕了此要求。請試著換個方式描述工作。"
+          }
+        }
+      }
     },
     "The on-device model doesn’t support this language yet. Try English." : {
-      "comment" : "Assistant: request language unsupported"
+      "comment" : "Assistant: request language unsupported",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "El modelo integrado aún no admite este idioma. Prueba en inglés."
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "기기 내 모델이 아직 이 언어를 지원하지 않습니다. 영어로 시도해 보세요."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Modellen på enheten stöder inte det här språket ännu. Prova engelska."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "设备端模型暂不支持此语言。请尝试使用英语。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "裝置端模型尚不支援此語言。請試試英文。"
+          }
+        }
+      }
     },
     "The on-device model is busy. Wait a moment and try again." : {
-      "comment" : "Assistant: model rate limited or busy"
+      "comment" : "Assistant: model rate limited or busy",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "El modelo integrado está ocupado. Espera un momento e inténtalo de nuevo."
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "기기 내 모델이 사용 중입니다. 잠시 후 다시 시도해 주세요."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Modellen på enheten är upptagen. Vänta en stund och försök igen."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "设备端模型正忙。请稍候再试。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "裝置端模型忙碌中。請稍候再試。"
+          }
+        }
+      }
     },
     "The on-device model is still downloading. Try again shortly." : {
-      "comment" : "Assistant: model assets not yet downloaded"
+      "comment" : "Assistant: model assets not yet downloaded",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "El modelo integrado aún se está descargando. Inténtalo de nuevo en breve."
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "기기 내 모델을 아직 다운로드하는 중입니다. 잠시 후 다시 시도해 주세요."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Modellen på enheten laddas fortfarande ned. Försök igen om en stund."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "设备端模型仍在下载中。请稍后再试。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "裝置端模型仍在下載中。請稍後再試。"
+          }
+        }
+      }
     },
     "The on-device model isn’t available right now." : {
-      "comment" : "Assistant: model unavailable for an unknown reason"
+      "comment" : "Assistant: model unavailable for an unknown reason",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "El modelo integrado no está disponible ahora."
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "기기 내 모델을 지금 사용할 수 없습니다."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Modellen på enheten är inte tillgänglig just nu."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "设备端模型目前不可用。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "裝置端模型目前無法使用。"
+          }
+        }
+      }
     },
     "This Mac doesn’t support Apple Intelligence, so the assistant isn’t available." : {
-      "comment" : "Assistant: hardware cannot run the on-device model"
+      "comment" : "Assistant: hardware cannot run the on-device model",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Este Mac no es compatible con Apple Intelligence, así que el asistente no está disponible."
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "이 Mac은 Apple Intelligence를 지원하지 않아 어시스턴트를 사용할 수 없습니다."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Den här Macen har inte stöd för Apple Intelligence, så assistenten är inte tillgänglig."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "这台 Mac 不支持 Apple 智能，因此无法使用助手。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "這部 Mac 不支援 Apple Intelligence，因此無法使用助理。"
+          }
+        }
+      }
     },
     "Turn on Apple Intelligence to use the assistant." : {
-      "comment" : "Assistant: Apple Intelligence is switched off"
+      "comment" : "Assistant: Apple Intelligence is switched off",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Activa Apple Intelligence para usar el asistente."
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "어시스턴트를 사용하려면 Apple Intelligence를 켜세요."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Slå på Apple Intelligence för att använda assistenten."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "打开 Apple 智能以使用助手。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "開啟 Apple Intelligence 以使用助理。"
+          }
+        }
+      }
     }
   },
   "version" : "1.0"

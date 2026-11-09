@@ -2,7 +2,39 @@
   "sourceLanguage" : "en",
   "strings" : {
     "%@ failed." : {
-      "comment" : "Taps: a tap or untap command failed; %@ is the command"
+      "comment" : "Taps: a tap or untap command failed; %@ is the command",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "%@ falló."
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "%@ 실패."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "%@ misslyckades."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "%@ 失败。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "%@ 失敗。"
+          }
+        }
+      }
     },
     "%@, %@" : {
       "comment" : "Taps: row subtitle; %1$@ is the formula count, %2$@ the cask count",
@@ -12,86 +44,948 @@
             "state" : "new",
             "value" : "%1$@, %2$@"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "%1$@, %2$@"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "%1$@, %2$@"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "%1$@, %2$@"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "%1$@，%2$@"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "%1$@，%2$@"
+          }
         }
       }
     },
     "%lld casks" : {
-      "comment" : "Taps: row subtitle part; %lld casks"
+      "comment" : "Taps: row subtitle part; %lld casks",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "%lld casks"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Cask %lld개"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "%lld caskar"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "%lld 个 Cask"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "%lld 個 Cask"
+          }
+        }
+      }
     },
     "%lld formulae" : {
-      "comment" : "Taps: row subtitle part; %lld formulae"
+      "comment" : "Taps: row subtitle part; %lld formulae",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "%lld fórmulas"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Formula %lld개"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "%lld formler"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "%lld 个 Formula"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "%lld 個 Formula"
+          }
+        }
+      }
     },
     "1 cask" : {
-      "comment" : "Taps: row subtitle part, one cask"
+      "comment" : "Taps: row subtitle part, one cask",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "1 cask"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Cask 1개"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "1 cask"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "1 个 Cask"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "1 個 Cask"
+          }
+        }
+      }
     },
     "1 formula" : {
-      "comment" : "Taps: row subtitle part, one formula"
+      "comment" : "Taps: row subtitle part, one formula",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "1 fórmula"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Formula 1개"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "1 formel"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "1 个 Formula"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "1 個 Formula"
+          }
+        }
+      }
     },
     "Add Tap" : {
-      "comment" : "Taps: confirm tap"
+      "comment" : "Taps: confirm tap",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Añadir tap"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "탭 추가"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Lägg till tap"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "添加 Tap"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "加入 Tap"
+          }
+        }
+      }
     },
     "Add Tap…" : {
-      "comment" : "Taps: add a tap after confirmation"
+      "comment" : "Taps: add a tap after confirmation",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Añadir tap…"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "탭 추가…"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Lägg till tap…"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "添加 Tap…"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "加入 Tap…"
+          }
+        }
+      }
     },
     "Add the tap %@?" : {
-      "comment" : "Taps: add confirmation title; %@ is the tap"
+      "comment" : "Taps: add confirmation title; %@ is the tap",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "¿Añadir el tap %@?"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "%@ 탭을 추가하시겠습니까?"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Lägga till tappen %@?"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "添加 Tap %@？"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "加入 Tap %@？"
+          }
+        }
+      }
     },
     "Available" : {
-      "comment" : "Taps: heading for everything the tap provides"
+      "comment" : "Taps: heading for everything the tap provides",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Disponibles"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "제공 항목"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Tillgängligt"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "可用项目"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "可用項目"
+          }
+        }
+      }
     },
     "Brewly will run: %@" : {
-      "comment" : "Taps: untap confirmation; %@ is the exact command"
+      "comment" : "Taps: untap confirmation; %@ is the exact command",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Brewly ejecutará: %@"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Brewly가 실행할 명령: %@"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Brewly kör: %@"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Brewly 将运行：%@"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Brewly 將執行：%@"
+          }
+        }
+      }
     },
     "Brewly will run: %@\n\nThird-party taps are maintained by their authors, not Homebrew. Packages you install from them run their code on your Mac." : {
-      "comment" : "Taps: tap confirmation with a third-party warning; %@ is the exact command"
+      "comment" : "Taps: tap confirmation with a third-party warning; %@ is the exact command",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Brewly ejecutará: %@\n\nLos taps de terceros los mantienen sus autores, no Homebrew. Los paquetes que instales desde ellos ejecutan su código en tu Mac."
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Brewly가 실행할 명령: %@\n\n타사 탭은 Homebrew가 아닌 작성자가 관리합니다. 여기에서 설치한 패키지는 Mac에서 해당 코드를 실행합니다."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Brewly kör: %@\n\nTaps från tredje part underhålls av sina upphovspersoner, inte av Homebrew. Paket du installerar från dem kör deras kod på din Mac."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Brewly 将运行：%@\n\n第三方 Tap 由其作者维护，而非 Homebrew。你从中安装的软件包会在你的 Mac 上运行其代码。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Brewly 將執行：%@\n\n第三方 Tap 由其作者維護，而非 Homebrew。你從中安裝的套件會在你的 Mac 上執行其程式碼。"
+          }
+        }
+      }
     },
     "Cancel" : {
-      "comment" : "Taps: cancel a tap or untap"
+      "comment" : "Taps: cancel a tap or untap",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Cancelar"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "취소"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Avbryt"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "取消"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "取消"
+          }
+        }
+      }
     },
     "Couldn’t list your taps." : {
-      "comment" : "Taps: brew tap-info failed"
+      "comment" : "Taps: brew tap-info failed",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "No se pudieron listar tus taps."
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "탭 목록을 가져오지 못했습니다."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Det gick inte att lista dina taps."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "无法列出你的 Tap。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "無法列出你的 Tap。"
+          }
+        }
+      }
     },
     "Installed from this tap" : {
-      "comment" : "Taps: heading for installed packages"
+      "comment" : "Taps: heading for installed packages",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Instalado desde este tap"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "이 탭에서 설치됨"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Installerat från den här tappen"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "从此 Tap 安装的项目"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "從此 Tap 安裝的項目"
+          }
+        }
+      }
     },
     "Last updated %@" : {
-      "comment" : "Taps: age of the tap's latest commit; %@ is e.g. 2 days ago"
+      "comment" : "Taps: age of the tap's latest commit; %@ is e.g. 2 days ago",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Última actualización: %@"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "마지막 업데이트: %@"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Senast uppdaterad: %@"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "上次更新：%@"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "上次更新：%@"
+          }
+        }
+      }
     },
     "Maintained by Homebrew" : {
-      "comment" : "Taps: row subtitle for an official tap whose packages brew does not list locally"
+      "comment" : "Taps: row subtitle for an official tap whose packages brew does not list locally",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Mantenido por Homebrew"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Homebrew에서 관리"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Underhålls av Homebrew"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "由 Homebrew 维护"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "由 Homebrew 維護"
+          }
+        }
+      }
     },
     "Nothing installed from this tap." : {
-      "comment" : "Taps: no installed packages from the tap"
+      "comment" : "Taps: no installed packages from the tap",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "No hay nada instalado desde este tap."
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "이 탭에서 설치된 항목이 없습니다."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Inget är installerat från den här tappen."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "尚未从此 Tap 安装任何项目。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "尚未從此 Tap 安裝任何項目。"
+          }
+        }
+      }
     },
     "Nothing listed." : {
-      "comment" : "Taps: tap provides no formulae or casks"
+      "comment" : "Taps: tap provides no formulae or casks",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "No hay nada en la lista."
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "표시할 항목이 없습니다."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Inget listat."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "没有列出任何项目。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "沒有列出任何項目。"
+          }
+        }
+      }
     },
     "Official" : {
-      "comment" : "Taps: badge for a Homebrew-maintained tap"
+      "comment" : "Taps: badge for a Homebrew-maintained tap",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Oficial"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "공식"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Officiell"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "官方"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "官方"
+          }
+        }
+      }
     },
     "Official Homebrew taps can’t be removed here." : {
-      "comment" : "Taps: why Remove is unavailable for an official tap"
+      "comment" : "Taps: why Remove is unavailable for an official tap",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Los taps oficiales de Homebrew no se pueden eliminar aquí."
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "공식 Homebrew 탭은 여기에서 제거할 수 없습니다."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Officiella Homebrew-taps kan inte tas bort här."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "无法在此移除 Homebrew 官方 Tap。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "無法在此移除 Homebrew 官方 Tap。"
+          }
+        }
+      }
     },
     "Remove Tap" : {
-      "comment" : "Taps: confirm untap"
+      "comment" : "Taps: confirm untap",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Eliminar tap"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "탭 제거"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Ta bort tap"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "移除 Tap"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "移除 Tap"
+          }
+        }
+      }
     },
     "Remove Tap…" : {
-      "comment" : "Taps: remove a tap after confirmation"
+      "comment" : "Taps: remove a tap after confirmation",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Eliminar tap…"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "탭 제거…"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Ta bort tap…"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "移除 Tap…"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "移除 Tap…"
+          }
+        }
+      }
     },
     "Remove the tap %@?" : {
-      "comment" : "Taps: remove confirmation title; %@ is the tap"
+      "comment" : "Taps: remove confirmation title; %@ is the tap",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "¿Eliminar el tap %@?"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "%@ 탭을 제거하시겠습니까?"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Ta bort tappen %@?"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "移除 Tap %@？"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "移除 Tap %@？"
+          }
+        }
+      }
     },
     "Third-party" : {
-      "comment" : "Taps: badge for a tap not maintained by Homebrew"
+      "comment" : "Taps: badge for a tap not maintained by Homebrew",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "De terceros"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "타사"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Tredje part"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "第三方"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "第三方"
+          }
+        }
+      }
     },
     "Uninstall the %lld packages from this tap before removing it." : {
-      "comment" : "Taps: why Remove is unavailable; %lld packages installed from the tap"
+      "comment" : "Taps: why Remove is unavailable; %lld packages installed from the tap",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Desinstala los %lld paquetes de este tap antes de eliminarlo."
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "이 탭을 제거하기 전에 패키지 %lld개를 제거하세요."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Avinstallera de %lld paketen från den här tappen innan du tar bort den."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "移除前，请先卸载此 Tap 中的 %lld 个软件包。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "移除前，請先解除安裝此 Tap 中的 %lld 個套件。"
+          }
+        }
+      }
     },
     "Uninstall the 1 package from this tap before removing it." : {
-      "comment" : "Taps: why Remove is unavailable; one package installed from the tap"
+      "comment" : "Taps: why Remove is unavailable; one package installed from the tap",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Desinstala el paquete de este tap antes de eliminarlo."
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "이 탭을 제거하기 전에 패키지 1개를 제거하세요."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Avinstallera paketet från den här tappen innan du tar bort den."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "移除前，请先卸载此 Tap 中的 1 个软件包。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "移除前，請先解除安裝此 Tap 中的 1 個套件。"
+          }
+        }
+      }
     },
     "user/repo" : {
-      "comment" : "Taps: placeholder for a new tap name"
+      "comment" : "Taps: placeholder for a new tap name",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "usuario/repo"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "사용자/저장소"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "användare/förråd"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "用户/仓库"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "使用者/儲存庫"
+          }
+        }
+      }
     }
   },
   "version" : "1.0"

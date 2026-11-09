@@ -3,6 +3,7 @@
 //  BrewFeatureGoTo
 //
 
+import BrewAccessibilityID
 import BrewAppEnvironment
 import BrewCore
 import BrewRepositoryInterfaces
@@ -66,6 +67,7 @@ struct GoToPalette: View {
                         return .handled
                     }
                     .onExitCommand { dismiss() }
+                    .axid(.goToField)
             }
             .padding(BrewSpacing.lg)
 
@@ -82,6 +84,8 @@ struct GoToPalette: View {
             }
         }
         .frame(width: 560)
+        .accessibilityElement(children: .contain)
+        .axid(.goToPalette)
         .background(Color.brewSurfaceElevated)
         .onAppear { fieldIsFocused = true }
         .task(id: query) {
@@ -174,6 +178,7 @@ private struct GoToRow: View {
         }
         .accessibilityElement(children: .combine)
         .accessibilityAddTraits(isHighlighted ? [.isButton, .isSelected] : .isButton)
+        .axid(.goToRow(id: result.id))
     }
 
     private var kindLabel: String {

@@ -1,50 +1,787 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "%@ and %@ can be upgraded" : {
+      "comment" : "Upgrade notification body; %1$@ and %2$@ are package names",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@ and %2$@ can be upgraded"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "%1$@ y %2$@ se pueden actualizar"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "%1$@ 및 %2$@을(를) 업그레이드할 수 있습니다"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "%1$@ och %2$@ kan uppgraderas"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "%1$@ 和 %2$@ 可升级"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "%1$@ 和 %2$@ 可升級"
+          }
+        }
+      }
+    },
+    "%@ can be upgraded" : {
+      "comment" : "Upgrade notification body; %@ is a package name",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "%@ se puede actualizar"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "%@을(를) 업그레이드할 수 있습니다"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "%@ kan uppgraderas"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "%@ 可升级"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "%@ 可升級"
+          }
+        }
+      }
+    },
+    "%@, %@ and %lld more can be upgraded" : {
+      "comment" : "Upgrade notification body; %1$@ and %2$@ are package names, %3$lld how many others",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@, %2$@ and %3$lld more can be upgraded"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "%1$@, %2$@ y %3$lld más se pueden actualizar"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "%1$@, %2$@ 외 %3$lld개를 업그레이드할 수 있습니다"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "%1$@, %2$@ och %3$lld till kan uppgraderas"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "%1$@、%2$@ 及另外 %3$lld 个可升级"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "%1$@、%2$@ 及另外 %3$lld 個可升級"
+          }
+        }
+      }
+    },
     "%lld upgrades available" : {
-      "comment" : "Menu bar: several upgrades; %lld is the count"
+      "comment" : "Menu bar: several upgrades; %lld is the count",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "%lld actualizaciones disponibles"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "업그레이드 %lld개 사용 가능"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "%lld uppgraderingar tillgängliga"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "有 %lld 个可用升级"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "有 %lld 個可用升級"
+          }
+        }
+      }
     },
     "1 upgrade available" : {
-      "comment" : "Menu bar: one upgrade"
+      "comment" : "Menu bar: one upgrade",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "1 actualización disponible"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "업그레이드 1개 사용 가능"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "1 uppgradering tillgänglig"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "有 1 个可用升级"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "有 1 個可用升級"
+          }
+        }
+      }
     },
     "Brewly: %lld upgrades available" : {
-      "comment" : "VoiceOver: menu bar icon; %lld is the outdated count"
+      "comment" : "VoiceOver: menu bar icon; %lld is the outdated count",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Brewly: %lld actualizaciones disponibles"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Brewly: 업그레이드 %lld개 사용 가능"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Brewly: %lld uppgraderingar tillgängliga"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Brewly：有 %lld 个可用升级"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Brewly：有 %lld 個可用升級"
+          }
+        }
+      }
     },
     "Brewly: everything is up to date" : {
-      "comment" : "VoiceOver: menu bar icon with no upgrades"
+      "comment" : "VoiceOver: menu bar icon with no upgrades",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Brewly: todo está actualizado"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Brewly: 모두 최신 상태입니다"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Brewly: allt är uppdaterat"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Brewly：全部是最新版本"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Brewly：全部都是最新版本"
+          }
+        }
+      }
     },
     "Check for Upgrades" : {
-      "comment" : "Menu bar: runs brew update and re-checks"
+      "comment" : "Menu bar: runs brew update and re-checks",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Buscar actualizaciones"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "업그레이드 확인"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Sök efter uppgraderingar"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "检查升级"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "檢查升級"
+          }
+        }
+      }
     },
     "Check for upgrades automatically" : {
-      "comment" : "Settings: periodic check toggle"
+      "comment" : "Settings: periodic check toggle",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Buscar actualizaciones automáticamente"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "자동으로 업그레이드 확인"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Sök efter uppgraderingar automatiskt"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "自动检查升级"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "自動檢查升級"
+          }
+        }
+      }
     },
     "Everything is up to date" : {
-      "comment" : "Menu bar: no upgrades"
+      "comment" : "Menu bar: no upgrades",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Todo está actualizado"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "모두 최신 상태입니다"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Allt är uppdaterat"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "全部是最新版本"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "全部都是最新版本"
+          }
+        }
+      }
     },
     "Last check failed: %@" : {
-      "comment" : "Menu bar: the last upgrade check failed; %@ is the error"
+      "comment" : "Menu bar: the last upgrade check failed; %@ is the error",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "La última comprobación falló: %@"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "마지막 확인 실패: %@"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Senaste kontrollen misslyckades: %@"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "上次检查失败：%@"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "上次檢查失敗：%@"
+          }
+        }
+      }
+    },
+    "Notifications are turned off for Brewly in System Settings." : {
+      "comment" : "Settings: macOS denied notification permission",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Las notificaciones de Brewly están desactivadas en Ajustes del Sistema."
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "시스템 설정에서 Brewly 알림이 꺼져 있습니다."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Notiser är avstängda för Brewly i Systeminställningar."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Brewly 的通知已在“系统设置”中关闭。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "已在「系統設定」中關閉 Brewly 的通知。"
+          }
+        }
+      }
+    },
+    "Notify me about new upgrades" : {
+      "comment" : "Settings: upgrade notification toggle",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Avisarme de nuevas actualizaciones"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "새 업그레이드 알림 받기"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Meddela mig om nya uppgraderingar"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "有新升级时通知我"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "有新升級時通知我"
+          }
+        }
+      }
+    },
+    "Only packages that became outdated since the last check are announced." : {
+      "comment" : "Settings: upgrade notification toggle detail",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Solo se avisa de los paquetes que han quedado desactualizados desde la última comprobación."
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "마지막 확인 이후 새로 업그레이드가 필요해진 패키지만 알려 줍니다."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Endast paket som blivit inaktuella sedan senaste kontrollen meddelas."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "仅通知自上次检查后变为可升级的软件包。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "只會通知自上次檢查後變為可升級的套件。"
+          }
+        }
+      }
     },
     "Open Upgrades…" : {
-      "comment" : "Menu bar: opens the main window on Upgrades"
+      "comment" : "Menu bar: opens the main window on Upgrades",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Abrir actualizaciones…"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "업그레이드 열기…"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Öppna uppgraderingar…"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "打开升级…"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "打開升級…"
+          }
+        }
+      }
     },
     "Quit Brewly" : {
-      "comment" : "Menu bar: quits the app"
+      "comment" : "Menu bar: quits the app",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Salir de Brewly"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Brewly 종료"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Avsluta Brewly"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "退出 Brewly"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "結束 Brewly"
+          }
+        }
+      }
     },
     "Settings…" : {
-      "comment" : "Menu bar: opens Brewly settings"
+      "comment" : "Menu bar: opens Brewly settings",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Ajustes…"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "설정…"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Inställningar…"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "设置…"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "設定…"
+          }
+        }
+      }
     },
     "Show Brewly in the menu bar" : {
-      "comment" : "Settings: menu bar extra toggle"
+      "comment" : "Settings: menu bar extra toggle",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Mostrar Brewly en la barra de menús"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "메뉴 막대에 Brewly 표시"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Visa Brewly i menyraden"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "在菜单栏中显示 Brewly"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "在選單列中顯示 Brewly"
+          }
+        }
+      }
     },
     "Shows how many packages can be upgraded, even when the window is closed." : {
-      "comment" : "Settings: menu bar extra toggle detail"
+      "comment" : "Settings: menu bar extra toggle detail",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Muestra cuántos paquetes se pueden actualizar, incluso con la ventana cerrada."
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "창이 닫혀 있어도 업그레이드할 수 있는 패키지 수를 표시합니다."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Visar hur många paket som kan uppgraderas, även när fönstret är stängt."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "即使窗口已关闭，也会显示可升级的软件包数量。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "即使視窗已關閉，也會顯示可升級的套件數量。"
+          }
+        }
+      }
+    },
+    "Upgrades available" : {
+      "comment" : "Upgrade notification title",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Actualizaciones disponibles"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "업그레이드 사용 가능"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Uppgraderingar tillgängliga"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "有可用升级"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "有可用升級"
+          }
+        }
+      }
     },
     "Uses `brew update-if-needed`, so Homebrew’s own auto-update settings apply. Nothing is upgraded automatically." : {
-      "comment" : "Settings: periodic check toggle detail"
+      "comment" : "Settings: periodic check toggle detail",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Usa `brew update-if-needed`, así que se aplican los ajustes de actualización automática de Homebrew. Nada se actualiza automáticamente."
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "`brew update-if-needed`를 사용하므로 Homebrew의 자동 업데이트 설정이 적용됩니다. 자동으로 업그레이드되는 것은 없습니다."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Använder `brew update-if-needed`, så Homebrews egna inställningar för automatisk uppdatering gäller. Inget uppgraderas automatiskt."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "使用 `brew update-if-needed`，因此会沿用 Homebrew 自身的自动更新设置。不会自动升级任何内容。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "使用 `brew update-if-needed`，因此會沿用 Homebrew 本身的自動更新設定。不會自動升級任何項目。"
+          }
+        }
+      }
     },
     "and %lld more" : {
-      "comment" : "Menu bar: count of outdated packages not listed"
+      "comment" : "Menu bar: count of outdated packages not listed",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "y %lld más"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "외 %lld개"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "och %lld till"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "以及另外 %lld 个"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "以及另外 %lld 個"
+          }
+        }
+      }
     }
   },
   "version" : "1.0"

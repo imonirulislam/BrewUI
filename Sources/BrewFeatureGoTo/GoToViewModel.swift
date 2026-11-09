@@ -39,7 +39,11 @@ struct GoToResult: Equatable, Identifiable {
     let destination: GoToDestination
 
     var id: String {
-        "\(kind)-\(title)-\(subtitle ?? "")"
+        switch destination {
+        case let .page(page): "page-\(page)"
+        case .installedPackage: "installed-\(title)"
+        case .discover: "catalogue-\(title)"
+        }
     }
 }
 

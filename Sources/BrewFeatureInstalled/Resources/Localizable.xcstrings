@@ -965,7 +965,39 @@
       }
     },
     "Deselect All" : {
-      "comment" : "Upgrades tab: clear every ticked row"
+      "comment" : "Upgrades tab: clear every ticked row",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Deseleccionar todo"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "모두 선택 해제"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Avmarkera alla"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "取消全选"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "取消全選"
+          }
+        }
+      }
     },
     "Details" : {
       "comment" : "Package detail section heading",
@@ -2094,7 +2126,39 @@
       }
     },
     "Select %@ for upgrade" : {
-      "comment" : "VoiceOver: checkbox ticking a package for Upgrade Selected; %@ is the package name"
+      "comment" : "VoiceOver: checkbox ticking a package for Upgrade Selected; %@ is the package name",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Seleccionar %@ para actualizar"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "업그레이드할 항목으로 %@ 선택"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Välj %@ för uppgradering"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "选择 %@ 进行升级"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "選擇 %@ 進行升級"
+          }
+        }
+      }
     },
     "Show all upgrades" : {
       "comment" : "Upgrades tab: clear the scope and search filters",
@@ -2348,7 +2412,39 @@
       }
     },
     "Tick to include in Upgrade Selected (Space)" : {
-      "comment" : "Upgrades row checkbox tooltip"
+      "comment" : "Upgrades row checkbox tooltip",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Marca para incluir en Actualizar seleccionados (Espacio)"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "선택 항목 업그레이드에 포함하려면 체크하세요 (스페이스)"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Markera för att ta med i Uppgradera valda (blanksteg)"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "勾选以包含在“升级所选项”中（空格键）"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "勾選以納入「升級所選項目」（空白鍵）"
+          }
+        }
+      }
     },
     "Try Again" : {
       "comment" : "Upgrades tab: re-run the failed upgrade check",
@@ -2561,7 +2657,39 @@
       }
     },
     "Upgrade %lld selected packages" : {
-      "comment" : "VoiceOver: upgrade-selected button; %lld is the ticked count"
+      "comment" : "VoiceOver: upgrade-selected button; %lld is the ticked count",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Actualizar %lld paquetes seleccionados"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "선택한 패키지 %lld개 업그레이드"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Uppgradera %lld valda paket"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "升级 %lld 个所选软件包"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "升級 %lld 個所選套件"
+          }
+        }
+      }
     },
     "Upgrade All (%lld)" : {
       "comment" : "Upgrades tab button; %lld is the outdated count",
@@ -2704,7 +2832,39 @@
       }
     },
     "Upgrade Selected (%lld)" : {
-      "comment" : "Upgrades tab button when rows are ticked; %lld is the ticked count"
+      "comment" : "Upgrades tab button when rows are ticked; %lld is the ticked count",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Actualizar seleccionados (%lld)"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "선택 항목 업그레이드 (%lld)"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Uppgradera valda (%lld)"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "升级所选项（%lld）"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "升級所選項目（%lld）"
+          }
+        }
+      }
     },
     "Upgrade to %@" : {
       "comment" : "Installed detail upgrade button; interpolated label shows target tap version.",
@@ -2882,7 +3042,39 @@
       }
     },
     "Upgrades the %lld selected packages" : {
-      "comment" : "Upgrades header command summary for several ticked packages"
+      "comment" : "Upgrades header command summary for several ticked packages",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Actualiza los %lld paquetes seleccionados"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "선택한 패키지 %lld개를 업그레이드합니다"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Uppgraderar de %lld valda paketen"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "升级 %lld 个所选软件包"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "升級 %lld 個所選套件"
+          }
+        }
+      }
     },
     "Upgrades the 1 package matching your search" : {
       "comment" : "Upgrades header command summary for a single searched package",
@@ -2920,7 +3112,39 @@
       }
     },
     "Upgrades the 1 selected package" : {
-      "comment" : "Upgrades header command summary for a single ticked package"
+      "comment" : "Upgrades header command summary for a single ticked package",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Actualiza el paquete seleccionado"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "선택한 패키지 1개를 업그레이드합니다"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Uppgraderar det valda paketet"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "升级 1 个所选软件包"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "升級 1 個所選套件"
+          }
+        }
+      }
     },
     "Upgrades this package to the latest available version" : {
       "comment" : "Command block summary above brew upgrade",

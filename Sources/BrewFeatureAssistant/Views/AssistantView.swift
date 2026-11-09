@@ -4,6 +4,7 @@
 //
 
 import AppKit
+import BrewAccessibilityID
 import BrewAppEnvironment
 import BrewAssistantCore
 import BrewCore
@@ -54,6 +55,8 @@ struct AssistantView: View {
             .frame(maxWidth: .infinity, alignment: .topLeading)
         }
         .background(Color.brewWindowBase)
+        .accessibilityElement(children: .contain)
+        .axid(.assistantScreen)
         .onAppear {
             viewModel.refreshAvailability()
             requestFieldIsFocused = true

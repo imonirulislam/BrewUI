@@ -73,6 +73,22 @@ final class TapsViewModel {
         selectedTapName = tap.name
     }
 
+    func selectNext() {
+        moveSelection(by: 1)
+    }
+
+    func selectPrevious() {
+        moveSelection(by: -1)
+    }
+
+    private func moveSelection(by offset: Int) {
+        guard let current = selectedTap, let index = taps.firstIndex(of: current) else {
+            return
+        }
+        let next = min(max(index + offset, 0), taps.count - 1)
+        selectedTapName = taps[next].name
+    }
+
     func load() async {
         await repository.load(forceRefresh: false)
     }

@@ -118,6 +118,7 @@ struct UpgradesPackagesView: View {
             }
             .toggleStyle(.checkbox)
             .labelsHidden()
+            .axid(.upgradesRowCheckbox(token: package.name))
             .help(String(localized: "Tick to include in Upgrade Selected (Space)", bundle: #bundle,
                          comment: "Upgrades row checkbox tooltip"))
             // The identifier sits on the row, not the stack, so the checkbox does not share it.

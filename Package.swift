@@ -294,7 +294,7 @@ let package = Package(
 
         .target(
             name: "BrewFeatureAssistant",
-            dependencies: ["BrewAssistantCore", "BrewCore", "BrewUIComponents", "BrewRepositoryInterfaces", "BrewAppEnvironment"],
+            dependencies: ["BrewAccessibilityID", "BrewAssistantCore", "BrewCore", "BrewUIComponents", "BrewRepositoryInterfaces", "BrewAppEnvironment"],
             resources: [.process("Resources/Localizable.xcstrings")],
             swiftSettings: [.defaultIsolation(MainActor.self), .swiftLanguageMode(.v6)],
         ),
@@ -315,7 +315,7 @@ let package = Package(
 
         .target(
             name: "BrewFeatureGoTo",
-            dependencies: ["BrewCore", "BrewUIComponents", "BrewRepositoryInterfaces", "BrewAppEnvironment"],
+            dependencies: ["BrewAccessibilityID", "BrewCore", "BrewUIComponents", "BrewRepositoryInterfaces", "BrewAppEnvironment"],
             resources: [.process("Resources/Localizable.xcstrings")],
             swiftSettings: [.defaultIsolation(MainActor.self), .swiftLanguageMode(.v6)],
         ),

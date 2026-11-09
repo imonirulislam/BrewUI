@@ -26,6 +26,23 @@ public enum AXID: Hashable, Sendable {
     case upgradesList
     case upgradesRow(token: String)
     case upgradesRefreshButton
+    case upgradesRowCheckbox(token: String)
+    case upgradesBatchButton
+    case upgradesDeselectAllButton
+
+    // Taps
+    case tapsScreen
+    case tapsList
+    case tapsRow(name: String)
+    case tapsAddField
+    case tapsAddButton
+    case tapsRemoveButton
+
+    // Go to palette and Assistant
+    case goToPalette
+    case goToField
+    case goToRow(id: String)
+    case assistantScreen
 
     // Self-upgrade
     case selfUpgradeBanner
@@ -99,6 +116,19 @@ public enum AXID: Hashable, Sendable {
         case .upgradesList: "upgrades.list"
         case let .upgradesRow(token): "upgrades.row.\(token)"
         case .upgradesRefreshButton: "upgrades.refresh"
+        case let .upgradesRowCheckbox(token): "upgrades.tick.\(token)"
+        case .upgradesBatchButton: "upgrades.batch"
+        case .upgradesDeselectAllButton: "upgrades.deselect"
+        case .tapsScreen: "taps.screen"
+        case .tapsList: "taps.list"
+        case let .tapsRow(name): "taps.row.\(name)"
+        case .tapsAddField: "taps.add.field"
+        case .tapsAddButton: "taps.add"
+        case .tapsRemoveButton: "taps.remove"
+        case .goToPalette: "goto.palette"
+        case .goToField: "goto.field"
+        case let .goToRow(id): "goto.row.\(id)"
+        case .assistantScreen: "assistant.screen"
         case .selfUpgradeBanner: "selfupgrade.banner"
         case .selfUpgradeUpgradeButton: "selfupgrade.upgrade"
         case .selfUpgradeLaterButton: "selfupgrade.later"

@@ -13,6 +13,19 @@ struct TapsViewModelTests {
         #expect(viewModel.selectedTap?.name == "anomalyco/tap")
     }
 
+    @Test func `arrow keys move the selection and stop at either end`() {
+        let viewModel = makeViewModel()
+
+        viewModel.selectNext()
+        #expect(viewModel.selectedTap?.name == "homebrew/core")
+        viewModel.selectNext()
+        #expect(viewModel.selectedTap?.name == "homebrew/core")
+
+        viewModel.selectPrevious()
+        viewModel.selectPrevious()
+        #expect(viewModel.selectedTap?.name == "anomalyco/tap")
+    }
+
     @Test func `installed packages are attributed to their tap`() {
         let viewModel = makeViewModel(installed: [
             .fixture(name: "opencode", kind: .formula, tap: "anomalyco/tap"),

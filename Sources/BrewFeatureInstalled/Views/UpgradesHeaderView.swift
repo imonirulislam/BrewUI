@@ -70,6 +70,7 @@ struct UpgradesHeaderView: View {
         .keyboardShortcut("u", modifiers: [.command, .shift])
         .disabled(viewModel.isUpgradingAny)
         .accessibilityLabel(upgradeButtonAccessibilityLabel)
+        .axid(.upgradesBatchButton)
     }
 
     private var upgradeButtonAccessibilityLabel: String {
@@ -94,6 +95,7 @@ struct UpgradesHeaderView: View {
             Text("Deselect All", bundle: #bundle, comment: "Upgrades tab: clear every ticked row")
         }
         .controlSize(.regular)
+        .axid(.upgradesDeselectAllButton)
     }
 
     /// ⌘R is the window-wide refresh (``RefreshCommands``); this button is the upgrades-only one.
