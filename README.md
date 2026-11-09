@@ -9,19 +9,19 @@ by the Homebrew project. Upstream's documentation below still applies unless not
 - App name `Brewly.app` and bundle ID `dev.imonirulislam.brewly`, so it can run beside the official app
   without sharing caches, logs, settings or crash reports.
 - Crash reports file issues on this fork rather than upstream.
-- Self-upgrade is inactive: Brewly is not distributed as a Homebrew cask, so the official `homebrew-app`
-  cask shows as an ordinary package.
+- Distributed as the `brewly` cask in [imonirulislam/homebrew-tap](https://github.com/imonirulislam/homebrew-tap),
+  so self-upgrade follows that cask and the official `homebrew-app` cask shows as an ordinary package.
 - An original flask icon and a copper accent instead of the Homebrew mark and amber.
 - A grouped sidebar (Library, Find, Manage, Health) and a Go to palette (⌘K) that reaches any page,
   installed package or catalogue package.
-- An Assistant page (⌘7) that suggests packages from a plain-language request using Apple's on-device
+- An Assistant page (⌘4) that suggests packages from a plain-language request using Apple's on-device
   model. Suggestions are checked against the Homebrew catalogue and nothing installs without confirmation.
   Requires Apple Intelligence, or choose Claude, OpenAI or an OpenAI-compatible server such as Ollama in
   Settings › Assistant; API keys are kept in the Keychain.
 - Upgrades rows have checkboxes: tick packages to run Upgrade Selected instead of Upgrade All.
 - An optional menu bar item (Settings, ⌘,) shows outdated packages and can check for upgrades periodically.
   It never upgrades anything by itself.
-- A Taps page (⌘8) lists installed taps, shows which installed packages came from each, and adds or
+- A Taps page (⌘6) lists installed taps, shows which installed packages came from each, and adds or
   removes taps after confirming the exact `brew tap` or `brew untap` command. Upstream BrewUI does not
   manage taps.
 
@@ -43,7 +43,15 @@ Enable CLI-averse users to safely discover, install, update and manage Homebrew 
 
 ## 📦 Installation
 
-Brewly is not yet packaged. Build it from source (see Development below). For the official app run
+```sh
+brew install --cask imonirulislam/tap/brewly
+```
+
+Brewly needs macOS 26.2 or later. It is signed ad hoc rather than with an Apple Developer ID, so it is
+not notarised. The first time you open it, macOS blocks it: open *System Settings › Privacy & Security*
+and click *Open Anyway* next to Brewly. Each update is a new signature, so macOS may ask again for
+access to API keys saved in the Keychain. Releases also carry the zipped app on
+[GitHub](https://github.com/imonirulislam/BrewUI/releases). For the official app run
 `brew install --cask homebrew-app`.
 
 ## Homebrew configuration

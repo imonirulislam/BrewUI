@@ -65,6 +65,18 @@ and results and disclose AI assistance accurately. Do not invent issue links or 
 Return the description in chat unless the user requests a file. Include before and after screenshots
 for visible changes; explain when screenshots do not apply. Keep the template short.
 
+## Brewly releases
+
+Run the *Brewly release* workflow ([brewly-release.yml](.github/workflows/brewly-release.yml)) from
+`main` with the new version, such as `1.0.1`. It archives an ad hoc signed app, publishes
+`Brewly-<version>.zip` as release `v<version>` and updates the `brewly` cask in
+[imonirulislam/homebrew-tap](https://github.com/imonirulislam/homebrew-tap) when the
+`HOMEBREW_TAP_TOKEN` secret holds a token that can push there. Without it, the run prints the version
+and SHA-256 to set in `Casks/brewly.rb` by hand. Brewly has no Developer ID, so releases are not
+notarised. Upstream's `build.yml`, `release.yml` and other workflows need Homebrew's secrets or labels
+and are disabled on the fork; only the Brewly release workflow runs. Releasing publishes under the
+owner's account, so agents only run it when asked.
+
 ## Guardrails
 
 - Do not modify `LICENSE` or commit secrets, credentials or the local signing configuration.

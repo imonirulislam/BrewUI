@@ -1,0 +1,127 @@
+name: Brewly release
+
+# Brewly has no Developer ID, so this builds an ad hoc signed app that is not notarised,
+# publishes it as a GitHub release and points the imonirulislam/homebrew-tap cask at it.
+# The upstream release.yml and build.yml need Homebrew's signing secrets and stay disabled on this fork.
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: Version to release, for example 1.0.1. Tagged as v<version>.
+        required: true
+        type: string
+
+permissions:
+  contents: read
+
+concurrency:
+  group: brewly-release
+  cancel-in-progress: false
+
+jobs:
+  release:
+    if: github.repository == 'imonirulislam/BrewUI' && github.ref == 'refs/heads/main'
+    runs-on: macos-26
+    permissions:
+      contents: write # create the tag and release
+    env:
+      VERSION: ${{ inputs.version }}
+      HAS_TAP_TOKEN: ${{ secrets.HOMEBREW_TAP_TOKEN != '' }}
+    steps:
+      - name: Check the version
+        run: |
+          if ! [[ "$VERSION" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+            echo "::error::Version must look like 1.2.3, got '$VERSION'."
+            exit 1
+          fi
+
+      - name: Checkout repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          # Full history so the build number (commit count) matches local builds.
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Refuse an existing tag
+        run: |
+          git fetch --tags --force
+          if git rev-parse -q --verify "refs/tags/v$VERSION" >/dev/null; then
+            echo "::error::Tag v$VERSION already exists."
+            exit 1
+          fi
+
+      - name: Build and archive
+        env:
+          MARKETING_VERSION_OVERRIDE: ${{ inputs.version }}
+        run: |
+          xcodebuild archive \
+            -project Homebrew.xcodeproj \
+            -scheme Brew \
+            -configuration Release \
+            -destination 'generic/platform=macOS' \
+            -archivePath "$RUNNER_TEMP/Brewly.xcarchive" \
+            CODE_SIGN_STYLE=Manual \
+            CODE_SIGN_IDENTITY=- \
+            DEVELOPMENT_TEAM=
+
+      - name: Verify the app
+        run: |
+          APP="$RUNNER_TEMP/Brewly.xcarchive/Products/Applications/Brewly.app"
+          codesign --verify --deep --strict "$APP"
+          BUNDLE_VERSION=$(/usr/libexec/PlistBuddy -c 'Print :CFBundleShortVersionString' "$APP/Contents/Info.plist")
+          if [ "$BUNDLE_VERSION" != "$VERSION" ]; then
+            echo "::error::App version $BUNDLE_VERSION does not match $VERSION."
+            exit 1
+          fi
+          echo "APP=$APP" >> "$GITHUB_ENV"
+
+      - name: Zip the app
+        run: |
+          ZIP="$RUNNER_TEMP/Brewly-$VERSION.zip"
+          ditto -c -k --keepParent "$APP" "$ZIP"
+          echo "ZIP=$ZIP" >> "$GITHUB_ENV"
+          echo "SHA256=$(shasum -a 256 "$ZIP" | cut -d ' ' -f 1)" >> "$GITHUB_ENV"
+
+      - name: Create tag and release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          cat > "$RUNNER_TEMP/notes.md" <<EOF
+          Install with Homebrew:
+
+          \`\`\`sh
+          brew install --cask imonirulislam/tap/brewly
+          \`\`\`
+
+          Brewly is not notarised by Apple. The first time you open it, macOS blocks it: open
+          System Settings › Privacy & Security and click Open Anyway next to Brewly.
+
+          SHA-256 of \`Brewly-$VERSION.zip\`: \`$SHA256\`
+          EOF
+          gh release create "v$VERSION" "$ZIP" \
+            --target "$GITHUB_SHA" \
+            --title "Brewly $VERSION" \
+            --notes-file "$RUNNER_TEMP/notes.md" \
+            --generate-notes
+
+      - name: Update the Homebrew tap
+        if: env.HAS_TAP_TOKEN == 'true'
+        env:
+          TAP_TOKEN: ${{ secrets.HOMEBREW_TAP_TOKEN }}
+        run: |
+          TAP="$RUNNER_TEMP/homebrew-tap"
+          git clone --depth 1 "https://x-access-token:${TAP_TOKEN}@github.com/imonirulislam/homebrew-tap.git" "$TAP"
+          sed -i '' -E \
+            -e "s/^  version \".*\"$/  version \"$VERSION\"/" \
+            -e "s/^  sha256 \".*\"$/  sha256 \"$SHA256\"/" \
+            "$TAP/Casks/brewly.rb"
+          git -C "$TAP" -c user.name="github-actions[bot]" \
+            -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
+            commit -am "brewly $VERSION"
+          git -C "$TAP" push
+
+      - name: Say how to update the tap by hand
+        if: env.HAS_TAP_TOKEN != 'true'
+        run: |
+          echo "::notice::No HOMEBREW_TAP_TOKEN secret, so the tap was not updated. In imonirulislam/homebrew-tap Casks/brewly.rb set version \"$VERSION\" and sha256 \"$SHA256\"."
