@@ -39,6 +39,9 @@ final class UpgradesViewModel {
 
     private var selectedPackageID: InstalledBrewPackage.ID?
 
+    /// Rows ticked for a batch upgrade, independent of the detail-pane selection.
+    private(set) var markedPackageIDs: Set<InstalledBrewPackage.ID> = []
+
     private var runningIDs: Set<BrewOperationID> = []
 
     /// The repository stays `.loaded` through a revalidation, so Refresh needs its own signal.
@@ -360,6 +363,8 @@ extension UpgradesViewModel {
                 bundle: #bundle,
                 comment: "Upgrades header command summary scoped to casks",
             )
+        case let .explicit(names) where isUpgradingMarkedSelection:
+            Self.markedUpgradeSummary(count: names.count)
         case let .explicit(names):
             Self.searchedUpgradeSummary(count: names.count)
         }
@@ -421,6 +426,9 @@ extension UpgradesViewModel {
     /// - A search narrows the batch to the visible rows by name (`brew upgrade git slack`).
     /// - Otherwise the scope picker maps to everything / `--formula` / `--cask`.
     var upgradeSelection: BrewUpgradeSelection {
+        if !markedVisibleRows.isEmpty {
+            return .explicit(markedVisibleRows.map(\.upgradeName))
+        }
         if isSearchActive, !allRows.isEmpty {
             return .explicit(allRows.map(\.upgradeName))
         }
@@ -453,6 +461,7 @@ extension UpgradesViewModel {
         let selection = upgradeSelection
         let id = BrewOperationID.bulkUpgrade(selection)
         let command = commandFactory.bulkUpgradeCommand(selection: selection)
+        markedPackageIDs.removeAll()
         Task { try? await brewCommandCenter.perform(command, id: id) }
     }
 
@@ -509,5 +518,59 @@ extension UpgradesViewModel {
             return
         }
         setSelection(id)
+    }
+}
+
+// MARK: - Marked selection
+
+extension UpgradesViewModel {
+    /// Only visible rows count, so a search or scope change can never upgrade a package the user cannot see.
+    var markedVisibleRows: [InstalledBrewPackage] {
+        allRows.filter { markedPackageIDs.contains($0.id) }
+    }
+
+    var isUpgradingMarkedSelection: Bool {
+        !markedVisibleRows.isEmpty
+    }
+
+    /// The number the action button shows; always the number of packages ``upgradeAll()`` names or covers.
+    var upgradeActionCount: Int {
+        isUpgradingMarkedSelection ? markedVisibleRows.count : outdatedCount
+    }
+
+    func isMarked(_ id: InstalledBrewPackage.ID) -> Bool {
+        markedPackageIDs.contains(id)
+    }
+
+    func toggleMark(_ id: InstalledBrewPackage.ID) {
+        if markedPackageIDs.remove(id) == nil {
+            markedPackageIDs.insert(id)
+        }
+    }
+
+    func toggleMarkForActiveSelection() {
+        guard let id = activeSelectedPackageID else {
+            return
+        }
+        toggleMark(id)
+    }
+
+    func clearMarks() {
+        markedPackageIDs.removeAll()
+    }
+
+    fileprivate static func markedUpgradeSummary(count: Int) -> LocalizedStringResource {
+        if count == 1 {
+            return LocalizedStringResource(
+                "Upgrades the 1 selected package",
+                bundle: #bundle,
+                comment: "Upgrades header command summary for a single ticked package",
+            )
+        }
+        return LocalizedStringResource(
+            "Upgrades the \(count) selected packages",
+            bundle: #bundle,
+            comment: "Upgrades header command summary for several ticked packages",
+        )
     }
 }

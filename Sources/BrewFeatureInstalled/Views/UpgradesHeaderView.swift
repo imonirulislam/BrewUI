@@ -42,6 +42,9 @@ struct UpgradesHeaderView: View {
         HStack(spacing: BrewSpacing.sm) {
             if viewModel.outdatedCount > 0 {
                 upgradeAllButton
+                if viewModel.isUpgradingMarkedSelection {
+                    deselectAllButton
+                }
             } else {
                 nothingToUpgradeIndicator
             }
@@ -55,17 +58,42 @@ struct UpgradesHeaderView: View {
         Button {
             viewModel.upgradeAll()
         } label: {
-            Text("Upgrade All (\(viewModel.outdatedCount))", bundle: #bundle, comment: "Upgrades tab button; %lld is the outdated count")
+            if viewModel.isUpgradingMarkedSelection {
+                Text("Upgrade Selected (\(viewModel.upgradeActionCount))", bundle: #bundle,
+                     comment: "Upgrades tab button when rows are ticked; %lld is the ticked count")
+            } else {
+                Text("Upgrade All (\(viewModel.outdatedCount))", bundle: #bundle, comment: "Upgrades tab button; %lld is the outdated count")
+            }
         }
         .buttonStyle(.borderedProminent)
         .controlSize(.regular)
         .keyboardShortcut("u", modifiers: [.command, .shift])
         .disabled(viewModel.isUpgradingAny)
-        .accessibilityLabel(String(
+        .accessibilityLabel(upgradeButtonAccessibilityLabel)
+    }
+
+    private var upgradeButtonAccessibilityLabel: String {
+        if viewModel.isUpgradingMarkedSelection {
+            return String(
+                localized: "Upgrade \(viewModel.upgradeActionCount) selected packages",
+                bundle: #bundle,
+                comment: "VoiceOver: upgrade-selected button; %lld is the ticked count",
+            )
+        }
+        return String(
             localized: "Upgrade all \(viewModel.outdatedCount) packages",
             bundle: #bundle,
             comment: "VoiceOver: upgrade-all button; %lld is the outdated count",
-        ))
+        )
+    }
+
+    private var deselectAllButton: some View {
+        Button {
+            viewModel.clearMarks()
+        } label: {
+            Text("Deselect All", bundle: #bundle, comment: "Upgrades tab: clear every ticked row")
+        }
+        .controlSize(.regular)
     }
 
     /// ⌘R is the window-wide refresh (``RefreshCommands``); this button is the upgrades-only one.

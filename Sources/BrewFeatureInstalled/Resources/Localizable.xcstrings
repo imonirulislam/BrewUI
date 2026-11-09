@@ -999,6 +999,9 @@
         }
       }
     },
+    "Deselect All" : {
+      "comment" : "Upgrades tab: clear every ticked row"
+    },
     "Details" : {
       "comment" : "Package detail section heading",
       "localizations" : {
@@ -2125,6 +2128,9 @@
         }
       }
     },
+    "Select %@ for upgrade" : {
+      "comment" : "VoiceOver: checkbox ticking a package for Upgrade Selected; %@ is the package name"
+    },
     "Show all upgrades" : {
       "comment" : "Upgrades tab: clear the scope and search filters",
       "localizations" : {
@@ -2376,6 +2382,9 @@
         }
       }
     },
+    "Tick to include in Upgrade Selected (Space)" : {
+      "comment" : "Upgrades row checkbox tooltip"
+    },
     "Try Again" : {
       "comment" : "Upgrades tab: re-run the failed upgrade check",
       "localizations" : {
@@ -2586,6 +2595,9 @@
         }
       }
     },
+    "Upgrade %lld selected packages" : {
+      "comment" : "VoiceOver: upgrade-selected button; %lld is the ticked count"
+    },
     "Upgrade All (%lld)" : {
       "comment" : "Upgrades tab button; %lld is the outdated count",
       "localizations" : {
@@ -2725,6 +2737,9 @@
           }
         }
       }
+    },
+    "Upgrade Selected (%lld)" : {
+      "comment" : "Upgrades tab button when rows are ticked; %lld is the ticked count"
     },
     "Upgrade to %@" : {
       "comment" : "Installed detail upgrade button; interpolated label shows target tap version.",
@@ -2901,6 +2916,9 @@
         }
       }
     },
+    "Upgrades the %lld selected packages" : {
+      "comment" : "Upgrades header command summary for several ticked packages"
+    },
     "Upgrades the 1 package matching your search" : {
       "comment" : "Upgrades header command summary for a single searched package",
       "localizations" : {
@@ -2935,6 +2953,9 @@
           }
         }
       }
+    },
+    "Upgrades the 1 selected package" : {
+      "comment" : "Upgrades header command summary for a single ticked package"
     },
     "Upgrades this package to the latest available version" : {
       "comment" : "Command block summary above brew upgrade",

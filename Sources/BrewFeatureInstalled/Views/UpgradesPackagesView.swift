@@ -95,6 +95,10 @@ struct UpgradesPackagesView: View {
                 viewModel.selectNext()
                 return .handled
             }
+            .onKeyPress(.space) {
+                viewModel.toggleMarkForActiveSelection()
+                return .handled
+            }
             .onExitCommand {
                 viewModel.clearSelection()
             }
@@ -102,24 +106,38 @@ struct UpgradesPackagesView: View {
     }
 
     private func row(for package: InstalledBrewPackage) -> some View {
-        InstalledListRowRoot(package: package)
-            .id(package.id)
-            .contentShape(Rectangle())
-            .listRowBackground(
-                RoundedRectangle(
-                    cornerRadius: BrewRadius.lg,
-                    style: .continuous,
-                )
-                .fill(
-                    viewModel.activeSelectedPackageID == package.id ? Color.brewBrandTint : Color.clear,
-                )
-                .padding(.horizontal, BrewSpacing.sm),
-            )
-            .onTapGesture {
-                // Needed to suppress the default ugly blue macOS highlight state
-                viewModel.setSelection(package.id)
+        HStack(spacing: BrewSpacing.sm) {
+            Toggle(isOn: Binding(
+                get: { viewModel.isMarked(package.id) },
+                set: { _ in viewModel.toggleMark(package.id) },
+            )) {
+                Text("Select \(package.name) for upgrade", bundle: #bundle,
+                     comment: "VoiceOver: checkbox ticking a package for Upgrade Selected; %@ is the package name")
             }
-            .axid(.upgradesRow(token: package.name))
+            .toggleStyle(.checkbox)
+            .labelsHidden()
+            .help(String(localized: "Tick to include in Upgrade Selected (Space)", bundle: #bundle,
+                         comment: "Upgrades row checkbox tooltip"))
+            // The identifier sits on the row, not the stack, so the checkbox does not share it.
+            InstalledListRowRoot(package: package)
+                .axid(.upgradesRow(token: package.name))
+        }
+        .id(package.id)
+        .contentShape(Rectangle())
+        .listRowBackground(
+            RoundedRectangle(
+                cornerRadius: BrewRadius.lg,
+                style: .continuous,
+            )
+            .fill(
+                viewModel.activeSelectedPackageID == package.id ? Color.brewBrandTint : Color.clear,
+            )
+            .padding(.horizontal, BrewSpacing.sm),
+        )
+        .onTapGesture {
+            // Needed to suppress the default ugly blue macOS highlight state
+            viewModel.setSelection(package.id)
+        }
     }
 
     private func scrollToSelection(
