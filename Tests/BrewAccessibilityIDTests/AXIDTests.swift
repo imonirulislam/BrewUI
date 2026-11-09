@@ -62,11 +62,13 @@ struct AXIDTests {
         #expect([
             AXID.upgradesRowCheckbox(token: "wget"), .upgradesBatchButton, .upgradesDeselectAllButton,
             .tapsScreen, .tapsList, .tapsRow(name: "user/tools"), .tapsAddField, .tapsAddButton, .tapsRemoveButton,
-            .goToPalette, .goToField, .goToRow(id: "page-taps"), .assistantScreen,
+            .goToPalette, .goToField, .goToRow(id: "page-taps"), .assistantScreen, .assistantChangeModelButton,
+            .assistantProviderPicker,
         ].map(\.rawValue) == [
             "upgrades.tick.wget", "upgrades.batch", "upgrades.deselect",
             "taps.screen", "taps.list", "taps.row.user/tools", "taps.add.field", "taps.add", "taps.remove",
-            "goto.palette", "goto.field", "goto.row.page-taps", "assistant.screen",
+            "goto.palette", "goto.field", "goto.row.page-taps", "assistant.screen", "assistant.model.change",
+            "assistant.settings.provider",
         ])
     }
 

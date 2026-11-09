@@ -6,7 +6,7 @@
 import BrewAccessibilityID
 import XCTest
 
-/// Upgrade Selected, Taps and the Go to palette, driven through the deterministic fixtures.
+/// Upgrade Selected, Taps, the Go to palette and the Assistant's model choice, driven through the deterministic fixtures.
 final class ForkFeaturesUITests: BrewUITestCase {
     // MARK: - Upgrade Selected
 
@@ -99,6 +99,19 @@ final class ForkFeaturesUITests: BrewUITestCase {
         BrewUIElement(app, .installedScreen).waitToExist()
         let detail = BrewUIElement(app, .packageDetail).element
         XCTAssertTrue(detail.staticTexts.containing(Self.text("ripgrep")).firstMatch.waitForExistence(timeout: 5))
+    }
+
+    // MARK: - Assistant
+
+    @MainActor
+    func testChangeModelOpensTheAssistantSettings() {
+        let app = launch(.installedBasic).app
+        BrewUIButton(app, .sidebarItem(.assistant)).tap()
+        BrewUIElement(app, .assistantScreen).waitToExist()
+
+        BrewUIButton(app, .assistantChangeModelButton).tap()
+
+        BrewUIElement(app, .assistantProviderPicker).waitToExist()
     }
 
     // MARK: - Helpers

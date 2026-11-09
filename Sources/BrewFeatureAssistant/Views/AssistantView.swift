@@ -103,6 +103,21 @@ struct AssistantView: View {
                 .font(.brewCallout)
                 .foregroundStyle(Color.brewTextSecondary)
                 .fixedSize(horizontal: false, vertical: true)
+            HStack(spacing: BrewSpacing.sm) {
+                Label {
+                    Text("Model: \(AssistantProviderCopy.name(for: provider))", bundle: #bundle,
+                         comment: "Assistant: the model provider in use; %@ is its name, such as Claude (Anthropic)")
+                } icon: {
+                    Image(systemName: "cpu")
+                }
+                .font(.brewCallout)
+                .foregroundStyle(Color.brewTextSecondary)
+                AssistantSettingsButton {
+                    Text("Change Model…", bundle: #bundle, comment: "Assistant: button opening Settings to pick Apple Intelligence, Claude, OpenAI or a local model")
+                }
+                .axid(.assistantChangeModelButton)
+            }
+            .padding(.top, BrewSpacing.xs)
         }
     }
 
@@ -171,23 +186,47 @@ private struct AssistantUnavailableNotice: View {
     var body: some View {
         VStack(alignment: .leading, spacing: BrewSpacing.sm) {
             NoteCallout(verbatim: AssistantCopy.unavailableTitle(for: availability))
-            if availability == .needsConfiguration {
-                SettingsLink {
-                    Text("Open Assistant Settings…", bundle: #bundle, comment: "Assistant: button opening Brewly's Assistant settings")
+            HStack(spacing: BrewSpacing.sm) {
+                if availability == .needsConfiguration {
+                    AssistantSettingsButton {
+                        Text("Open Assistant Settings…", bundle: #bundle, comment: "Assistant: button opening Brewly's Assistant settings")
+                    }
                 }
-            }
-            if availability == .appleIntelligenceNotEnabled {
-                Button {
-                    openURL(Self.appleIntelligenceSettingsURL)
-                } label: {
-                    Text("Open Apple Intelligence Settings…", bundle: #bundle,
-                         comment: "Assistant: button opening System Settings")
+                if availability == .appleIntelligenceNotEnabled {
+                    Button {
+                        openURL(Self.appleIntelligenceSettingsURL)
+                    } label: {
+                        Text("Open Apple Intelligence Settings…", bundle: #bundle,
+                             comment: "Assistant: button opening System Settings")
+                    }
+                }
+                if availability != .needsConfiguration {
+                    AssistantSettingsButton {
+                        Text("Use Claude, OpenAI or a Local Model…", bundle: #bundle,
+                             comment: "Assistant: button offering a cloud or local model when Apple's on-device model can't be used")
+                    }
                 }
             }
         }
     }
 
     private static let appleIntelligenceSettingsURL = URL(string: "x-apple.systempreferences:com.apple.Siri-Settings.extension")!
+}
+
+/// Opens Settings on the Assistant tab, where the model provider, model and API key are chosen.
+private struct AssistantSettingsButton<Content: View>: View {
+    @ViewBuilder let label: () -> Content
+    @Environment(\.selectAssistantSettingsTab) private var selectAssistantSettingsTab
+    @Environment(\.openSettings) private var openSettings
+
+    var body: some View {
+        Button {
+            selectAssistantSettingsTab()
+            openSettings()
+        } label: {
+            label()
+        }
+    }
 }
 
 private struct AssistantSuggestionRow: View {

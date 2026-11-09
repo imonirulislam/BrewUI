@@ -43,6 +43,8 @@ public enum AXID: Hashable, Sendable {
     case goToField
     case goToRow(id: String)
     case assistantScreen
+    case assistantChangeModelButton
+    case assistantProviderPicker
 
     // Self-upgrade
     case selfUpgradeBanner
@@ -129,6 +131,8 @@ public enum AXID: Hashable, Sendable {
         case .goToField: "goto.field"
         case let .goToRow(id): "goto.row.\(id)"
         case .assistantScreen: "assistant.screen"
+        case .assistantChangeModelButton: "assistant.model.change"
+        case .assistantProviderPicker: "assistant.settings.provider"
         case .selfUpgradeBanner: "selfupgrade.banner"
         case .selfUpgradeUpgradeButton: "selfupgrade.upgrade"
         case .selfUpgradeLaterButton: "selfupgrade.later"

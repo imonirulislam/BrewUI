@@ -3,6 +3,7 @@
 //  BrewFeatureAssistant
 //
 
+import BrewAccessibilityID
 import BrewAssistantCore
 import BrewUIComponents
 import SwiftUI
@@ -10,6 +11,9 @@ import SwiftUI
 public extension EnvironmentValues {
     /// Injected by the composition root with the Keychain store; the default keeps nothing.
     @Entry var assistantCredentialStore: any AssistantCredentialStoring = NoCredentialStore()
+
+    /// Selects the Assistant tab before Settings opens; the app shell owns the Settings window.
+    @Entry var selectAssistantSettingsTab: @MainActor @Sendable () -> Void = {}
 }
 
 public struct NoCredentialStore: AssistantCredentialStoring {
@@ -93,6 +97,7 @@ public struct AssistantSettingsView: View {
             } label: {
                 Text("Model provider", bundle: #bundle, comment: "Assistant settings: provider picker")
             }
+            .axid(.assistantProviderPicker)
 
             if settings.provider != .onDevice {
                 TextField(text: $settings.model, prompt: Text(verbatim: settings.provider.defaultModel ?? "")) {

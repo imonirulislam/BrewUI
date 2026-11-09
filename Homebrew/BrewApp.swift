@@ -32,6 +32,7 @@ struct BrewApp: App {
 
     @Environment(\.scenePhase) private var scenePhase
     @AppStorage(MenuBarPreferenceKey.showsMenuBarExtra) private var showsMenuBarExtra = false
+    @State private var settingsTab = SettingsTab.general
 
     private static let mainWindowID = "main"
     /// Fixture launches never show the extra, whatever the user's own setting.
@@ -151,6 +152,7 @@ struct BrewApp: App {
                 .environment(\.servicesRepository, servicesRepository)
                 .environment(\.tapsRepository, tapsRepository)
                 .environment(\.packageSuggestionModel, packageSuggestionModel)
+                .environment(\.selectAssistantSettingsTab) { settingsTab = .assistant }
                 .environment(\.selfUpgradeCoordinator, selfUpgradeCoordinator)
                 .task {
                     async let catalogue: Void = catalogueCache.prepare()
@@ -211,14 +213,16 @@ struct BrewApp: App {
         }
 
         Settings {
-            TabView {
+            TabView(selection: $settingsTab) {
                 BrewlySettingsView()
+                    .tag(SettingsTab.general)
                     .tabItem {
                         Label(String(localized: "General", bundle: #bundle, comment: "Settings tab: menu bar and notifications"),
                               systemImage: "gearshape")
                     }
                 AssistantSettingsView()
                     .environment(\.assistantCredentialStore, Self.credentialStore)
+                    .tag(SettingsTab.assistant)
                     .tabItem {
                         Label(String(localized: "Assistant", bundle: #bundle, comment: "Settings tab: assistant model provider"),
                               systemImage: "text.magnifyingglass")
@@ -226,6 +230,11 @@ struct BrewApp: App {
             }
         }
     }
+}
+
+private enum SettingsTab: Hashable {
+    case general
+    case assistant
 }
 
 /// Bundled so the two `makeSelfUpgradeCoordinator` overloads don't each carry seven parameters.
