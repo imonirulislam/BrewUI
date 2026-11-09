@@ -11,72 +11,43 @@ import SwiftUI
 struct MainSidebarView: View {
     @Binding var selection: SidebarItem
 
+    private static let sections: [(title: String, items: [SidebarItem])] = [
+        (String(localized: "Library", bundle: #bundle, comment: "Sidebar section: packages on this Mac"), [.installed, .upgrades]),
+        (String(localized: "Find", bundle: #bundle, comment: "Sidebar section: finding new packages"), [.discover, .assistant]),
+        (String(localized: "Manage", bundle: #bundle, comment: "Sidebar section: services and taps"), [.services, .taps]),
+        (String(localized: "Health", bundle: #bundle, comment: "Sidebar section: diagnostics and configuration"), [.doctor, .configuration]),
+    ]
+
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
-            sidebarRow(
-                title: SidebarItem.installed.title,
-                systemImage: "cube.box.fill",
-                item: .installed,
-            )
-            .padding(.horizontal, BrewSpacing.sm)
-            .padding(.top, BrewSpacing.sm)
+            wordmark
+                .padding(.horizontal, BrewSpacing.lg)
+                .padding(.top, BrewSpacing.md)
 
-            sidebarRow(
-                title: SidebarItem.upgrades.title,
-                systemImage: "arrow.up.circle",
-                item: .upgrades,
-                trailingAccessory: { UpgradesSidebarBadge() },
-            )
-            .padding(.horizontal, BrewSpacing.sm)
-            .padding(.top, BrewSpacing.xs)
-
-            sidebarRow(
-                title: SidebarItem.discover.title,
-                systemImage: "magnifyingglass",
-                item: .discover,
-            )
-            .padding(.horizontal, BrewSpacing.sm)
-            .padding(.top, BrewSpacing.xs)
-
-            sidebarRow(
-                title: SidebarItem.services.title,
-                systemImage: "server.rack",
-                item: .services,
-            )
-            .padding(.horizontal, BrewSpacing.sm)
-            .padding(.top, BrewSpacing.xs)
-
-            sidebarRow(
-                title: SidebarItem.doctor.title,
-                systemImage: "stethoscope",
-                item: .doctor,
-            )
-            .padding(.horizontal, BrewSpacing.sm)
-            .padding(.top, BrewSpacing.xs)
-
-            sidebarRow(
-                title: SidebarItem.configuration.title,
-                systemImage: "gearshape",
-                item: .configuration,
-            )
-            .padding(.horizontal, BrewSpacing.sm)
-            .padding(.top, BrewSpacing.xs)
-
-            sidebarRow(
-                title: SidebarItem.assistant.title,
-                systemImage: "sparkles",
-                item: .assistant,
-            )
-            .padding(.horizontal, BrewSpacing.sm)
-            .padding(.top, BrewSpacing.xs)
-
-            sidebarRow(
-                title: SidebarItem.taps.title,
-                systemImage: "arrow.triangle.branch",
-                item: .taps,
-            )
-            .padding(.horizontal, BrewSpacing.sm)
-            .padding(.top, BrewSpacing.xs)
+            ForEach(Self.sections, id: \.title) { section in
+                Text(section.title)
+                    .font(.brewCaption)
+                    .foregroundStyle(Color.brewTextSecondary)
+                    .padding(.horizontal, BrewSpacing.lg)
+                    .padding(.top, BrewSpacing.xl)
+                    .padding(.bottom, BrewSpacing.xs)
+                    .accessibilityAddTraits(.isHeader)
+                VStack(spacing: BrewSpacing.xxs) {
+                    ForEach(section.items) { item in
+                        sidebarRow(
+                            title: item.title,
+                            systemImage: item.systemImage,
+                            item: item,
+                            trailingAccessory: {
+                                if item == .upgrades {
+                                    UpgradesSidebarBadge()
+                                }
+                            },
+                        )
+                    }
+                }
+                .padding(.horizontal, BrewSpacing.sm)
+            }
 
             Spacer(minLength: 0)
         }
@@ -86,6 +57,19 @@ struct MainSidebarView: View {
         // the rows inside it, so UI tests can scope a query to the sidebar.
         .accessibilityElement(children: .contain)
         .axid(.sidebar)
+    }
+
+    private var wordmark: some View {
+        HStack(spacing: BrewSpacing.sm) {
+            Image(systemName: "flask.fill")
+                .foregroundStyle(Color.brewTextBrand)
+                .accessibilityHidden(true)
+            Text(verbatim: "Brewly")
+                .font(.brewTitle3)
+                .foregroundStyle(Color.brewTextPrimary)
+        }
+        .accessibilityElement(children: .combine)
+        .accessibilityAddTraits(.isHeader)
     }
 
     @ViewBuilder

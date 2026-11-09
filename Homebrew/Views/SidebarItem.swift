@@ -13,11 +13,11 @@ enum SidebarItem: String, CaseIterable, Hashable, Identifiable {
     case installed
     case upgrades
     case discover
+    case assistant
     case services
+    case taps
     case doctor
     case configuration
-    case assistant
-    case taps
 
     var id: String {
         rawValue
@@ -33,6 +33,19 @@ enum SidebarItem: String, CaseIterable, Hashable, Identifiable {
         case .configuration: String(localized: "Configuration", bundle: #bundle, comment: "Sidebar: brew config and environment")
         case .assistant: String(localized: "Assistant", bundle: #bundle, comment: "Sidebar: on-device assistant that suggests packages")
         case .taps: String(localized: "Taps", bundle: #bundle, comment: "Sidebar: installed taps and adding or removing them")
+        }
+    }
+
+    var systemImage: String {
+        switch self {
+        case .installed: "cube.box.fill"
+        case .upgrades: "arrow.up.circle"
+        case .discover: "magnifyingglass"
+        case .assistant: "text.magnifyingglass"
+        case .services: "server.rack"
+        case .taps: "arrow.triangle.branch"
+        case .doctor: "stethoscope"
+        case .configuration: "gearshape"
         }
     }
 

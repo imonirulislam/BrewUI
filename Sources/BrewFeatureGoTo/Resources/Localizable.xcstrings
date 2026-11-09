@@ -1,0 +1,21 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "Go to page or package" : {
+      "comment" : "Go to palette: search field placeholder"
+    },
+    "Installed" : {
+      "comment" : "Go to palette: result is an installed package"
+    },
+    "No pages or packages match" : {
+      "comment" : "Go to palette: no results"
+    },
+    "Not installed" : {
+      "comment" : "Go to palette: result is a catalogue package to view in Discover"
+    },
+    "Page" : {
+      "comment" : "Go to palette: result is a sidebar page"
+    }
+  },
+  "version" : "1.0"
+}

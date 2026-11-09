@@ -14,7 +14,7 @@ struct InstalledOutdatedBadge: View {
     var body: some View {
         Text(
             String(
-                localized: "OUTDATED",
+                localized: "Outdated",
                 bundle: #bundle,
                 comment: "Installed outdated status badge label",
             ),

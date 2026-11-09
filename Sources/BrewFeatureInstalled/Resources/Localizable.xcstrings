@@ -859,41 +859,6 @@
         }
       }
     },
-    "DEPRECATED" : {
-      "comment" : "Installed deprecated status badge label",
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "OBSOLETO"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "已弃用"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "已棄用"
-          }
-        },
-        "sv" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "FÖRÅLDRAD"
-          }
-        },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "지원 중단됨"
-          }
-        }
-      }
-    },
     "Dependencies" : {
       "comment" : "Package detail section heading",
       "localizations" : {
@@ -965,12 +930,24 @@
       }
     },
     "Deprecated" : {
-      "comment" : "Installed deprecated status badge accessibility label",
+      "comment" : "Installed deprecated status badge accessibility label\nInstalled deprecated status badge label",
       "localizations" : {
         "es" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Obsoleto"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "지원 중단됨"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Föråldrad"
           }
         },
         "zh-Hans" : {
@@ -983,18 +960,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "已棄用"
-          }
-        },
-        "sv" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Föråldrad"
-          }
-        },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "지원 중단됨"
           }
         }
       }
@@ -1813,41 +1778,6 @@
         }
       }
     },
-    "OUTDATED" : {
-      "comment" : "Installed outdated status badge label",
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "DESACTUALIZADO"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "可升级"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "可升級"
-          }
-        },
-        "sv" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "INAKTUELL"
-          }
-        },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "구버전"
-          }
-        }
-      }
-    },
     "Open installed package %@" : {
       "comment" : "VoiceOver: dependency row that jumps to that package; %@ is its name",
       "localizations" : {
@@ -1879,6 +1809,41 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "설치된 패키지 %@ 열기"
+          }
+        }
+      }
+    },
+    "Outdated" : {
+      "comment" : "Installed outdated status badge label",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Desactualizado"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "可升级"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "可升級"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Inaktuell"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "구버전"
           }
         }
       }

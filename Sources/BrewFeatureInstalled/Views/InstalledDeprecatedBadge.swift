@@ -14,7 +14,7 @@ struct InstalledDeprecatedBadge: View {
     var body: some View {
         Text(
             String(
-                localized: "DEPRECATED",
+                localized: "Deprecated",
                 bundle: #bundle,
                 comment: "Installed deprecated status badge label",
             ),

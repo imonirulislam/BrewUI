@@ -7,6 +7,7 @@ import BrewFeatureConfig
 import BrewFeatureConsole
 import BrewFeatureDiscover
 import BrewFeatureDoctor
+import BrewFeatureGoTo
 import BrewFeatureInstalled
 import BrewFeatureMenuBar
 import BrewFeatureSelfUpgrade
@@ -29,6 +30,8 @@ struct MainWindowView: View {
 
     @State var selectedSidebarItem: SidebarItem = .installed
     @State private var pendingInstalledSelection: InstalledBrewPackage.ID?
+    @State private var pendingDiscoverQuery: String?
+    @State private var isGoToPresented = false
     @SceneStorage("consoleExpanded") private var consoleExpanded: Bool = false
     @SceneStorage("consoleHeight") private var consoleHeight: Double = BrewLayout.consoleDefaultExpandedHeight
 
@@ -54,6 +57,7 @@ struct MainWindowView: View {
         .navigationSplitViewStyle(.automatic)
         .focusedSceneValue(\.consoleExpanded, $consoleExpanded)
         .focusedSceneValue(\.sidebarSelection, $selectedSidebarItem)
+        .focusedSceneValue(\.goToPresented, $isGoToPresented)
         .focusedSceneValue(\.refreshAll, RefreshAllAction { refreshAll() })
         .focusedSceneValue(
             \.saveBrewfile,
@@ -64,6 +68,13 @@ struct MainWindowView: View {
             selectedSidebarItem = .installed
         }
         .environment(\.packageListBanner, PackageListBanner { SelfUpgradeBanner() })
+        .environment(\.pendingDiscoverQuery, $pendingDiscoverQuery)
+        .sheet(isPresented: $isGoToPresented) {
+            GoToPaletteRoot(
+                pages: SidebarItem.allCases.map { GoToPage(id: $0.rawValue, title: $0.title, systemImage: $0.systemImage) },
+                onSelect: go(to:),
+            )
+        }
         .onAppear(perform: applyMainWindowRequest)
         .onChange(of: mainWindowRequests.pendingDestination) { applyMainWindowRequest() }
         .alert(
@@ -129,6 +140,21 @@ struct MainWindowView: View {
                 ideal: BrewLayout.sidebarWidth,
                 max: BrewLayout.sidebarWidth + 40,
             )
+    }
+
+    private func go(to destination: GoToDestination) {
+        switch destination {
+        case let .page(id):
+            if let item = SidebarItem(rawValue: id) {
+                selectedSidebarItem = item
+            }
+        case let .installedPackage(id):
+            pendingInstalledSelection = id
+            selectedSidebarItem = .installed
+        case let .discover(query):
+            pendingDiscoverQuery = query
+            selectedSidebarItem = .discover
+        }
     }
 
     private func applyMainWindowRequest() {

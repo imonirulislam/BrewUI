@@ -602,41 +602,6 @@
         }
       }
     },
-    "INSTALLED" : {
-      "comment" : "Discover installed status badge label",
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "INSTALADO"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "已安装"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "已安裝"
-          }
-        },
-        "sv" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "INSTALLERAD"
-          }
-        },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "설치됨"
-          }
-        }
-      }
-    },
     "Install" : {
       "comment" : "Discover detail: install button\nPackage detail section heading\nVoiceOver: install button",
       "localizations" : {
@@ -708,12 +673,24 @@
       }
     },
     "Installed" : {
-      "comment" : "Discover installed status badge accessibility label\nDiscover list row installed status\nDiscover package installed status\nPackage detail row: installed version(s)",
+      "comment" : "Discover installed status badge accessibility label\nDiscover installed status badge label\nDiscover list row installed status\nDiscover package installed status\nPackage detail row: installed version(s)",
       "localizations" : {
         "es" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Instalado"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "설치됨"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Installerad"
           }
         },
         "zh-Hans" : {
@@ -726,18 +703,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "已安裝"
-          }
-        },
-        "sv" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Installerad"
-          }
-        },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "설치됨"
           }
         }
       }

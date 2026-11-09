@@ -11,7 +11,9 @@ by the Homebrew project. Upstream's documentation below still applies unless not
 - Crash reports file issues on this fork rather than upstream.
 - Self-upgrade is inactive: Brewly is not distributed as a Homebrew cask, so the official `homebrew-app`
   cask shows as an ordinary package.
-- Original placeholder icon instead of the Homebrew mark.
+- An original flask icon and a copper accent instead of the Homebrew mark and amber.
+- A grouped sidebar (Library, Find, Manage, Health) and a Go to palette (⌘K) that reaches any page,
+  installed package or catalogue package.
 - An Assistant page (⌘7) that suggests packages from a plain-language request using Apple's on-device
   model. Suggestions are checked against the Homebrew catalogue and nothing installs without confirmation.
   Requires Apple Intelligence.

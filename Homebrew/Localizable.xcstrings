@@ -320,6 +320,15 @@
         }
       }
     },
+    "Find" : {
+      "comment" : "Sidebar section: finding new packages"
+    },
+    "Go to…" : {
+      "comment" : "View menu: open the Go to palette"
+    },
+    "Health" : {
+      "comment" : "Sidebar section: diagnostics and configuration"
+    },
     "Homebrew Documentation" : {
       "comment" : "Help menu",
       "localizations" : {
@@ -441,6 +450,12 @@
           }
         }
       }
+    },
+    "Library" : {
+      "comment" : "Sidebar section: packages on this Mac"
+    },
+    "Manage" : {
+      "comment" : "Sidebar section: services and taps"
     },
     "OK" : {
       "comment" : "Self-upgrade outcome alert: dismiss",

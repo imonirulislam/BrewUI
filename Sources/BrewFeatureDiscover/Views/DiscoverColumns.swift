@@ -25,6 +25,7 @@ public struct DiscoverColumnsRoot: View {
 
 struct DiscoverColumns: View {
     @State private var viewModel: DiscoverViewModel
+    @Environment(\.pendingDiscoverQuery) private var pendingQuery
 
     init(
         discoverPackagesRepository: any DiscoverPackagesRepository,
@@ -40,7 +41,21 @@ struct DiscoverColumns: View {
         )
     }
 
+    private func applyPendingQuery() {
+        guard let query = pendingQuery.wrappedValue else {
+            return
+        }
+        pendingQuery.wrappedValue = nil
+        viewModel.query = query
+    }
+
     var body: some View {
+        columns
+            .onAppear(perform: applyPendingQuery)
+            .onChange(of: pendingQuery.wrappedValue) { applyPendingQuery() }
+    }
+
+    private var columns: some View {
         HSplitView {
             DiscoverPackagesView(viewModel: viewModel)
                 .frame(

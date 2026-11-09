@@ -8,7 +8,7 @@ struct DiscoverInstalledBadge: View {
             Image(systemName: "checkmark.circle")
             Text(
                 String(
-                    localized: "INSTALLED",
+                    localized: "Installed",
                     bundle: #bundle,
                     comment: "Discover installed status badge label",
                 ),

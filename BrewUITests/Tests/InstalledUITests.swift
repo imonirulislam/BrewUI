@@ -54,7 +54,7 @@ final class InstalledUITests: BrewUITestCase {
         _ = window.resizeWindow(by: CGVector(dx: -280, dy: 0))
 
         XCTAssertTrue(app.staticTexts["Rectangle"].waitForExistence(timeout: BrewUITestTimeout.default))
-        XCTAssertTrue(app.staticTexts["CASK"].waitForExistence(timeout: BrewUITestTimeout.default))
+        XCTAssertTrue(app.staticTexts["Cask"].waitForExistence(timeout: BrewUITestTimeout.default))
         XCTAssertTrue(app.staticTexts["Upgrade available"].waitForExistence(timeout: BrewUITestTimeout.default))
     }
 

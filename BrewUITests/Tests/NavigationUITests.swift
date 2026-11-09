@@ -20,14 +20,17 @@ final class NavigationUITests: BrewUITestCase {
         installed.sidebar.goToInstalled()
     }
 
-    /// ⌘1–⌘6 follow sidebar order.
+    /// ⌘1–⌘8 follow sidebar order; the Assistant (⌘4) and Taps (⌘6) have no screen identifier of their own.
     @MainActor
     func testCommandNumbersFollowSidebarOrder() {
         let app = launch(.installedBasic).app
-        let destinations: [AXID] = [.installedScreen, .upgradesScreen, .discoverScreen, .servicesScreen, .doctorScreen, .configScreen]
-        for (index, destination) in destinations.enumerated() {
-            app.typeKey(XCUIKeyboardKey(rawValue: "\(index + 1)"), modifierFlags: .command)
-            BrewUIElement(app, destination).assertExists()
+        let destinations: [(key: Int, screen: AXID)] = [
+            (1, .installedScreen), (2, .upgradesScreen), (3, .discoverScreen),
+            (5, .servicesScreen), (7, .doctorScreen), (8, .configScreen),
+        ]
+        for destination in destinations {
+            app.typeKey(XCUIKeyboardKey(rawValue: "\(destination.key)"), modifierFlags: .command)
+            BrewUIElement(app, destination.screen).assertExists()
         }
     }
 

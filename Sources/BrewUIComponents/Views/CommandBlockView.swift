@@ -110,13 +110,19 @@ public struct CommandBlockView: View {
     @ViewBuilder
     private var commandsBlock: some View {
         if commands.count <= 1, let command = commands.first {
-            Text(command)
-                .font(.brewCode)
-                .foregroundStyle(Color.brewTextPrimary)
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .padding(BrewSpacing.md)
-                .background(Color.brewSurface)
-                .textSelection(.enabled)
+            HStack(alignment: .firstTextBaseline, spacing: BrewSpacing.sm) {
+                Text(verbatim: "$")
+                    .font(.brewCode)
+                    .foregroundStyle(Color.brewTextBrand)
+                    .accessibilityHidden(true)
+                Text(command)
+                    .font(.brewCode)
+                    .foregroundStyle(Color.brewTextPrimary)
+                    .textSelection(.enabled)
+            }
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .padding(BrewSpacing.md)
+            .background(Color.brewSurface)
         } else {
             VStack(alignment: .leading, spacing: BrewSpacing.xs) {
                 ForEach(Array(commands.enumerated()), id: \.offset) { index, command in

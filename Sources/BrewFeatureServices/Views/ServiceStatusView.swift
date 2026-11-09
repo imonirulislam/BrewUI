@@ -24,8 +24,7 @@ struct ServiceStatusBadge: View {
         let tone = ServiceStatusTone(service)
         HStack(alignment: .firstTextBaseline, spacing: BrewSpacing.xs) {
             ServiceStatusGlyph(tone: tone)
-            Text(verbatim: service.status)
-                .textCase(.uppercase)
+            Text(verbatim: service.status.prefix(1).uppercased() + service.status.dropFirst())
                 .foregroundStyle(Color.brewTextPrimary)
         }
         .font(.brewCaption2)

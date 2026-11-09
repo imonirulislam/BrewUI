@@ -51,7 +51,7 @@ struct InstalledPackageRowPresentationTests {
 
     @Test func `formula chrome matches design tokens`() {
         let expected = PackageKindChrome(
-            badgeLabel: "FORMULA",
+            badgeLabel: "Formula",
             accent: .brandPrimary,
         )
         #expect(InstalledPackageKind.formula.chrome == expected)
@@ -59,7 +59,7 @@ struct InstalledPackageRowPresentationTests {
 
     @Test func `cask chrome matches design tokens`() {
         let expected = PackageKindChrome(
-            badgeLabel: "CASK",
+            badgeLabel: "Cask",
             accent: .statusInfo,
         )
         #expect(InstalledPackageKind.cask.chrome == expected)

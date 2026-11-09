@@ -177,6 +177,7 @@ struct BrewApp: App {
         .commands {
             SearchCommands()
             SidebarCommands()
+            GoToCommands()
             RefreshCommands()
             ConsoleCommands()
             BrewfileCommands()

@@ -486,6 +486,11 @@ when a test only passed on a retry, so that screenshot is not thrown away with t
 > Theme implementations and colour assets are authoritative: [BrewUIComponents](Sources/BrewUIComponents/Theme/BrewColors.swift).
 > Derived from the [brew.sh](https://brew.sh) visual identity.
 > Adapted for a native macOS SwiftUI application in light and dark modes.
+> **Brewly fork:** the brand accent is copper rather than Homebrew amber. `BrandPrimary` and
+> `TextBrand` are `#EC9562`, `BrandPrimaryHover` and `CodeCommand` `#F2A27A`, `BrandPrimaryPressed`
+> `#EB9868`, high-contrast `TextBrand` `#A85A2E` and the light `BrandTint` `#FDF3EC`. Each matches the
+> luminance of the amber it replaced, so every contrast pairing below still holds. Warning colours stay
+> amber, which keeps warnings distinct from the brand.
 
 ---
 
