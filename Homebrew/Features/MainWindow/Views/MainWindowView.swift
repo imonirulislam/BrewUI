@@ -2,6 +2,7 @@ import AppKit
 import BrewAccessibilityID
 import BrewAppEnvironment
 import BrewCore
+import BrewFeatureAssistant
 import BrewFeatureConfig
 import BrewFeatureConsole
 import BrewFeatureDiscover
@@ -161,6 +162,10 @@ struct MainWindowView: View {
             ConfigColumnsRoot()
                 .navigationTitle(selectedSidebarItem.title)
                 .navigationSubtitle(String(localized: "Homebrew environment & diagnostics", bundle: #bundle, comment: "Window subtitle, Configuration"))
+        case .assistant:
+            AssistantRoot()
+                .navigationTitle(selectedSidebarItem.title)
+                .navigationSubtitle(String(localized: "Describe what you need and get package suggestions", bundle: #bundle, comment: "Window subtitle, Assistant"))
         }
     }
 }

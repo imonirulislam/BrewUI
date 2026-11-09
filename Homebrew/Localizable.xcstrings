@@ -15,6 +15,9 @@
         }
       }
     },
+    "Assistant" : {
+      "comment" : "Sidebar: on-device assistant that suggests packages"
+    },
     "Authenticate" : {
       "comment" : "Askpass: submit the administrator password",
       "localizations" : {
@@ -185,6 +188,9 @@
           }
         }
       }
+    },
+    "Describe what you need and get package suggestions" : {
+      "comment" : "Window subtitle, Assistant"
     },
     "Discard" : {
       "comment" : "Crash report dialog: delete the report",

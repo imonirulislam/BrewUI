@@ -53,6 +53,7 @@ struct AXIDTests {
             "sidebar.item.services",
             "sidebar.item.doctor",
             "sidebar.item.configuration",
+            "sidebar.item.assistant",
         ])
     }
 

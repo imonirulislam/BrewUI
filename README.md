@@ -12,6 +12,9 @@ by the Homebrew project. Upstream's documentation below still applies unless not
 - Self-upgrade is inactive: Brewly is not distributed as a Homebrew cask, so the official `homebrew-app`
   cask shows as an ordinary package.
 - Original placeholder icon instead of the Homebrew mark.
+- An Assistant page (⌘7) that suggests packages from a plain-language request using Apple's on-device
+  model. Suggestions are checked against the Homebrew catalogue and nothing installs without confirmation.
+  Requires Apple Intelligence.
 
 # Upstream: BrewUI
 

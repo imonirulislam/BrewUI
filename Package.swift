@@ -29,6 +29,9 @@ let package = Package(
         .library(name: "BrewFeatureDoctor", targets: ["BrewFeatureDoctor"]),
         .library(name: "BrewFeatureConfig", targets: ["BrewFeatureConfig"]),
         .library(name: "BrewFeatureServices", targets: ["BrewFeatureServices"]),
+        .library(name: "BrewAssistantCore", targets: ["BrewAssistantCore"]),
+        .library(name: "BrewIntelligence", targets: ["BrewIntelligence"]),
+        .library(name: "BrewFeatureAssistant", targets: ["BrewFeatureAssistant"]),
     ],
     dependencies: [
         // Justification (`AGENTS.md`, Coding conventions): a controlling-terminal pty needs `setsid()`
@@ -273,7 +276,39 @@ let package = Package(
             swiftSettings: [.defaultIsolation(MainActor.self), .swiftLanguageMode(.v6)],
         ),
 
+        .target(
+            name: "BrewAssistantCore",
+            dependencies: ["BrewCore", "BrewRepositoryInterfaces"],
+            swiftSettings: [.defaultIsolation(nil), .swiftLanguageMode(.v6)],
+        ),
+
+        // The only target that imports FoundationModels; everything else talks to `PackageSuggestionModel`.
+        .target(
+            name: "BrewIntelligence",
+            dependencies: ["BrewAssistantCore"],
+            swiftSettings: [.defaultIsolation(nil), .swiftLanguageMode(.v6)],
+        ),
+
+        .target(
+            name: "BrewFeatureAssistant",
+            dependencies: ["BrewAssistantCore", "BrewCore", "BrewUIComponents", "BrewRepositoryInterfaces", "BrewAppEnvironment"],
+            resources: [.process("Resources/Localizable.xcstrings")],
+            swiftSettings: [.defaultIsolation(MainActor.self), .swiftLanguageMode(.v6)],
+        ),
+
         // MARK: - Test targets
+
+        .testTarget(
+            name: "BrewFeatureAssistantTests",
+            dependencies: ["BrewFeatureAssistant", "BrewAssistantCore", "BrewCore", "BrewCoreTestSupport", "BrewRepositoryInterfaces"],
+            swiftSettings: [.defaultIsolation(MainActor.self), .swiftLanguageMode(.v6)],
+        ),
+
+        .testTarget(
+            name: "BrewAssistantCoreTests",
+            dependencies: ["BrewAssistantCore", "BrewCore", "BrewRepositoryInterfaces"],
+            swiftSettings: [.defaultIsolation(nil), .swiftLanguageMode(.v6)],
+        ),
 
         .testTarget(
             name: "BrewFeatureServicesTests",

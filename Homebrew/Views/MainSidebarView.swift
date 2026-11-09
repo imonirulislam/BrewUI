@@ -62,6 +62,14 @@ struct MainSidebarView: View {
             .padding(.horizontal, BrewSpacing.sm)
             .padding(.top, BrewSpacing.xs)
 
+            sidebarRow(
+                title: SidebarItem.assistant.title,
+                systemImage: "sparkles",
+                item: .assistant,
+            )
+            .padding(.horizontal, BrewSpacing.sm)
+            .padding(.top, BrewSpacing.xs)
+
             Spacer(minLength: 0)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)

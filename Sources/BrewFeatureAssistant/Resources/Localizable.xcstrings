@@ -1,0 +1,78 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "Apple’s on-device model suggests packages, and Brewly checks each one against the Homebrew catalogue. Nothing leaves your Mac and nothing installs until you confirm." : {
+      "comment" : "Assistant: explanation under the heading"
+    },
+    "Brewly will run: %@" : {
+      "comment" : "Assistant: install confirmation; %@ is the exact brew command"
+    },
+    "Cancel" : {
+      "comment" : "Assistant: cancel install button"
+    },
+    "Find software by describing what you need" : {
+      "comment" : "Assistant: page heading"
+    },
+    "For example: something to convert videos" : {
+      "comment" : "Assistant: request field placeholder"
+    },
+    "Install" : {
+      "comment" : "Assistant: confirm install button"
+    },
+    "Install %@?" : {
+      "comment" : "Assistant: install confirmation title; %@ is the package name"
+    },
+    "Installed" : {
+      "comment" : "Assistant: package already installed"
+    },
+    "Install…" : {
+      "comment" : "Assistant: install button that asks for confirmation"
+    },
+    "No matching packages found in the Homebrew catalogue. Try naming the kind of tool or a related app." : {
+      "comment" : "Assistant: no catalogue matches for the request"
+    },
+    "Open Apple Intelligence Settings…" : {
+      "comment" : "Assistant: button opening System Settings"
+    },
+    "Searching the catalogue…" : {
+      "comment" : "Assistant: working on a request"
+    },
+    "Something went wrong while installing this package." : {
+      "comment" : "Assistant: generic install error"
+    },
+    "Suggest" : {
+      "comment" : "Assistant: submit request button"
+    },
+    "That request is too long for the on-device model. Try a shorter description." : {
+      "comment" : "Assistant: request exceeded the model's context window"
+    },
+    "The assistant couldn’t answer. Try again." : {
+      "comment" : "Assistant: generic failure"
+    },
+    "The assistant couldn’t answer: %@" : {
+      "comment" : "Assistant: generation failed; %@ is the model's error description"
+    },
+    "The on-device model declined this request. Try describing the task differently." : {
+      "comment" : "Assistant: model refused or hit a safety guardrail"
+    },
+    "The on-device model doesn’t support this language yet. Try English." : {
+      "comment" : "Assistant: request language unsupported"
+    },
+    "The on-device model is busy. Wait a moment and try again." : {
+      "comment" : "Assistant: model rate limited or busy"
+    },
+    "The on-device model is still downloading. Try again shortly." : {
+      "comment" : "Assistant: model assets not yet downloaded"
+    },
+    "The on-device model isn’t available right now." : {
+      "comment" : "Assistant: model unavailable for an unknown reason"
+    },
+    "This Mac doesn’t support Apple Intelligence, so the assistant isn’t available." : {
+      "comment" : "Assistant: hardware cannot run the on-device model"
+    },
+    "Turn on Apple Intelligence to use the assistant." : {
+      "comment" : "Assistant: Apple Intelligence is switched off"
+    }
+  },
+  "version" : "1.0"
+}

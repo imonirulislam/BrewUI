@@ -25,6 +25,8 @@ current problem and extend it when real usage warrants it.
 | `Sources/BrewAppEnvironment/` | Shared environment dependencies and composition slots |
 | `Sources/BrewFeature*/` | Feature views, ViewModels and presentation items |
 | `Sources/BrewUIComponents/` | Shared UI, theme tokens and colour assets |
+| `Sources/BrewAssistantCore/` | Assistant model contract and the suggestion pipeline that grounds model output in the catalogue |
+| `Sources/BrewIntelligence/` | Foundation Models adapter; the only target that imports `FoundationModels` |
 | `Sources/BrewAccessibilityID/`, `Sources/BrewUITestContract/` | Dependency-free contracts shared by the app and UI tests |
 | `HomebrewAskpassHelper/` | Administrator password prompt for `SUDO_ASKPASS` |
 | `HomebrewUpgradeHelper/`, `Sources/BrewSelfUpgrade*/` | Self-upgrade executable, contract and testable helper core |
@@ -158,6 +160,17 @@ Console expansion and height use `@SceneStorage`. The console uses a selectable 
 selection spans lines, applies transcript suffix edits to preserve selection and follows output only
 while the reader remains at the end. Terminal assembly keeps revisable rows bounded by terminal
 height and preserves whether the final line actually ended in a newline.
+
+## Assistant
+
+The Assistant page suggests packages from a plain-language request using Apple's on-device model.
+`SuggestionPipeline` asks the model for likely package names, searches the catalogue for them and lets
+the model choose only among the packages the catalogue returned. Any pick that does not match a returned
+candidate is dropped, so model text never reaches a command: installs use the candidate's catalogue
+identity through `BrewMutatingCommandFactory` and `BrewCommandCenter`, after the user confirms the exact
+`brew install` command. The model's 4,096-token context caps candidates at 12 with summaries of at most
+90 characters. Each request uses a fresh `LanguageModelSession`. UI-test launches inject
+`UnavailablePackageSuggestionModel`, so the deterministic suites never reach the live model.
 
 ## Product constraints
 

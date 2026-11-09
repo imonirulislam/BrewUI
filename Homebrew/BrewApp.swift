@@ -6,11 +6,14 @@
 //
 
 import BrewAppEnvironment
+import BrewAssistantCore
 import BrewCLI
 import BrewCore
 import BrewCrashReporting
+import BrewFeatureAssistant
 import BrewFeatureConsole
 import BrewFeatureSelfUpgrade
+import BrewIntelligence
 import BrewNetworking
 import BrewRepositories
 import BrewRepositoryInterfaces
@@ -40,11 +43,17 @@ struct BrewApp: App {
     private let doctorRepository: BrewDoctorRepository
     private let configRepository: BrewConfigRepository
     private let servicesRepository: BrewServicesRepository
+    private let packageSuggestionModel = BrewApp.makePackageSuggestionModel()
     private let crashReportController: CrashReportController
     private let selfUpgradeCoordinator: SelfUpgradeCoordinator
     #if DEBUG
         private let selfUpgradeDebugControl = SelfUpgradeDebugControl()
     #endif
+
+    /// UI tests stay deterministic: a fixture launch never reaches the live model.
+    private static func makePackageSuggestionModel() -> any PackageSuggestionModel {
+        BrewUITestingLaunchConfiguration.current() == nil ? OnDevicePackageSuggestionModel() : UnavailablePackageSuggestionModel()
+    }
 
     init() {
         let inventoryCache = InstalledInventoryCache()
@@ -122,6 +131,7 @@ struct BrewApp: App {
                 .environment(\.doctorRepository, doctorRepository)
                 .environment(\.configRepository, configRepository)
                 .environment(\.servicesRepository, servicesRepository)
+                .environment(\.packageSuggestionModel, packageSuggestionModel)
                 .environment(\.selfUpgradeCoordinator, selfUpgradeCoordinator)
                 .task {
                     async let catalogue: Void = catalogueCache.prepare()
