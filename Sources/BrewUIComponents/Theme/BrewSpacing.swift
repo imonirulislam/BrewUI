@@ -64,15 +64,16 @@ public enum BrewLayout {
     /// Minimum supported window width.
     public static let minWindowWidth: CGFloat = 820
 
-    /// Derived rather than picked: ``mainPaneMinHeight`` (521) + ``consoleMinExpandedHeight`` (150) +
-    /// the split's own 7pt of chrome = 678, rounded up. Sized against the console's floor, not its default.
-    public static let minWindowHeight: CGFloat = 680
+    /// Derived rather than picked: ``mainPaneMinHeight`` (525) + ``consoleMinExpandedHeight`` (150) +
+    /// the split's own 7pt of chrome = 682, rounded up. Sized against the console's floor, not its default.
+    public static let minWindowHeight: CGFloat = 684
 
     // MARK: Command Console
 
     /// Floor for the pane *above* the console, which is the accessory and gives way to it. Sized for
-    /// Upgrades: 405pt of chrome plus two 58pt rows on macOS 27, none of the chrome scrolling.
-    public static let mainPaneMinHeight: CGFloat = 521
+    /// Upgrades: 405pt of chrome plus two 58pt rows on macOS 27, none of the chrome scrolling. macOS 26
+    /// lays the same views out 4pt taller (525), so the floor takes the larger.
+    public static let mainPaneMinHeight: CGFloat = 525
 
     /// Collapsed status-strip height (36pt — matches the mock and macOS toolbar idiom).
     public static let consoleCollapsedHeight: CGFloat = 36

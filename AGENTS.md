@@ -367,6 +367,15 @@ Environment and accessibility issues encountered while running `BrewUITests` on 
 
    **Watch for:** `scripts/test-ui` now signs the runner ad hoc; verify its seal before attributing any remaining launch hang to signing.
 
+9. **On macOS 26, ⌘F straight after Escape can bring the toolbar search field back without the
+   keyboard.** `SearchDismissUITests.testEscapeHandsTheKeyboardBackToTheList` fails there, and also on
+   unmodified upstream. A trace of the arbiter shows the app doing the right thing: Escape dismisses the
+   field, ⌘F re-presents it and `@FocusState` reports `.searchField`. The accessibility tree disagrees
+   (`hasKeyboardFocus == false`), so the typed text goes nowhere. With a 0.5s pause between Escape and ⌘F
+   the same steps pass, so the cause is AppKit still collapsing the field when ⌘F re-presents it, not the
+   arbiter. **Watch for:** do not add a delay to the test or skip it to make it pass; it is the record of
+   a real, if fast-fingered, macOS 26 behaviour.
+
 ### Debugging gotcha specific to this environment
 
 Running a diagnostic shell command (even a quick `osascript` query) *while* a test is polling
