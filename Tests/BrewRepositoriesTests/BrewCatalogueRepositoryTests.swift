@@ -176,6 +176,31 @@ struct BrewCatalogueRepositoryTests {
         #expect(await apiClient.recordedFormulaETags() == [#""etag-current""#])
     }
 
+    @Test @MainActor func `repeated lookups map a fresh catalogue once`() async throws {
+        let fixture = TestFixture()
+        defer { fixture.cleanup() }
+
+        let payload = try JSONDecoder().decode(FormulaCatalogueJSON.self, from: fixture.formulaCacheJSON(name: "wget"))
+        let cache = MockCatalogueCache(formulaData: payload, formulaETag: #""etag""#)
+        UserDefaults.standard.set(Date(), forKey: fixture.formulaLastRefreshKey)
+        let apiClient = StubCatalogueAPIClient(formulaHandler: { _ in .notModified }, caskHandler: { _ in .notModified })
+        let repository = BrewCatalogueRepository(
+            apiClient: apiClient,
+            cache: cache,
+            defaultsKeyPrefix: fixture.defaultsKeyPrefix,
+            now: Date.init,
+            ttl: 60,
+        )
+
+        for _ in 0 ..< 3 {
+            #expect(try await repository.package(for: .formula(name: "wget"))?.name == "wget")
+        }
+        #expect(try await repository.package(for: .formula(name: "missing")) == nil)
+
+        #expect(await cache.formulaReads == 1)
+        #expect(await apiClient.formulaCallCount() == 0)
+    }
+
     @Test @MainActor func `updated refresh persists through cache protocol`() async throws {
         let fixture = TestFixture()
         defer { fixture.cleanup() }
@@ -406,6 +431,7 @@ private actor MockCatalogueCache: CatalogueCaching {
     private var formulaETag: String?
     private var caskETag: String?
     private var formulaUpdates: [(etag: String?, rawData: Data)] = []
+    private(set) var formulaReads = 0
 
     init(
         formulaData: FormulaCatalogueJSON? = nil,
@@ -420,7 +446,8 @@ private actor MockCatalogueCache: CatalogueCaching {
     }
 
     func formulaCatalogue() async -> FormulaCatalogueJSON? {
-        formulaData
+        formulaReads += 1
+        return formulaData
     }
 
     func caskCatalogue() async -> CaskCatalogueJSON? {

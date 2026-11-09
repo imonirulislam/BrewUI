@@ -79,10 +79,12 @@ struct InstalledPackagesView: View {
     }
 
     private func installedList(_ content: InstalledPackagesContent) -> some View {
-        ScrollViewReader { proxy in
+        // Read once per render: the getter re-filters the whole inventory, so per-row reads were quadratic.
+        let activeSelectedPackageID = viewModel.activeSelectedPackageID
+        return ScrollViewReader { proxy in
             List {
                 ForEach(content.packages) { package in
-                    row(for: package)
+                    row(for: package, isActive: activeSelectedPackageID == package.id)
                 }
             }
             .listStyle(.inset)
@@ -113,7 +115,7 @@ struct InstalledPackagesView: View {
         }
     }
 
-    private func row(for package: InstalledBrewPackage) -> some View {
+    private func row(for package: InstalledBrewPackage, isActive: Bool) -> some View {
         InstalledListRowRoot(package: package)
             .id(package.id)
             .contentShape(Rectangle())
@@ -123,7 +125,7 @@ struct InstalledPackagesView: View {
                     style: .continuous,
                 )
                 .fill(
-                    viewModel.activeSelectedPackageID == package.id ? Color.brewBrandTint : Color.clear,
+                    isActive ? Color.brewBrandTint : Color.clear,
                 )
                 .padding(.horizontal, BrewSpacing.sm),
             )

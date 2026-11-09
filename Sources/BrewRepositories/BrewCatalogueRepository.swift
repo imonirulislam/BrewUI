@@ -22,6 +22,9 @@ public actor BrewCatalogueRepository: CatalogueRepository {
     private let ttl: TimeInterval
 
     private var refreshTasks: [HomebrewPackageKind: Task<[BrewPackage], Error>] = [:]
+    /// Mapping a catalogue costs milliseconds; Discover looks up dozens of packages per load, so the
+    /// mapped result is kept until a refresh replaces it.
+    private var indexes: [HomebrewPackageKind: CatalogueIndex] = [:]
 
     /// `defaultsKeyPrefix` is the test seam for `UserDefaults.standard`; tests pass a unique prefix
     /// to isolate their lastRefresh timestamps from each other and from production data.
@@ -44,8 +47,7 @@ public actor BrewCatalogueRepository: CatalogueRepository {
     }
 
     public func package(for reference: HomebrewPackageID) async throws -> BrewPackage? {
-        let packages = try await packages(for: reference.kind)
-        return packages.first { $0.id == reference }
+        try await index(for: reference.kind).byID[reference]
     }
 
     public func searchPackages(matching query: String, limit: Int) async throws -> [BrewPackage] {
@@ -77,6 +79,19 @@ public actor BrewCatalogueRepository: CatalogueRepository {
     }
 
     private func packages(for kind: HomebrewPackageKind) async throws -> [BrewPackage] {
+        try await index(for: kind).packages
+    }
+
+    private func index(for kind: HomebrewPackageKind) async throws -> CatalogueIndex {
+        if !isStale(kind: kind.catalogueKind), let index = indexes[kind] {
+            return index
+        }
+        let index = try await CatalogueIndex(packages: unindexedPackages(for: kind))
+        indexes[kind] = index
+        return index
+    }
+
+    private func unindexedPackages(for kind: HomebrewPackageKind) async throws -> [BrewPackage] {
         if !isStale(kind: kind.catalogueKind) {
             switch kind {
             case .formula:
@@ -189,5 +204,15 @@ private extension HomebrewPackageKind {
         case .formula: .formula
         case .cask: .cask
         }
+    }
+}
+
+private struct CatalogueIndex {
+    let packages: [BrewPackage]
+    let byID: [HomebrewPackageID: BrewPackage]
+
+    init(packages: [BrewPackage]) {
+        self.packages = packages
+        byID = Dictionary(packages.map { ($0.id, $0) }, uniquingKeysWith: { first, _ in first })
     }
 }
