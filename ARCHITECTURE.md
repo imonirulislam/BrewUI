@@ -27,6 +27,7 @@ current problem and extend it when real usage warrants it.
 | `Sources/BrewUIComponents/` | Shared UI, theme tokens and colour assets |
 | `Sources/BrewAssistantCore/` | Assistant model contract and the suggestion pipeline that grounds model output in the catalogue |
 | `Sources/BrewIntelligence/` | Foundation Models adapter; the only target that imports `FoundationModels` |
+| `Sources/BrewAssistantCloud/` | Claude and OpenAI-compatible Assistant providers over HTTPS, the Keychain key store and the provider switch |
 | `Sources/BrewAccessibilityID/`, `Sources/BrewUITestContract/` | Dependency-free contracts shared by the app and UI tests |
 | `HomebrewAskpassHelper/` | Administrator password prompt for `SUDO_ASKPASS` |
 | `HomebrewUpgradeHelper/`, `Sources/BrewSelfUpgrade*/` | Self-upgrade executable, contract and testable helper core |
@@ -171,6 +172,18 @@ identity through `BrewMutatingCommandFactory` and `BrewCommandCenter`, after the
 `brew install` command. The model's 4,096-token context caps candidates at 12 with summaries of at most
 90 characters. Each request uses a fresh `LanguageModelSession`. UI-test launches inject
 `UnavailablePackageSuggestionModel`, so the deterministic suites never reach the live model.
+
+Candidates come from name matches first, then whole-word matches in package descriptions, so a request
+such as "convert videos" reaches ffmpeg even when no package name contains "video".
+
+Settings › Assistant chooses the provider: Apple's on-device model (the default), Claude through the
+Anthropic Messages API, OpenAI, or any server speaking the OpenAI chat completions API, such as Ollama.
+`ConfiguredPackageSuggestionModel` reads the choice on every request. Cloud providers receive the request
+and the names and descriptions of the matching catalogue packages, which the Assistant page and Settings
+both state. Both cloud clients ask for JSON constrained by a schema (`output_config.format` and a strict
+`json_schema` response format) and treat a refusal or an answer outside the schema as an error rather than
+parsing free text. Claude requests set `effort: low` and opt into `fallbacks: "default"`. API keys live in
+the login Keychain, one item per provider; defaults hold only the provider, model and server address.
 
 ## Product constraints
 

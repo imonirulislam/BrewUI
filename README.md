@@ -16,7 +16,8 @@ by the Homebrew project. Upstream's documentation below still applies unless not
   installed package or catalogue package.
 - An Assistant page (⌘7) that suggests packages from a plain-language request using Apple's on-device
   model. Suggestions are checked against the Homebrew catalogue and nothing installs without confirmation.
-  Requires Apple Intelligence.
+  Requires Apple Intelligence, or choose Claude, OpenAI or an OpenAI-compatible server such as Ollama in
+  Settings › Assistant; API keys are kept in the Keychain.
 - Upgrades rows have checkboxes: tick packages to run Upgrade Selected instead of Upgrade All.
 - An optional menu bar item (Settings, ⌘,) shows outdated packages and can check for upgrades periodically.
   It never upgrades anything by itself.

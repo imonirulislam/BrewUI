@@ -11,6 +11,8 @@ public enum AssistantAvailability: Equatable, Sendable {
     case deviceNotEligible
     case appleIntelligenceNotEnabled
     case modelNotReady
+    /// A cloud provider is chosen but its model, address or API key is missing.
+    case needsConfiguration
     case unavailable
 }
 
@@ -21,6 +23,8 @@ public enum AssistantError: Error, Equatable, Sendable {
     case refusal
     case unsupportedLanguage
     case rateLimited
+    /// The provider rejected the API key.
+    case unauthorized
     case generationFailed(String)
 }
 
@@ -38,7 +42,7 @@ public struct SuggestionCandidate: Equatable, Sendable {
 }
 
 /// The model's raw choice. Untrusted: `name` only counts if it matches a candidate the app offered.
-public struct ModelPick: Equatable, Sendable {
+public struct ModelPick: Decodable, Equatable, Sendable {
     public let name: String
     public let reason: String
 

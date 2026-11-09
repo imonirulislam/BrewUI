@@ -46,6 +46,24 @@ public actor BrewCatalogueRepository: CatalogueRepository {
         "\(defaultsKeyPrefix).\(kind.rawValue).lastRefresh"
     }
 
+    public func searchPackages(describedBy keyword: String, limit: Int) async throws -> [BrewPackage] {
+        let lowered = keyword.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
+        guard !lowered.isEmpty, limit > 0 else {
+            return []
+        }
+        async let formulae = index(for: .formula).packages
+        async let casks = index(for: .cask).packages
+        let matches = try await (formulae + casks).filter { Self.description($0.description, containsWord: lowered) }
+        return Array(matches
+            .sorted { $0.name.localizedCaseInsensitiveCompare($1.name) == .orderedAscending }
+            .prefix(limit))
+    }
+
+    private static func description(_ description: String, containsWord word: String) -> Bool {
+        let words = description.lowercased().split { !$0.isLetter && !$0.isNumber }
+        return words.contains { $0 == word }
+    }
+
     public func package(for reference: HomebrewPackageID) async throws -> BrewPackage? {
         try await index(for: reference.kind).byID[reference]
     }

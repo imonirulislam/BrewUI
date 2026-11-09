@@ -33,8 +33,11 @@ enum AssistantCopy {
         case .unsupportedLanguage:
             String(localized: "The on-device model doesn’t support this language yet. Try English.",
                    bundle: #bundle, comment: "Assistant: request language unsupported")
+        case .unauthorized:
+            String(localized: "The provider rejected the API key. Check it in Settings › Assistant.", bundle: #bundle,
+                   comment: "Assistant: cloud provider returned 401 or 403")
         case .rateLimited:
-            String(localized: "The on-device model is busy. Wait a moment and try again.",
+            String(localized: "The model is busy or rate limited. Wait a moment and try again.",
                    bundle: #bundle, comment: "Assistant: model rate limited or busy")
         case let .generationFailed(detail):
             String(localized: "The assistant couldn’t answer: \(detail)", bundle: #bundle,
@@ -49,6 +52,9 @@ enum AssistantCopy {
         case .appleIntelligenceNotEnabled:
             String(localized: "Turn on Apple Intelligence to use the assistant.", bundle: #bundle,
                    comment: "Assistant: Apple Intelligence is switched off")
+        case .needsConfiguration:
+            String(localized: "Finish setting up the assistant in Settings › Assistant.", bundle: #bundle,
+                   comment: "Assistant: a cloud provider is chosen but its model, address or API key is missing")
         case .modelNotReady:
             String(localized: "The on-device model is still downloading. Try again shortly.", bundle: #bundle,
                    comment: "Assistant: model assets not yet downloaded")

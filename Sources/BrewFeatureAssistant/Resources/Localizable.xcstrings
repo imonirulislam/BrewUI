@@ -1,6 +1,76 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "API key" : {
+      "comment" : "Assistant settings: API key field",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Clave de API"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "API 키"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "API-nyckel"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "API 密钥"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "API 金鑰"
+          }
+        }
+      }
+    },
+    "API key (optional)" : {
+      "comment" : "Assistant settings: API key field for servers that may not need one",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Clave de API (opcional)"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "API 키(선택 사항)"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "API-nyckel (valfri)"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "API 密钥（可选）"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "API 金鑰（選用）"
+          }
+        }
+      }
+    },
     "Apple’s on-device model suggests packages, and Brewly checks each one against the Homebrew catalogue. Nothing leaves your Mac and nothing installs until you confirm." : {
       "comment" : "Assistant: explanation under the heading",
       "localizations" : {
@@ -32,6 +102,76 @@
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "Apple 的裝置端模型會建議套件，Brewly 會逐一在 Homebrew 目錄中核對。所有內容都不會離開你的 Mac，在你確認前也不會安裝任何項目。"
+          }
+        }
+      }
+    },
+    "Brewly couldn’t update the Keychain: %@" : {
+      "comment" : "Assistant settings: Keychain write failed; %@ is the error",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Brewly no pudo actualizar el llavero: %@"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Brewly가 키체인을 업데이트하지 못했습니다: %@"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Brewly kunde inte uppdatera nyckelringen: %@"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Brewly 无法更新钥匙串：%@"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Brewly 無法更新鑰匙圈：%@"
+          }
+        }
+      }
+    },
+    "Brewly sends your request and the names and descriptions of matching catalogue packages to %@, then checks every suggestion against the Homebrew catalogue. Nothing installs until you confirm." : {
+      "comment" : "Assistant: privacy note for a cloud provider; %@ is Anthropic or OpenAI\nAssistant: privacy note for an OpenAI-compatible server; %@ is the server's host name",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Brewly envía tu solicitud y los nombres y descripciones de los paquetes coincidentes del catálogo a %@, y después comprueba cada sugerencia en el catálogo de Homebrew. Nada se instala hasta que lo confirmes."
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Brewly는 요청 내용과 일치하는 카탈로그 패키지의 이름 및 설명을 %@에 보낸 다음, 모든 추천을 Homebrew 카탈로그에서 확인합니다. 확인하기 전에는 아무것도 설치되지 않습니다."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Brewly skickar din förfrågan samt namn och beskrivningar för matchande katalogpaket till %@ och kontrollerar sedan varje förslag mot Homebrews katalog. Inget installeras förrän du bekräftar."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Brewly 会将你的请求以及匹配的目录软件包的名称和描述发送给 %@，然后在 Homebrew 目录中核实每条建议。在你确认之前不会安装任何东西。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Brewly 會將你的要求以及相符目錄套件的名稱和描述傳送給 %@，然後在 Homebrew 目錄中核對每項建議。在你確認前不會安裝任何項目。"
           }
         }
       }
@@ -106,6 +246,41 @@
         }
       }
     },
+    "Claude (Anthropic)" : {
+      "comment" : "Assistant provider: Anthropic's Claude API",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Claude (Anthropic)"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Claude (Anthropic)"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Claude (Anthropic)"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Claude（Anthropic）"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Claude（Anthropic）"
+          }
+        }
+      }
+    },
     "Find software by describing what you need" : {
       "comment" : "Assistant: page heading",
       "localizations" : {
@@ -137,6 +312,41 @@
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "描述你的需求來尋找軟體"
+          }
+        }
+      }
+    },
+    "Finish setting up the assistant in Settings › Assistant." : {
+      "comment" : "Assistant: a cloud provider is chosen but its model, address or API key is missing",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Termina de configurar el asistente en Ajustes › Asistente."
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "설정 › 어시스턴트에서 어시스턴트 설정을 완료하세요."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Slutför inställningen av assistenten i Inställningar › Assistent."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "请在“设置 › 助手”中完成助手设置。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "請在「設定 › 助理」中完成助理設定。"
           }
         }
       }
@@ -316,6 +526,76 @@
         }
       }
     },
+    "Model" : {
+      "comment" : "Assistant settings: model identifier field",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Modelo"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "모델"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Modell"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "模型"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "模型"
+          }
+        }
+      }
+    },
+    "Model provider" : {
+      "comment" : "Assistant settings: provider picker",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Proveedor del modelo"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "모델 제공자"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Modelleverantör"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "模型提供方"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "模型供應商"
+          }
+        }
+      }
+    },
     "No matching packages found in the Homebrew catalogue. Try naming the kind of tool or a related app." : {
       "comment" : "Assistant: no catalogue matches for the request",
       "localizations" : {
@@ -347,6 +627,41 @@
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "在 Homebrew 目錄中找不到相符的套件。試試說明工具類型或相關 App。"
+          }
+        }
+      }
+    },
+    "On this Mac (Apple Intelligence)" : {
+      "comment" : "Assistant provider: Apple's on-device model",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "En este Mac (Apple Intelligence)"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "이 Mac에서 (Apple Intelligence)"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "På den här Macen (Apple Intelligence)"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "在这台 Mac 上（Apple 智能）"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "在這部 Mac 上（Apple Intelligence）"
           }
         }
       }
@@ -386,6 +701,216 @@
         }
       }
     },
+    "Open Assistant Settings…" : {
+      "comment" : "Assistant: button opening Brewly's Assistant settings",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Abrir ajustes del asistente…"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "어시스턴트 설정 열기…"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Öppna assistentinställningar…"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "打开助手设置…"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "打開助理設定…"
+          }
+        }
+      }
+    },
+    "OpenAI (ChatGPT and Codex models)" : {
+      "comment" : "Assistant provider: OpenAI's API",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "OpenAI (modelos de ChatGPT y Codex)"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "OpenAI (ChatGPT 및 Codex 모델)"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "OpenAI (ChatGPT- och Codex-modeller)"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "OpenAI（ChatGPT 和 Codex 模型）"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "OpenAI（ChatGPT 和 Codex 模型）"
+          }
+        }
+      }
+    },
+    "OpenAI-compatible server (Ollama, LM Studio…)" : {
+      "comment" : "Assistant provider: any server speaking the OpenAI chat completions API",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Servidor compatible con OpenAI (Ollama, LM Studio…)"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "OpenAI 호환 서버 (Ollama, LM Studio…)"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "OpenAI-kompatibel server (Ollama, LM Studio…)"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "OpenAI 兼容服务器（Ollama、LM Studio…）"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "OpenAI 相容伺服器（Ollama、LM Studio…）"
+          }
+        }
+      }
+    },
+    "Remove" : {
+      "comment" : "Assistant settings: delete the stored API key",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Eliminar"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "제거"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Ta bort"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "移除"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "移除"
+          }
+        }
+      }
+    },
+    "Save" : {
+      "comment" : "Assistant settings: store the API key in the Keychain",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Guardar"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "저장"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Spara"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "保存"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "儲存"
+          }
+        }
+      }
+    },
+    "Saved in your Keychain" : {
+      "comment" : "Assistant settings: API key placeholder when a key is stored",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Guardada en tu llavero"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "키체인에 저장됨"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Sparad i din nyckelring"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "已存储在你的钥匙串中"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "已儲存在你的鑰匙圈中"
+          }
+        }
+      }
+    },
     "Searching the catalogue…" : {
       "comment" : "Assistant: working on a request",
       "localizations" : {
@@ -417,6 +942,41 @@
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "正在搜尋目錄…"
+          }
+        }
+      }
+    },
+    "Server address" : {
+      "comment" : "Assistant settings: OpenAI-compatible base URL field",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Dirección del servidor"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "서버 주소"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Serveradress"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "服务器地址"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "伺服器位址"
           }
         }
       }
@@ -596,6 +1156,41 @@
         }
       }
     },
+    "The model is busy or rate limited. Wait a moment and try again." : {
+      "comment" : "Assistant: model rate limited or busy",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "El modelo está ocupado o ha alcanzado su límite de uso. Espera un momento e inténtalo de nuevo."
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "모델이 사용 중이거나 사용량 한도에 도달했습니다. 잠시 후 다시 시도해 주세요."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Modellen är upptagen eller har nått sin användningsgräns. Vänta en stund och försök igen."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "模型正忙或已达到速率限制。请稍候再试。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "模型忙碌中或已達速率限制。請稍候再試。"
+          }
+        }
+      }
+    },
     "The on-device model declined this request. Try describing the task differently." : {
       "comment" : "Assistant: model refused or hit a safety guardrail",
       "localizations" : {
@@ -666,41 +1261,6 @@
         }
       }
     },
-    "The on-device model is busy. Wait a moment and try again." : {
-      "comment" : "Assistant: model rate limited or busy",
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "El modelo integrado está ocupado. Espera un momento e inténtalo de nuevo."
-          }
-        },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "기기 내 모델이 사용 중입니다. 잠시 후 다시 시도해 주세요."
-          }
-        },
-        "sv" : {
-          "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Modellen på enheten är upptagen. Vänta en stund och försök igen."
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "设备端模型正忙。请稍候再试。"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "裝置端模型忙碌中。請稍候再試。"
-          }
-        }
-      }
-    },
     "The on-device model is still downloading. Try again shortly." : {
       "comment" : "Assistant: model assets not yet downloaded",
       "localizations" : {
@@ -767,6 +1327,41 @@
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "裝置端模型目前無法使用。"
+          }
+        }
+      }
+    },
+    "The provider rejected the API key. Check it in Settings › Assistant." : {
+      "comment" : "Assistant: cloud provider returned 401 or 403",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "El proveedor rechazó la clave de API. Revísala en Ajustes › Asistente."
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "제공자가 API 키를 거부했습니다. 설정 › 어시스턴트에서 확인하세요."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Leverantören avvisade API-nyckeln. Kontrollera den i Inställningar › Assistent."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "提供方拒绝了 API 密钥。请在“设置 › 助手”中检查。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "供應商拒絕了 API 金鑰。請在「設定 › 助理」中檢查。"
           }
         }
       }

@@ -201,6 +201,38 @@ struct BrewCatalogueRepositoryTests {
         #expect(await apiClient.formulaCallCount() == 0)
     }
 
+    @Test @MainActor func `description search matches whole words and respects the limit`() async throws {
+        let fixture = TestFixture()
+        defer { fixture.cleanup() }
+
+        let json = """
+        [
+          {"name": "wget", "desc": "Internet file retriever", "homepage": "", "versions": {"stable": "1"}, "dependencies": []},
+          {"name": "vidstab", "desc": "Video stabilization library", "homepage": "", "versions": {"stable": "1"}, "dependencies": []},
+          {"name": "ffmpeg", "desc": "Play, record, convert, and stream audio and video", "homepage": "", "versions": {"stable": "1"}, "dependencies": []},
+          {"name": "videoplay", "desc": "Plays videos", "homepage": "", "versions": {"stable": "1"}, "dependencies": []}
+        ]
+        """
+        let payload = try JSONDecoder().decode(FormulaCatalogueJSON.self, from: Data(json.utf8))
+        let casks = try JSONDecoder().decode(CaskCatalogueJSON.self, from: Data("[]".utf8))
+        let cache = MockCatalogueCache(formulaData: payload, caskData: casks, formulaETag: #""etag""#)
+        UserDefaults.standard.set(Date(), forKey: fixture.formulaLastRefreshKey)
+        UserDefaults.standard.set(Date(), forKey: fixture.caskLastRefreshKey)
+        let apiClient = StubCatalogueAPIClient(formulaHandler: { _ in .notModified }, caskHandler: { _ in .notModified })
+        let repository = BrewCatalogueRepository(
+            apiClient: apiClient,
+            cache: cache,
+            defaultsKeyPrefix: fixture.defaultsKeyPrefix,
+            now: Date.init,
+            ttl: 60,
+        )
+
+        #expect(try await repository.searchPackages(describedBy: "VIDEO", limit: 5).map(\.name) == ["ffmpeg", "vidstab"])
+        #expect(try await repository.searchPackages(describedBy: "rec", limit: 5).isEmpty)
+        #expect(try await repository.searchPackages(describedBy: "video", limit: 1).map(\.name) == ["ffmpeg"])
+        #expect(try await repository.searchPackages(describedBy: "  ", limit: 5).isEmpty)
+    }
+
     @Test @MainActor func `updated refresh persists through cache protocol`() async throws {
         let fixture = TestFixture()
         defer { fixture.cleanup() }

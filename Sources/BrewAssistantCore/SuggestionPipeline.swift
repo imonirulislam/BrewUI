@@ -12,6 +12,7 @@ import Foundation
 public struct SuggestionPipeline: Sendable {
     public static let maximumSearchTerms = 5
     public static let resultsPerTerm = 4
+    public static let descriptionResultsPerTerm = 3
     public static let maximumCandidates = 12
     public static let maximumSuggestions = 5
     /// The on-device model has a 4,096-token window shared by instructions, candidates and output.
@@ -42,17 +43,18 @@ public struct SuggestionPipeline: Sendable {
         return Self.validated(picks, against: candidates)
     }
 
+    /// Name matches lead: a term the model offered as a package name is the strongest signal. Description
+    /// matches follow, so a request like "convert videos" still reaches ffmpeg when no name contains "video".
     private func searchCatalogue(for terms: [String]) async throws -> [BrewPackage] {
         var seen = Set<HomebrewPackageID>()
-        var candidates: [BrewPackage] = []
+        var byName: [BrewPackage] = []
+        var byDescription: [BrewPackage] = []
         for term in terms {
             try Task.checkCancellation()
-            for package in try await catalogue.searchPackages(matching: term, limit: Self.resultsPerTerm)
-                where seen.insert(package.id).inserted
-            {
-                candidates.append(package)
-            }
+            byName += try await catalogue.searchPackages(matching: term, limit: Self.resultsPerTerm)
+            byDescription += try await catalogue.searchPackages(describedBy: term, limit: Self.descriptionResultsPerTerm)
         }
+        let candidates = (byName + byDescription).filter { seen.insert($0.id).inserted }
         return Array(candidates.prefix(Self.maximumCandidates))
     }
 

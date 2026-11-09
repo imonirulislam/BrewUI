@@ -6,6 +6,7 @@
 //
 
 import BrewAppEnvironment
+import BrewAssistantCloud
 import BrewAssistantCore
 import BrewCLI
 import BrewCore
@@ -61,8 +62,13 @@ struct BrewApp: App {
 
     /// UI tests stay deterministic: a fixture launch never reaches the live model.
     private static func makePackageSuggestionModel() -> any PackageSuggestionModel {
-        BrewUITestingLaunchConfiguration.current() == nil ? OnDevicePackageSuggestionModel() : UnavailablePackageSuggestionModel()
+        guard BrewUITestingLaunchConfiguration.current() == nil else {
+            return UnavailablePackageSuggestionModel()
+        }
+        return ConfiguredPackageSuggestionModel(onDevice: OnDevicePackageSuggestionModel(), credentials: credentialStore)
     }
+
+    private static let credentialStore = KeychainCredentialStore()
 
     // swiftlint:disable:next function_body_length
     init() {
@@ -205,7 +211,19 @@ struct BrewApp: App {
         }
 
         Settings {
-            BrewlySettingsView()
+            TabView {
+                BrewlySettingsView()
+                    .tabItem {
+                        Label(String(localized: "General", bundle: #bundle, comment: "Settings tab: menu bar and notifications"),
+                              systemImage: "gearshape")
+                    }
+                AssistantSettingsView()
+                    .environment(\.assistantCredentialStore, Self.credentialStore)
+                    .tabItem {
+                        Label(String(localized: "Assistant", bundle: #bundle, comment: "Settings tab: assistant model provider"),
+                              systemImage: "text.magnifyingglass")
+                    }
+            }
         }
     }
 }

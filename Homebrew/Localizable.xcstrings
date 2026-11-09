@@ -48,7 +48,7 @@
       }
     },
     "Assistant" : {
-      "comment" : "Sidebar: on-device assistant that suggests packages",
+      "comment" : "Settings tab: assistant model provider\nSidebar: on-device assistant that suggests packages",
       "localizations" : {
         "es" : {
           "stringUnit" : {
@@ -479,6 +479,41 @@
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "尋找"
+          }
+        }
+      }
+    },
+    "General" : {
+      "comment" : "Settings tab: menu bar and notifications",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "General"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "일반"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Allmänt"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "通用"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "一般"
           }
         }
       }

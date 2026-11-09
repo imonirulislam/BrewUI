@@ -22,6 +22,7 @@
 		EEAA110B00000000000000BB /* BrewFeatureDoctor in Frameworks */ = {isa = PBXBuildFile; productRef = EEAA100B00000000000000CB /* BrewFeatureDoctor */; };
 		EEAA110C00000000000000BC /* BrewFeatureConfig in Frameworks */ = {isa = PBXBuildFile; productRef = EEAA100C00000000000000CC /* BrewFeatureConfig */; };
 		EEAA112000000000000000E0 /* BrewFeatureServices in Frameworks */ = {isa = PBXBuildFile; productRef = EEAA102000000000000000F0 /* BrewFeatureServices */; };
+		EEAA112700000000000000E7 /* BrewAssistantCloud in Frameworks */ = {isa = PBXBuildFile; productRef = EEAA102700000000000000F7 /* BrewAssistantCloud */; };
 		EEAA112600000000000000E6 /* BrewFeatureGoTo in Frameworks */ = {isa = PBXBuildFile; productRef = EEAA102600000000000000F6 /* BrewFeatureGoTo */; };
 		EEAA112500000000000000E5 /* BrewFeatureTaps in Frameworks */ = {isa = PBXBuildFile; productRef = EEAA102500000000000000F5 /* BrewFeatureTaps */; };
 		EEAA112400000000000000E4 /* BrewFeatureMenuBar in Frameworks */ = {isa = PBXBuildFile; productRef = EEAA102400000000000000F4 /* BrewFeatureMenuBar */; };
@@ -163,6 +164,7 @@
 				EEAA110B00000000000000BB /* BrewFeatureDoctor in Frameworks */,
 				EEAA110C00000000000000BC /* BrewFeatureConfig in Frameworks */,
 				EEAA112000000000000000E0 /* BrewFeatureServices in Frameworks */,
+				EEAA112700000000000000E7 /* BrewAssistantCloud in Frameworks */,
 				EEAA112600000000000000E6 /* BrewFeatureGoTo in Frameworks */,
 				EEAA112500000000000000E5 /* BrewFeatureTaps in Frameworks */,
 				EEAA112400000000000000E4 /* BrewFeatureMenuBar in Frameworks */,
@@ -317,6 +319,7 @@
 				EEAA100B00000000000000CB /* BrewFeatureDoctor */,
 				EEAA100C00000000000000CC /* BrewFeatureConfig */,
 				EEAA102000000000000000F0 /* BrewFeatureServices */,
+				EEAA102700000000000000F7 /* BrewAssistantCloud */,
 				EEAA102600000000000000F6 /* BrewFeatureGoTo */,
 				EEAA102500000000000000F5 /* BrewFeatureTaps */,
 				EEAA102400000000000000F4 /* BrewFeatureMenuBar */,
@@ -1035,6 +1038,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = EEAA1F0000000000000000FF /* XCLocalSwiftPackageReference "." */;
 			productName = BrewFeatureServices;
+		};
+		EEAA102700000000000000F7 /* BrewAssistantCloud */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EEAA1F0000000000000000FF /* XCLocalSwiftPackageReference "." */;
+			productName = BrewAssistantCloud;
 		};
 		EEAA102600000000000000F6 /* BrewFeatureGoTo */ = {
 			isa = XCSwiftPackageProductDependency;

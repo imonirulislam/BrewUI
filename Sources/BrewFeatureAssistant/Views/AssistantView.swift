@@ -34,6 +34,8 @@ public struct AssistantRoot: View {
 
 struct AssistantView: View {
     @State private var viewModel: AssistantViewModel
+    @AppStorage(AssistantSettingsKey.provider) private var providerRawValue = AssistantProvider.onDevice.rawValue
+    @AppStorage(AssistantSettingsKey.baseURL) private var baseURL = ""
     @FocusState private var requestFieldIsFocused: Bool
 
     init(viewModel: AssistantViewModel) {
@@ -62,6 +64,9 @@ struct AssistantView: View {
             requestFieldIsFocused = true
         }
         .onReceive(NotificationCenter.default.publisher(for: NSApplication.didBecomeActiveNotification)) { _ in
+            viewModel.refreshAvailability()
+        }
+        .onReceive(NotificationCenter.default.publisher(for: UserDefaults.didChangeNotification)) { _ in
             viewModel.refreshAvailability()
         }
         .confirmationDialog(
@@ -94,18 +99,15 @@ struct AssistantView: View {
         VStack(alignment: .leading, spacing: BrewSpacing.xs) {
             Text("Find software by describing what you need", bundle: #bundle, comment: "Assistant: page heading")
                 .font(.brewTitle2)
-            Text(
-                """
-                Apple’s on-device model suggests packages, and Brewly checks each one against the Homebrew \
-                catalogue. Nothing leaves your Mac and nothing installs until you confirm.
-                """,
-                bundle: #bundle,
-                comment: "Assistant: explanation under the heading",
-            )
-            .font(.brewCallout)
-            .foregroundStyle(Color.brewTextSecondary)
-            .fixedSize(horizontal: false, vertical: true)
+            Text(AssistantProviderCopy.privacyNote(for: provider, baseURL: baseURL))
+                .font(.brewCallout)
+                .foregroundStyle(Color.brewTextSecondary)
+                .fixedSize(horizontal: false, vertical: true)
         }
+    }
+
+    private var provider: AssistantProvider {
+        AssistantProvider(rawValue: providerRawValue) ?? .onDevice
     }
 
     private var requestField: some View {
@@ -169,6 +171,11 @@ private struct AssistantUnavailableNotice: View {
     var body: some View {
         VStack(alignment: .leading, spacing: BrewSpacing.sm) {
             NoteCallout(verbatim: AssistantCopy.unavailableTitle(for: availability))
+            if availability == .needsConfiguration {
+                SettingsLink {
+                    Text("Open Assistant Settings…", bundle: #bundle, comment: "Assistant: button opening Brewly's Assistant settings")
+                }
+            }
             if availability == .appleIntelligenceNotEnabled {
                 Button {
                     openURL(Self.appleIntelligenceSettingsURL)

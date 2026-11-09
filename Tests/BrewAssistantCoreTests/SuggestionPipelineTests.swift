@@ -99,6 +99,20 @@ struct SuggestionPipelineTests {
         #expect(summary.count <= SuggestionPipeline.maximumSummaryLength)
     }
 
+    @Test func `packages found only by description are offered after name matches`() async throws {
+        let catalogue = DescribingCatalogue(
+            byName: ["video": [Self.formula("videoplay")]],
+            byDescription: ["video": [Self.formula("ffmpeg"), Self.formula("videoplay")]],
+        )
+        let model = FakeSuggestionModel(terms: ["video"], picks: [ModelPick(name: "ffmpeg", reason: "Converts video")])
+        let pipeline = SuggestionPipeline(model: model, catalogue: catalogue)
+
+        let suggestions = try await pipeline.suggestions(for: "convert videos")
+
+        #expect(await model.offeredCandidates.map(\.name) == ["videoplay", "ffmpeg"])
+        #expect(suggestions.map(\.package.name) == ["ffmpeg"])
+    }
+
     @Test func `catalogue failures reach the caller`() async {
         let model = FakeSuggestionModel(terms: ["ffmpeg"], picks: [])
         let pipeline = SuggestionPipeline(model: model, catalogue: FailingCatalogue())
@@ -201,5 +215,22 @@ private struct FailingCatalogue: CatalogueRepository {
 
     func searchPackages(matching _: String, limit _: Int) async throws -> [BrewPackage] {
         throw Failure()
+    }
+}
+
+private struct DescribingCatalogue: CatalogueRepository {
+    let byName: [String: [BrewPackage]]
+    let byDescription: [String: [BrewPackage]]
+
+    func package(for _: HomebrewPackageID) async throws -> BrewPackage? {
+        nil
+    }
+
+    func searchPackages(matching query: String, limit: Int) async throws -> [BrewPackage] {
+        Array((byName[query] ?? []).prefix(limit))
+    }
+
+    func searchPackages(describedBy keyword: String, limit: Int) async throws -> [BrewPackage] {
+        Array((byDescription[keyword] ?? []).prefix(limit))
     }
 }

@@ -31,6 +31,7 @@ let package = Package(
         .library(name: "BrewFeatureServices", targets: ["BrewFeatureServices"]),
         .library(name: "BrewAssistantCore", targets: ["BrewAssistantCore"]),
         .library(name: "BrewIntelligence", targets: ["BrewIntelligence"]),
+        .library(name: "BrewAssistantCloud", targets: ["BrewAssistantCloud"]),
         .library(name: "BrewFeatureAssistant", targets: ["BrewFeatureAssistant"]),
         .library(name: "BrewFeatureMenuBar", targets: ["BrewFeatureMenuBar"]),
         .library(name: "BrewFeatureTaps", targets: ["BrewFeatureTaps"]),
@@ -320,7 +321,20 @@ let package = Package(
             swiftSettings: [.defaultIsolation(MainActor.self), .swiftLanguageMode(.v6)],
         ),
 
+        // Cloud providers over plain HTTPS; no third-party packages, and the Keychain holds the keys.
+        .target(
+            name: "BrewAssistantCloud",
+            dependencies: ["BrewAssistantCore"],
+            swiftSettings: [.defaultIsolation(nil), .swiftLanguageMode(.v6)],
+        ),
+
         // MARK: - Test targets
+
+        .testTarget(
+            name: "BrewAssistantCloudTests",
+            dependencies: ["BrewAssistantCloud", "BrewAssistantCore", "BrewCore"],
+            swiftSettings: [.defaultIsolation(nil), .swiftLanguageMode(.v6)],
+        ),
 
         .testTarget(
             name: "BrewFeatureGoToTests",
