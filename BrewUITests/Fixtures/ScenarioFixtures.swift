@@ -374,8 +374,19 @@ enum ScenarioFixtures {
             "\(servicesInfoKey).stdout": text(""),
             "doctor.stdout": text("Your system is ready to brew.\n"),
             "doctor_--json.stdout": json(["tier": 1, "findings": []]),
+            "tap-info_--installed_--json.stdout": tapInfoJSON,
         ]
     }
+
+    private static let tapInfoJSON = json([
+        ["name": "homebrew/core", "installed": true, "official": true, "trusted": true, "private": false,
+         "remote": "https://github.com/Homebrew/homebrew-core", "formula_names": [], "cask_tokens": []],
+        ["name": "homebrew/cask", "installed": true, "official": true, "trusted": true, "private": false,
+         "remote": "https://github.com/Homebrew/homebrew-cask", "formula_names": [], "cask_tokens": []],
+        ["name": "example/tools", "installed": true, "official": false, "trusted": false, "private": false,
+         "remote": "https://github.com/example/homebrew-tools", "last_commit": "3 days ago",
+         "formula_names": ["example/tools/hello-cli", "example/tools/fmt-json"], "cask_tokens": ["example/tools/notes"]],
+    ])
 
     private static func infoJSON(for packages: [FixturePackage]) -> Data {
         json([

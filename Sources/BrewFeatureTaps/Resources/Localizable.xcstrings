@@ -4,16 +4,28 @@
     "%@ failed." : {
       "comment" : "Taps: a tap or untap command failed; %@ is the command"
     },
-    "%lld formulae, %lld casks" : {
-      "comment" : "Taps: row subtitle; %1$lld formulae, %2$lld casks",
+    "%@, %@" : {
+      "comment" : "Taps: row subtitle; %1$@ is the formula count, %2$@ the cask count",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "%1$lld formulae, %2$lld casks"
+            "value" : "%1$@, %2$@"
           }
         }
       }
+    },
+    "%lld casks" : {
+      "comment" : "Taps: row subtitle part; %lld casks"
+    },
+    "%lld formulae" : {
+      "comment" : "Taps: row subtitle part; %lld formulae"
+    },
+    "1 cask" : {
+      "comment" : "Taps: row subtitle part, one cask"
+    },
+    "1 formula" : {
+      "comment" : "Taps: row subtitle part, one formula"
     },
     "Add Tap" : {
       "comment" : "Taps: confirm tap"
@@ -44,6 +56,9 @@
     },
     "Last updated %@" : {
       "comment" : "Taps: age of the tap's latest commit; %@ is e.g. 2 days ago"
+    },
+    "Maintained by Homebrew" : {
+      "comment" : "Taps: row subtitle for an official tap whose packages brew does not list locally"
     },
     "Nothing installed from this tap." : {
       "comment" : "Taps: no installed packages from the tap"

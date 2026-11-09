@@ -130,8 +130,20 @@ struct TapsView: View {
     }
 
     private func packageCounts(for tap: BrewTap) -> String {
-        String(localized: "\(tap.formulaNames.count) formulae, \(tap.caskTokens.count) casks", bundle: #bundle,
-               comment: "Taps: row subtitle; %1$lld formulae, %2$lld casks")
+        // In API mode brew lists nothing locally for its own taps, so a count would read as empty.
+        if tap.isOfficial, tap.formulaNames.isEmpty, tap.caskTokens.isEmpty {
+            return String(localized: "Maintained by Homebrew", bundle: #bundle,
+                          comment: "Taps: row subtitle for an official tap whose packages brew does not list locally")
+        }
+        let formulae = tap.formulaNames.count == 1
+            ? String(localized: "1 formula", bundle: #bundle, comment: "Taps: row subtitle part, one formula")
+            : String(localized: "\(tap.formulaNames.count) formulae", bundle: #bundle,
+                     comment: "Taps: row subtitle part; %lld formulae")
+        let casks = tap.caskTokens.count == 1
+            ? String(localized: "1 cask", bundle: #bundle, comment: "Taps: row subtitle part, one cask")
+            : String(localized: "\(tap.caskTokens.count) casks", bundle: #bundle, comment: "Taps: row subtitle part; %lld casks")
+        return String(localized: "\(formulae), \(casks)", bundle: #bundle,
+                      comment: "Taps: row subtitle; %1$@ is the formula count, %2$@ the cask count")
     }
 
     private var confirmationTitle: String {

@@ -9,7 +9,7 @@ struct ServiceStatusView: View {
         let tone = ServiceStatusTone(service)
         HStack(spacing: BrewSpacing.xs) {
             ServiceStatusGlyph(tone: tone)
-            Text(verbatim: service.status)
+            Text(verbatim: sentenceCased(service.status))
                 .foregroundStyle(tone == .failed ? Color.brewStatusError : .brewTextPrimary)
         }
         .font(.brewCaption)
@@ -24,7 +24,7 @@ struct ServiceStatusBadge: View {
         let tone = ServiceStatusTone(service)
         HStack(alignment: .firstTextBaseline, spacing: BrewSpacing.xs) {
             ServiceStatusGlyph(tone: tone)
-            Text(verbatim: service.status.prefix(1).uppercased() + service.status.dropFirst())
+            Text(verbatim: sentenceCased(service.status))
                 .foregroundStyle(Color.brewTextPrimary)
         }
         .font(.brewCaption2)
@@ -61,4 +61,9 @@ private struct ServiceStatusGlyph: View {
                 .accessibilityHidden(true)
         }
     }
+}
+
+/// brew reports statuses in lower case (`started`, `none`); the interface shows them in sentence case.
+private func sentenceCased(_ status: String) -> String {
+    status.prefix(1).uppercased() + status.dropFirst()
 }

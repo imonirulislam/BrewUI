@@ -74,12 +74,14 @@ struct GoToPalette: View {
             if viewModel.results.isEmpty {
                 Text("No pages or packages match", bundle: #bundle, comment: "Go to palette: no results")
                     .foregroundStyle(Color.brewTextSecondary)
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .frame(maxWidth: .infinity)
+                    .padding(.vertical, BrewSpacing.xl)
             } else {
                 resultsList
+                    .frame(height: resultsHeight)
             }
         }
-        .frame(width: 560, height: 420)
+        .frame(width: 560)
         .background(Color.brewSurfaceElevated)
         .onAppear { fieldIsFocused = true }
         .task(id: query) {
@@ -92,6 +94,18 @@ struct GoToPalette: View {
             await viewModel.search(query)
         }
     }
+
+    /// Fits the sheet to its results instead of leaving a tall empty panel under a short list.
+    private var resultsHeight: CGFloat {
+        let rows = viewModel.results.reduce(CGFloat.zero) { height, result in
+            height + (result.subtitle?.isEmpty == false ? Self.packageRowHeight : Self.pageRowHeight) + BrewSpacing.xxs
+        }
+        return min(rows + BrewSpacing.lg, Self.maximumResultsHeight)
+    }
+
+    private static let pageRowHeight: CGFloat = 36
+    private static let packageRowHeight: CGFloat = 48
+    private static let maximumResultsHeight: CGFloat = 360
 
     private var resultsList: some View {
         ScrollViewReader { proxy in
