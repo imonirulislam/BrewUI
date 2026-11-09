@@ -12,6 +12,7 @@ import BrewCore
 import BrewCrashReporting
 import BrewFeatureAssistant
 import BrewFeatureConsole
+import BrewFeatureMenuBar
 import BrewFeatureSelfUpgrade
 import BrewIntelligence
 import BrewNetworking
@@ -28,6 +29,11 @@ struct BrewApp: App {
     private static let reportIssueURL = URL(string: "https://github.com/imonirulislam/BrewUI/issues/new/choose")!
 
     @Environment(\.scenePhase) private var scenePhase
+    @AppStorage(MenuBarPreferenceKey.showsMenuBarExtra) private var showsMenuBarExtra = false
+
+    private static let mainWindowID = "main"
+    /// Fixture launches never show the extra, whatever the user's own setting.
+    private static let isUITesting = BrewUITestingLaunchConfiguration.current() != nil
 
     private let commandCenter: SerialBrewCommandCenter
     private let commandFactory: LiveBrewMutatingCommandFactory
@@ -44,6 +50,7 @@ struct BrewApp: App {
     private let configRepository: BrewConfigRepository
     private let servicesRepository: BrewServicesRepository
     private let packageSuggestionModel = BrewApp.makePackageSuggestionModel()
+    private let mainWindowRequests = MainWindowRequests()
     private let crashReportController: CrashReportController
     private let selfUpgradeCoordinator: SelfUpgradeCoordinator
     #if DEBUG
@@ -118,8 +125,9 @@ struct BrewApp: App {
     }
 
     var body: some Scene {
-        WindowGroup {
+        WindowGroup(id: Self.mainWindowID) {
             MainWindowView()
+                .environment(\.mainWindowRequests, mainWindowRequests)
                 .environment(\.brewCommandCenter, commandCenter)
                 .environment(\.mutatingCommandFactory, commandFactory)
                 .environment(\.installedPackagesRepository, installedPackagesRepository)
@@ -180,6 +188,19 @@ struct BrewApp: App {
                 DebugMenuCommands(selfUpgradeControl: selfUpgradeDebugControl)
             }
         #endif
+
+        MenuBarExtra(isInserted: Self.isUITesting ? .constant(false) : $showsMenuBarExtra) {
+            MenuBarExtraContent(mainWindowID: Self.mainWindowID)
+                .environment(\.installedPackagesRepository, installedPackagesRepository)
+                .environment(\.mainWindowRequests, mainWindowRequests)
+        } label: {
+            MenuBarExtraLabel()
+                .environment(\.installedPackagesRepository, installedPackagesRepository)
+        }
+
+        Settings {
+            BrewlySettingsView()
+        }
     }
 }
 

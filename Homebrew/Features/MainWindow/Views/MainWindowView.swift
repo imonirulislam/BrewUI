@@ -8,6 +8,7 @@ import BrewFeatureConsole
 import BrewFeatureDiscover
 import BrewFeatureDoctor
 import BrewFeatureInstalled
+import BrewFeatureMenuBar
 import BrewFeatureSelfUpgrade
 import BrewFeatureServices
 import BrewRepositoryInterfaces
@@ -23,6 +24,7 @@ struct MainWindowView: View {
     @Environment(\.servicesRepository) private var servicesRepository
     @Environment(\.brewCommandCenter) private var brewCommandCenter
     @Environment(\.mutatingCommandFactory) private var mutatingCommandFactory
+    @Environment(\.mainWindowRequests) private var mainWindowRequests
 
     @State var selectedSidebarItem: SidebarItem = .installed
     @State private var pendingInstalledSelection: InstalledBrewPackage.ID?
@@ -61,6 +63,8 @@ struct MainWindowView: View {
             selectedSidebarItem = .installed
         }
         .environment(\.packageListBanner, PackageListBanner { SelfUpgradeBanner() })
+        .onAppear(perform: applyMainWindowRequest)
+        .onChange(of: mainWindowRequests.pendingDestination) { applyMainWindowRequest() }
         .alert(
             Text(outcomeCopy.title),
             isPresented: launchOutcomeBinding,
@@ -124,6 +128,15 @@ struct MainWindowView: View {
                 ideal: BrewLayout.sidebarWidth,
                 max: BrewLayout.sidebarWidth + 40,
             )
+    }
+
+    private func applyMainWindowRequest() {
+        switch mainWindowRequests.consume() {
+        case .upgrades:
+            selectedSidebarItem = .upgrades
+        case nil:
+            break
+        }
     }
 
     @ViewBuilder

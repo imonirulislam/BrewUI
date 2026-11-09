@@ -1,0 +1,51 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "%lld upgrades available" : {
+      "comment" : "Menu bar: several upgrades; %lld is the count"
+    },
+    "1 upgrade available" : {
+      "comment" : "Menu bar: one upgrade"
+    },
+    "Brewly: %lld upgrades available" : {
+      "comment" : "VoiceOver: menu bar icon; %lld is the outdated count"
+    },
+    "Brewly: everything is up to date" : {
+      "comment" : "VoiceOver: menu bar icon with no upgrades"
+    },
+    "Check for Upgrades" : {
+      "comment" : "Menu bar: runs brew update and re-checks"
+    },
+    "Check for upgrades automatically" : {
+      "comment" : "Settings: periodic check toggle"
+    },
+    "Everything is up to date" : {
+      "comment" : "Menu bar: no upgrades"
+    },
+    "Last check failed: %@" : {
+      "comment" : "Menu bar: the last upgrade check failed; %@ is the error"
+    },
+    "Open Upgrades…" : {
+      "comment" : "Menu bar: opens the main window on Upgrades"
+    },
+    "Quit Brewly" : {
+      "comment" : "Menu bar: quits the app"
+    },
+    "Settings…" : {
+      "comment" : "Menu bar: opens Brewly settings"
+    },
+    "Show Brewly in the menu bar" : {
+      "comment" : "Settings: menu bar extra toggle"
+    },
+    "Shows how many packages can be upgraded, even when the window is closed." : {
+      "comment" : "Settings: menu bar extra toggle detail"
+    },
+    "Uses `brew update-if-needed`, so Homebrew’s own auto-update settings apply. Nothing is upgraded automatically." : {
+      "comment" : "Settings: periodic check toggle detail"
+    },
+    "and %lld more" : {
+      "comment" : "Menu bar: count of outdated packages not listed"
+    }
+  },
+  "version" : "1.0"
+}
