@@ -11,6 +11,7 @@ import BrewFeatureInstalled
 import BrewFeatureMenuBar
 import BrewFeatureSelfUpgrade
 import BrewFeatureServices
+import BrewFeatureTaps
 import BrewRepositoryInterfaces
 import BrewUIComponents
 import SwiftUI
@@ -179,6 +180,10 @@ struct MainWindowView: View {
             AssistantRoot()
                 .navigationTitle(selectedSidebarItem.title)
                 .navigationSubtitle(String(localized: "Describe what you need and get package suggestions", bundle: #bundle, comment: "Window subtitle, Assistant"))
+        case .taps:
+            TapsRoot()
+                .navigationTitle(selectedSidebarItem.title)
+                .navigationSubtitle(String(localized: "Repositories Homebrew installs packages from", bundle: #bundle, comment: "Window subtitle, Taps"))
         }
     }
 }

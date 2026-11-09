@@ -33,6 +33,7 @@ let package = Package(
         .library(name: "BrewIntelligence", targets: ["BrewIntelligence"]),
         .library(name: "BrewFeatureAssistant", targets: ["BrewFeatureAssistant"]),
         .library(name: "BrewFeatureMenuBar", targets: ["BrewFeatureMenuBar"]),
+        .library(name: "BrewFeatureTaps", targets: ["BrewFeatureTaps"]),
     ],
     dependencies: [
         // Justification (`AGENTS.md`, Coding conventions): a controlling-terminal pty needs `setsid()`
@@ -304,7 +305,20 @@ let package = Package(
             swiftSettings: [.defaultIsolation(MainActor.self), .swiftLanguageMode(.v6)],
         ),
 
+        .target(
+            name: "BrewFeatureTaps",
+            dependencies: ["BrewAccessibilityID", "BrewCore", "BrewUIComponents", "BrewRepositoryInterfaces", "BrewAppEnvironment"],
+            resources: [.process("Resources/Localizable.xcstrings")],
+            swiftSettings: [.defaultIsolation(MainActor.self), .swiftLanguageMode(.v6)],
+        ),
+
         // MARK: - Test targets
+
+        .testTarget(
+            name: "BrewFeatureTapsTests",
+            dependencies: ["BrewFeatureTaps", "BrewCore", "BrewCoreTestSupport", "BrewRepositoryInterfaces"],
+            swiftSettings: [.defaultIsolation(MainActor.self), .swiftLanguageMode(.v6)],
+        ),
 
         .testTarget(
             name: "BrewFeatureMenuBarTests",

@@ -54,6 +54,7 @@ struct AXIDTests {
             "sidebar.item.doctor",
             "sidebar.item.configuration",
             "sidebar.item.assistant",
+            "sidebar.item.taps",
         ])
     }
 

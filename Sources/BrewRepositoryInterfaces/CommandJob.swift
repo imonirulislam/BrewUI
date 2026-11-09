@@ -167,7 +167,7 @@ public extension CommandJob {
         case .uninstallCask:
             verb = "uninstall"
             isCask = true
-        case .doctorFix, .doctorRead, .upgradeAll, .upgradeApp, .bundleDump, .serviceControl:
+        case .doctorFix, .doctorRead, .upgradeAll, .upgradeApp, .bundleDump, .serviceControl, .tapManagement:
             // Unreachable: these materialize their display command in the outer switch.
             return "brew"
         }

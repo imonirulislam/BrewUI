@@ -14,6 +14,7 @@ import BrewFeatureAssistant
 import BrewFeatureConsole
 import BrewFeatureMenuBar
 import BrewFeatureSelfUpgrade
+import BrewFeatureTaps
 import BrewIntelligence
 import BrewNetworking
 import BrewRepositories
@@ -49,6 +50,7 @@ struct BrewApp: App {
     private let doctorRepository: BrewDoctorRepository
     private let configRepository: BrewConfigRepository
     private let servicesRepository: BrewServicesRepository
+    private let tapsRepository: BrewTapsRepository
     private let packageSuggestionModel = BrewApp.makePackageSuggestionModel()
     private let mainWindowRequests = MainWindowRequests()
     private let crashReportController: CrashReportController
@@ -62,6 +64,7 @@ struct BrewApp: App {
         BrewUITestingLaunchConfiguration.current() == nil ? OnDevicePackageSuggestionModel() : UnavailablePackageSuggestionModel()
     }
 
+    // swiftlint:disable:next function_body_length
     init() {
         let inventoryCache = InstalledInventoryCache()
         // nil in every production launch, so both process-boundary seams below fall through to the
@@ -104,6 +107,7 @@ struct BrewApp: App {
         doctorRepository = BrewDoctorRepository(commandCenter: center, executionContext: executionContext)
         configRepository = BrewConfigRepository(executionContext: executionContext)
         servicesRepository = BrewServicesRepository(executionContext: executionContext, commandCenter: center)
+        tapsRepository = BrewTapsRepository(executionContext: executionContext)
 
         let selfUpgradeContext = SelfUpgradeLaunchContext(
             installedPackagesRepository: installedPackagesRepository,
@@ -139,6 +143,7 @@ struct BrewApp: App {
                 .environment(\.doctorRepository, doctorRepository)
                 .environment(\.configRepository, configRepository)
                 .environment(\.servicesRepository, servicesRepository)
+                .environment(\.tapsRepository, tapsRepository)
                 .environment(\.packageSuggestionModel, packageSuggestionModel)
                 .environment(\.selfUpgradeCoordinator, selfUpgradeCoordinator)
                 .task {

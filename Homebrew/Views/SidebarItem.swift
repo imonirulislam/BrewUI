@@ -17,6 +17,7 @@ enum SidebarItem: String, CaseIterable, Hashable, Identifiable {
     case doctor
     case configuration
     case assistant
+    case taps
 
     var id: String {
         rawValue
@@ -31,13 +32,14 @@ enum SidebarItem: String, CaseIterable, Hashable, Identifiable {
         case .doctor: String(localized: "Doctor", bundle: #bundle, comment: "Sidebar: brew doctor diagnostics")
         case .configuration: String(localized: "Configuration", bundle: #bundle, comment: "Sidebar: brew config and environment")
         case .assistant: String(localized: "Assistant", bundle: #bundle, comment: "Sidebar: on-device assistant that suggests packages")
+        case .taps: String(localized: "Taps", bundle: #bundle, comment: "Sidebar: installed taps and adding or removing them")
         }
     }
 
     var refreshesDoctorReport: Bool {
         switch self {
         case .doctor: true
-        case .installed, .upgrades, .discover, .services, .configuration, .assistant: false
+        case .installed, .upgrades, .discover, .services, .configuration, .assistant, .taps: false
         }
     }
 
@@ -52,6 +54,7 @@ enum SidebarItem: String, CaseIterable, Hashable, Identifiable {
         case .doctor: .doctor
         case .configuration: .configuration
         case .assistant: .assistant
+        case .taps: .taps
         }
     }
 }
@@ -60,7 +63,7 @@ extension FocusedValues {
     @Entry var sidebarSelection: Binding<SidebarItem>?
 }
 
-/// View menu commands for navigating the main window sidebar (⌘1–⌘7).
+/// View menu commands for navigating the main window sidebar (⌘1–⌘8).
 public struct SidebarCommands: Commands {
     @FocusedValue(\.sidebarSelection) private var selection
 

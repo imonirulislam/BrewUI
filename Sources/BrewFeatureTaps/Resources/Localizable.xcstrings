@@ -1,0 +1,83 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "%@ failed." : {
+      "comment" : "Taps: a tap or untap command failed; %@ is the command"
+    },
+    "%lld formulae, %lld casks" : {
+      "comment" : "Taps: row subtitle; %1$lld formulae, %2$lld casks",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$lld formulae, %2$lld casks"
+          }
+        }
+      }
+    },
+    "Add Tap" : {
+      "comment" : "Taps: confirm tap"
+    },
+    "Add Tap…" : {
+      "comment" : "Taps: add a tap after confirmation"
+    },
+    "Add the tap %@?" : {
+      "comment" : "Taps: add confirmation title; %@ is the tap"
+    },
+    "Available" : {
+      "comment" : "Taps: heading for everything the tap provides"
+    },
+    "Brewly will run: %@" : {
+      "comment" : "Taps: untap confirmation; %@ is the exact command"
+    },
+    "Brewly will run: %@\n\nThird-party taps are maintained by their authors, not Homebrew. Packages you install from them run their code on your Mac." : {
+      "comment" : "Taps: tap confirmation with a third-party warning; %@ is the exact command"
+    },
+    "Cancel" : {
+      "comment" : "Taps: cancel a tap or untap"
+    },
+    "Couldn’t list your taps." : {
+      "comment" : "Taps: brew tap-info failed"
+    },
+    "Installed from this tap" : {
+      "comment" : "Taps: heading for installed packages"
+    },
+    "Last updated %@" : {
+      "comment" : "Taps: age of the tap's latest commit; %@ is e.g. 2 days ago"
+    },
+    "Nothing installed from this tap." : {
+      "comment" : "Taps: no installed packages from the tap"
+    },
+    "Nothing listed." : {
+      "comment" : "Taps: tap provides no formulae or casks"
+    },
+    "Official" : {
+      "comment" : "Taps: badge for a Homebrew-maintained tap"
+    },
+    "Official Homebrew taps can’t be removed here." : {
+      "comment" : "Taps: why Remove is unavailable for an official tap"
+    },
+    "Remove Tap" : {
+      "comment" : "Taps: confirm untap"
+    },
+    "Remove Tap…" : {
+      "comment" : "Taps: remove a tap after confirmation"
+    },
+    "Remove the tap %@?" : {
+      "comment" : "Taps: remove confirmation title; %@ is the tap"
+    },
+    "Third-party" : {
+      "comment" : "Taps: badge for a tap not maintained by Homebrew"
+    },
+    "Uninstall the %lld packages from this tap before removing it." : {
+      "comment" : "Taps: why Remove is unavailable; %lld packages installed from the tap"
+    },
+    "Uninstall the 1 package from this tap before removing it." : {
+      "comment" : "Taps: why Remove is unavailable; one package installed from the tap"
+    },
+    "user/repo" : {
+      "comment" : "Taps: placeholder for a new tap name"
+    }
+  },
+  "version" : "1.0"
+}

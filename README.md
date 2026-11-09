@@ -18,6 +18,9 @@ by the Homebrew project. Upstream's documentation below still applies unless not
 - Upgrades rows have checkboxes: tick packages to run Upgrade Selected instead of Upgrade All.
 - An optional menu bar item (Settings, ⌘,) shows outdated packages and can check for upgrades periodically.
   It never upgrades anything by itself.
+- A Taps page (⌘8) lists installed taps, shows which installed packages came from each, and adds or
+  removes taps after confirming the exact `brew tap` or `brew untap` command. Upstream BrewUI does not
+  manage taps.
 
 # Upstream: BrewUI
 

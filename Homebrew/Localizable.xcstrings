@@ -547,6 +547,9 @@
         }
       }
     },
+    "Repositories Homebrew installs packages from" : {
+      "comment" : "Window subtitle, Taps"
+    },
     "Review and upgrade outdated packages" : {
       "comment" : "Window subtitle, Upgrades",
       "localizations" : {
@@ -627,6 +630,9 @@
           }
         }
       }
+    },
+    "Taps" : {
+      "comment" : "Sidebar: installed taps and adding or removing them"
     },
     "The upgrade helper is missing from this build of the Homebrew app." : {
       "comment" : "Shown when the bundled self-upgrade helper executable cannot be found",
